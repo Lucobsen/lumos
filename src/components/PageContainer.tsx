@@ -1,0 +1,11 @@
+import { Container, useMediaQuery, useTheme } from "@mui/material";
+
+export const PageContainer = ({ children }: { children: React.ReactNode }) => {
+    const { breakpoints } = useTheme();
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+
+    return (
+        <Container disableGutters sx={{ p: ({ spacing }) => isSmallScreen ? spacing(4) : spacing(4, 8), m: 0 }}>
+            {children}
+        </Container>);
+};

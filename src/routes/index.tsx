@@ -1,11 +1,12 @@
-import { Container, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
+import { PageContainer } from '../components/PageContainer'
 
 const Index = () => (
-  <Container disableGutters sx={{ p: ({ spacing }) => spacing(4, 8), m: 0 }}>
+  <PageContainer>
     <Typography color='secondary' variant='h3'>Welcome to the Lumos home page!</Typography>
-  </Container>
-)
+  </PageContainer>
+);
 
 export const Route = createFileRoute('/')({
   component: Index,
