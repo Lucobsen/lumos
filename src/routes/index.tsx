@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
 
 const Index = () => (
-  <Container disableGutters sx={{ p: ({ spacing }) => spacing(4), m: 0 }}>
+  <Container disableGutters sx={{ p: ({ spacing }) => spacing(4, 8), m: 0 }}>
     <Typography color='secondary' variant='h3'>Welcome to the Lumos home page!</Typography>
   </Container>
 )

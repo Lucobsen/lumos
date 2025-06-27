@@ -22,7 +22,7 @@ const StyledLink = styled(Link)`
 
 export const NavItems = () => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(850));
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
     const isMediumScreen = useMediaQuery(breakpoints.down(1100));
 
     if (isSmallScreen) return <IconButton color='secondary' size="large" disableRipple><MenuRoundedIcon fontSize="large" /></IconButton>;
