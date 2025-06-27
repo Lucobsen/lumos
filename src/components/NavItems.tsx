@@ -1,5 +1,6 @@
-import { Stack, styled, Typography } from "@mui/material";
+import { IconButton, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "@tanstack/react-router";
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 const StyledLink = styled(Link)`
     text-decoration: none; 
@@ -19,25 +20,33 @@ const StyledLink = styled(Link)`
     }
 `;
 
-export const NavItems = () => (
-    <Stack direction='row' spacing={2}>
-        <StyledLink to="/">
-            <Typography color='secondary' variant='h4'>Home</Typography>
-        </StyledLink>
-        <StyledLink to="/schedule">
-            <Typography color='secondary' variant='h4'>Schedule</Typography>
-        </StyledLink>
-        <StyledLink to="/prices">
-            <Typography color='secondary' variant='h4'>Prices</Typography>
-        </StyledLink>
-        <StyledLink to="/locations">
-            <Typography color='secondary' variant='h4'>Locations</Typography>
-        </StyledLink>
-        <StyledLink to="/courses">
-            <Typography color='secondary' variant='h4'>Courses</Typography>
-        </StyledLink>
-        <StyledLink to="/contact">
-            <Typography color='secondary' variant='h4'>Contact Us</Typography>
-        </StyledLink>
-    </Stack>
-);
+export const NavItems = () => {
+    const { breakpoints } = useTheme();
+    const isSmallScreen = useMediaQuery(breakpoints.down(850));
+    const isMediumScreen = useMediaQuery(breakpoints.down(1100));
+
+    if (isSmallScreen) return <IconButton color='secondary' size="large" disableRipple><MenuRoundedIcon fontSize="large" /></IconButton>;
+
+    return (
+        <Stack direction='row' spacing={2}>
+            <StyledLink to="/">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Home</Typography>
+            </StyledLink>
+            <StyledLink to="/schedule">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Schedule</Typography>
+            </StyledLink>
+            <StyledLink to="/prices">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Prices</Typography>
+            </StyledLink>
+            <StyledLink to="/locations">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Locations</Typography>
+            </StyledLink>
+            <StyledLink to="/courses">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Courses</Typography>
+            </StyledLink>
+            <StyledLink to="/contact">
+                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Contact Us</Typography>
+            </StyledLink>
+        </Stack>
+    );
+}
