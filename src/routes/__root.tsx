@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, createTheme, Stack, ThemeProvider, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, createTheme, ThemeProvider, Toolbar } from '@mui/material';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { NavItems } from '../components/NavItems';
