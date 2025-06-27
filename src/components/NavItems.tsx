@@ -1,6 +1,6 @@
-import { IconButton, Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "@tanstack/react-router";
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { MobileNavMenu } from "./MobileNavMenu";
 
 const StyledLink = styled(Link)`
     text-decoration: none; 
@@ -25,7 +25,7 @@ export const NavItems = () => {
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
     const isMediumScreen = useMediaQuery(breakpoints.down(1100));
 
-    if (isSmallScreen) return <IconButton color='secondary' size="large" disableRipple><MenuRoundedIcon fontSize="large" /></IconButton>;
+    if (isSmallScreen) return <MobileNavMenu />;
 
     return (
         <Stack direction='row' spacing={2}>

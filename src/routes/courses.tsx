@@ -1,11 +1,12 @@
-import { Container, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
+import { PageContainer } from '../components/PageContainer'
 
-const Courses = () => {
-    return <Container disableGutters sx={{ p: ({ spacing }) => spacing(4, 8), m: 0 }}>
+const Courses = () => (
+    <PageContainer>
         <Typography color='secondary' variant='h3'>Check out all the amaxzing courses we have to offer!</Typography>
-    </Container>
-}
+    </PageContainer>
+)
 
 export const Route = createFileRoute('/courses')({
     component: Courses,
