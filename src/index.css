@@ -1,7 +1,4 @@
 :root {
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
   background-color: #FFE28B;
 
@@ -14,8 +11,6 @@
 body {
   margin: 0;
 }
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
