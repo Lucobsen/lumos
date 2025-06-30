@@ -5,7 +5,7 @@ export const PageContainer = ({ children }: { children: React.ReactNode }) => {
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
     return (
-        <Container disableGutters sx={{ p: ({ spacing }) => isSmallScreen ? spacing(4) : spacing(4, 8), m: 0 }}>
+        <Container maxWidth={false} disableGutters sx={{ p: ({ spacing }) => isSmallScreen ? spacing(4) : spacing(4, 8), m: ({ spacing }) => spacing(isSmallScreen ? 12.5 : 15, 0, 0, 0) }} >
             {children}
         </Container>);
 };
