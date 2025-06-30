@@ -2,10 +2,12 @@ import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 type LocationItemProps = {
     address: string;
-    openingHours: string;
+    openingHour: string;
+    closingHour: string;
+    locationUrl: string;
 };
 
-export const LocationItem = ({ address, openingHours }: LocationItemProps) => {
+export const LocationItem = ({ address, openingHour, closingHour, locationUrl }: LocationItemProps) => {
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -17,13 +19,20 @@ export const LocationItem = ({ address, openingHours }: LocationItemProps) => {
                 frame-border="0"
                 style={{ border: 0 }}
                 referrer-policy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?origin=mfe&pb=!1m4!2m1!1sAdmiraal+de+Ruijterweg+21,+1057+JT+Amsterdam.!5e0!6i10"
+                src={locationUrl}
                 allowFullScreen>
             </iframe>
 
             <Stack gap={4} justifyContent='center'>
-                <Typography color='secondary' variant='h4'>Address: {address}</Typography>
-                <Typography color='secondary' variant='h4'>Opening Hours: {openingHours}</Typography>
+                <Stack>
+                    <Typography color='secondary' variant='h4'>Address:</Typography>
+                    <Typography color='secondary' variant='h4'>{address}</Typography>
+                </Stack>
+
+                <Stack>
+                    <Typography color='secondary' variant='h4'>Opening Hours:</Typography>
+                    <Typography color='secondary' variant='h4'>{openingHour} - {closingHour}</Typography>
+                </Stack>
             </Stack>
         </Stack>
     )
