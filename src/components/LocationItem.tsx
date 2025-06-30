@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 type LocationItemProps = {
     address: string;
@@ -6,10 +6,13 @@ type LocationItemProps = {
 };
 
 export const LocationItem = ({ address, openingHours }: LocationItemProps) => {
+    const { breakpoints } = useTheme();
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+
     return (
-        <Stack p={2} border={2} borderRadius={2} borderColor='secondary.main' direction='row' gap={2} bgcolor='primary.light'>
+        <Stack p={2} border={2} borderRadius={2} borderColor='secondary.main' direction={isSmallScreen ? 'column' : 'row'} gap={2} bgcolor='primary.light'>
             <iframe
-                width="450"
+                width={isSmallScreen ? "100%" : "450"}
                 height="250"
                 frame-border="0"
                 style={{ border: 0 }}
