@@ -14,7 +14,6 @@ const Schedule = () => {
 
     return (
         <PageContainer>
-            <Typography color='secondary' variant='h3'>Check the Lumos schedule!</Typography>
             <IframeResizer
                 src="https://www.bueno.nu/webshop/school/764/schedule?currentDate=&skipEmptyWeeksOnFirstLoad=YES&calendarEntryTypes=&locations=&genres=&levels=&employees="
                 style={{ width: '100%', height: '100vh' }}
