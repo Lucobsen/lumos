@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { Navbar } from '../components/Navbar';
+import { Analytics } from '@vercel/analytics/react';
 
 const theme = createTheme({
     palette: {
@@ -29,6 +30,7 @@ export const Route = createRootRoute({
         <ThemeProvider theme={theme}>
             <Navbar />
             <Outlet />
+            <Analytics />
             <TanStackRouterDevtools />
         </ThemeProvider >
     ),
