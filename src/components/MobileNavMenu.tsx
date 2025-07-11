@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 const StyledLink = styled(Link)`
-    text-decoration: none; 
+    text-decoration: none;
+    width: 100%;
     color: ${({ theme }) => theme.palette.secondary.main};
 
     &.active {
