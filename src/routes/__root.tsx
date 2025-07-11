@@ -10,16 +10,16 @@ const theme = createTheme({
             light: '#FFE28B',
             dark: '#B2994D',
         },
+        // change to shades of black
         secondary: {
-            main: '#385097',
+            main: '#000',
             light: '#5F73AB',
             dark: '#273869',
         },
     },
     typography: {
         fontFamily: [
-            'Chau Philomene One',
-            'Montserrat Classic'
+            'Open Sans fat', 'sans-serif'
         ].join(','),
     }
 });
