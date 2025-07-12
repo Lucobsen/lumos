@@ -4,7 +4,7 @@ type PageContainerProps = { children: React.ReactNode, disableBorders?: boolean 
 
 export const PageContainer = ({ children, disableBorders = false }: PageContainerProps) => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
     return (
         <Container

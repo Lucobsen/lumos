@@ -1,24 +1,16 @@
 import { Stack, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "@tanstack/react-router";
 import { MobileNavMenu } from "./MobileNavMenu";
+import { useTranslation } from 'react-i18next';
 
 const StyledLink = styled(Link)`
     text-decoration: none; 
-
-    &:hover {
-      text-decoration: underline; 
-      text-decoration-color: ${({ theme }) => theme.palette.secondary.light};
-    }
-
-    &.active {
-      text-decoration: underline; 
-      text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
-    }
 `;
 
 export const NavItems = () => {
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
     const isMediumScreen = useMediaQuery(breakpoints.down(1100));
 
     if (isSmallScreen) return <MobileNavMenu />;
@@ -26,23 +18,35 @@ export const NavItems = () => {
     return (
         <Stack direction='row' spacing={2}>
             <StyledLink to="/">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Home</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.home")}
+                </Typography>
             </StyledLink>
             <StyledLink to="/schedule">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Schedule</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.schedule")}
+                </Typography>
             </StyledLink>
             <StyledLink to="/prices">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Prices</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.prices")}
+                </Typography>
             </StyledLink>
             <StyledLink to="/locations">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Locations</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.locations")}
+                </Typography>
             </StyledLink>
             <StyledLink to="/courses">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Courses</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.courses")}
+                </Typography>
             </StyledLink>
             <StyledLink to="/contact">
-                <Typography color='secondary' variant={isMediumScreen ? 'h5' : 'h4'}>Contact Us</Typography>
+                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                    {t("navItems.contact")}
+                </Typography>
             </StyledLink>
-        </Stack>
+        </Stack >
     );
 }
