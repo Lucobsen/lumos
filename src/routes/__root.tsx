@@ -11,16 +11,15 @@ const theme = createTheme({
             light: '#FFE28B',
             dark: '#B2994D',
         },
-        // change to shades of black
         secondary: {
             main: '#000',
-            light: '#5F73AB',
-            dark: '#273869',
+            light: '#333333',
+            dark: '#000',
         },
     },
     typography: {
         fontFamily: [
-            'Open Sans fat', 'sans-serif'
+            'Open Sans', 'sans-serif'
         ].join(','),
     }
 });

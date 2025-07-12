@@ -12,10 +12,10 @@ const Schedule = () => {
     };
 
     return (
-        <PageContainer>
+        <PageContainer disableBorders>
             <IframeResizer
                 src="https://www.bueno.nu/webshop/school/764/schedule?currentDate=&skipEmptyWeeksOnFirstLoad=YES&calendarEntryTypes=&locations=&genres=&levels=&employees="
-                style={{ width: '100%', height: '100vh' }}
+                style={{ width: '100%', minHeight: '100vh' }}
                 log={false}
                 onScroll={() => scrollSchedule()}
                 license='GPLv3'

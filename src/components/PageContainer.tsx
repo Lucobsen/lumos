@@ -12,7 +12,7 @@ export const PageContainer = ({ children, disableBorders = false }: PageContaine
             disableGutters
             sx={{
                 p: ({ spacing }) => disableBorders ? spacing(0) : isSmallScreen ? spacing(4) : spacing(4, 8),
-                m: ({ spacing }) => spacing(isSmallScreen ? 12.5 : 15, 0, 0, 0),
+                m: ({ spacing }) => spacing(isSmallScreen ? 10 : 12.5, 0, 0, 0),
                 alignItems: 'center',
                 display: 'flex',
                 flexDirection: 'column',

@@ -8,10 +8,6 @@ const StyledLink = styled(Link)`
     &:hover {
       text-decoration: underline; 
       text-decoration-color: ${({ theme }) => theme.palette.secondary.light};
-
-      h4 {
-        color: ${({ theme }) => theme.palette.secondary.light};
-      }
     }
 
     &.active {
