@@ -23,7 +23,7 @@ const Contact = () => {
                     <SvgIcon color='secondary' inheritViewBox>
                         <Email />
                     </SvgIcon>
-                    <Typography color='secondary' variant='h5'>lumoslatin@gmail.nl</Typography>
+                    <Typography color='secondary' variant='h5'>info@lumoslatin.nl</Typography>
                 </Stack>
 
                 <Stack direction='row' alignItems='center' gap={2}>
