@@ -21,6 +21,10 @@ i18n
                         locations: 'Locations',
                         courses: 'Courses',
                         contact: 'Contact'
+                    },
+                    contact: {
+                        ourTeam: 'Our Team',
+                        questions: "Got a question?\nWe would love to hear from you!"
                     }
                 }
             },
@@ -33,6 +37,10 @@ i18n
                         locations: 'Locaties',
                         courses: 'Cursussen',
                         contact: 'Contact'
+                    },
+                    contact: {
+                        ourTeam: 'Ons Team',
+                        questions: "Heb je een vraag?\nWij horen graag van u!"
                     }
                 }
             }
