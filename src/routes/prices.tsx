@@ -18,14 +18,20 @@ const Prices = () => {
                     <Typography textAlign='center' color='secondary' variant={isSmallScreen ? 'body1' : 'h6'}>Sign-up for a single course of your choosing.</Typography>
 
                     <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4} mt={2}>
-                        <PriceItem title='Beginners' infoItems={[
-                            '6-week course',
-                            'Some info on the course'
-                        ]} />
-                        <PriceItem title='Improvers' infoItems={[
-                            '12-week course',
-                            'Some info on the course'
-                        ]} />
+                        <PriceItem
+                            title='6-week Course'
+                            cost='€100'
+                            infoItems={[
+                                'Can be used for Salsa or Bachata'
+                            ]}
+                        />
+                        <PriceItem
+                            title='12-week Course'
+                            cost='€100'
+                            infoItems={[
+                                'Can be used for Salsa or Bachata'
+                            ]}
+                        />
                     </Stack>
                 </Stack>
 
@@ -34,14 +40,20 @@ const Prices = () => {
                     <Typography textAlign='center' color='secondary' variant={isSmallScreen ? 'body1' : 'h6'}>Buy a punch card for more flexability or join us for a single class.</Typography>
 
                     <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4} mt={2}>
-                        <PriceItem title='Punch Cards' infoItems={[
-                            'Some info on punch cards',
-                            'Some info on punch cards'
-                        ]} />
-                        <PriceItem title='Single Class' infoItems={[
-                            'Some info on single classes',
-                            'Some info on single classes'
-                        ]} />
+                        <PriceItem
+                            cost='€65'
+                            title='Punch Cards'
+                            infoItems={[
+                                'Valid for 5 classes'
+                            ]}
+                        />
+                        <PriceItem
+                            title='Single Class'
+                            cost='€15'
+                            infoItems={[
+                                'Valid for a single class'
+                            ]}
+                        />
                     </Stack>
                 </Stack>
             </Stack>
