@@ -11,7 +11,7 @@ export const PageContainer = ({ children, disableBorders = false }: PageContaine
             maxWidth={false}
             disableGutters
             sx={{
-                p: ({ spacing }) => disableBorders ? spacing(0) : isSmallScreen ? spacing(4) : spacing(4, 8),
+                p: ({ spacing }) => disableBorders ? spacing(0) : isSmallScreen ? spacing(4, 4, 10, 4) : spacing(4, 35),
                 m: ({ spacing }) => spacing(isSmallScreen ? 10 : 12.5, 0, 0, 0),
                 alignItems: 'center',
                 display: 'flex',

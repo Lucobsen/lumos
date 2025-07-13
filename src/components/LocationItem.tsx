@@ -1,37 +1,38 @@
-import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Skeleton, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import LocationPinIcon from '@mui/icons-material/LocationPin';
+import { Suspense } from "react";
 
 type LocationItemProps = {
     address: string;
-    openingHour: string;
-    closingHour: string;
+    title: string;
     locationUrl: string;
 };
 
-export const LocationItem = ({ address, openingHour, closingHour, locationUrl }: LocationItemProps) => {
+export const LocationItem = ({ title, address, locationUrl }: LocationItemProps) => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
     return (
-        <Stack p={2} border={2} borderRadius={2} borderColor='secondary.main' direction={isSmallScreen ? 'column' : 'row'} gap={2} bgcolor='primary.light'>
-            <iframe
-                width={isSmallScreen ? "100%" : "450"}
-                height="250"
-                frame-border="0"
-                style={{ border: 0 }}
-                referrer-policy="no-referrer-when-downgrade"
-                src={locationUrl}
-                allowFullScreen>
-            </iframe>
+        <Stack spacing={4} alignItems='center' direction={isSmallScreen ? 'column' : 'row'}>
+            <Suspense fallback={<Skeleton height='300px' width={isSmallScreen ? '100%' : '600px'} />}>
+                <iframe
+                    height="300px"
+                    width={isSmallScreen ? '100%' : '600px'}
+                    loading="lazy"
+                    frame-border="0"
+                    style={{ border: 0 }}
+                    referrer-policy="no-referrer-when-downgrade"
+                    src={locationUrl}
+                    allowFullScreen>
+                </iframe>
+            </Suspense>
 
-            <Stack gap={4} justifyContent='center'>
-                <Stack>
-                    <Typography color='secondary' variant='h4'>Address:</Typography>
-                    <Typography color='secondary' variant='h4'>{address}</Typography>
-                </Stack>
+            <Stack gap={2}>
+                <Typography color='primary' variant='h2' sx={{ WebkitTextStrokeWidth: 2, WebkitTextStrokeColor: '#000', fontWeight: 'bold' }}>{title}</Typography>
 
-                <Stack>
-                    <Typography color='secondary' variant='h4'>Opening Hours:</Typography>
-                    <Typography color='secondary' variant='h4'>{openingHour} - {closingHour}</Typography>
+                <Stack alignItems='center' direction='row' spacing={2}>
+                    <SvgIcon inheritViewBox color="secondary"><LocationPinIcon /></SvgIcon>
+                    <Typography color='secondary' variant='h5'>{address}</Typography>
                 </Stack>
             </Stack>
         </Stack>
