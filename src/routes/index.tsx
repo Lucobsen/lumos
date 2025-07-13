@@ -11,12 +11,12 @@ const Index = () => {
 
   return (
     <PageContainer disableBorders>
-      <Box position='relative' width='100%'>
+      <Box position='relative'>
         <Box
           component="img"
           sx={{
             width: '100%',
-            height: 'auto',
+            height: '100vh',
             position: 'absolute',
             opacity: 0.8,
             top: 0,
@@ -47,19 +47,20 @@ const Index = () => {
         <Box sx={{
           position: 'relative',
           zIndex: 3,
-          minHeight: '100vh',
+          minHeight: '80vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
-          gap: isSmallScreen ? 10 : 20
+          gap: isSmallScreen ? 6 : 10,
+          p: isSmallScreen ? 2 : 4,
         }}>
           <Box>
             <Typography color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!</Typography>
             <Typography color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>We offer a range of courses to suit all levels and styles of dance.</Typography>
           </Box>
 
-          <Stack gap={2}>
+          <Stack spacing={2}>
             <Link to="/schedule">
               <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Schedule</Button>
             </Link>
