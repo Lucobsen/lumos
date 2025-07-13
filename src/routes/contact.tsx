@@ -10,7 +10,7 @@ type TeamMember = { name: string; avatar?: string | undefined; role: string; };
 const team: TeamMember[] = [
     {
         name: 'Pauline',
-        avatar: 'pauline.jpg',
+        avatar: 'pauline.jpeg',
         role: 'Owner'
     },
     {
