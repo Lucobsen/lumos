@@ -8,7 +8,7 @@ export const Navbar = () => {
     const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
     return (<Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" sx={{ justifyContent: 'center', height: isSmallScreen ? 80 : 100, px: isSmallScreen ? 2 : 8, borderBottom: '4px solid #000' }}>
+        <AppBar position="fixed" sx={{ justifyContent: 'center', height: isSmallScreen ? 80 : 100, px: isSmallScreen ? 4 : 8, borderBottom: '4px solid #000' }}>
             <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
                 <Link to="/">
                     <Box
