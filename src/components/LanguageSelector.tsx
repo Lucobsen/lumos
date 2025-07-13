@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 type LanguageOption = { nativeName: string, flagName: string };
 
 const lngs: Record<string, LanguageOption> = {
-    en: { nativeName: 'English', flagName: 'ie' },
+    en: { nativeName: 'English', flagName: 'gb' },
     nl: { nativeName: 'Dutch', flagName: 'nl' }
 };
 
