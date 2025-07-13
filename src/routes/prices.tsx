@@ -1,8 +1,7 @@
-import { Box, List, ListItem, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { PriceItem } from '../components/PriceItem';
 
 const Prices = () => {
