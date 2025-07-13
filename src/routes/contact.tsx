@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 import { Email, Instagram, PhoneAndroid } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 type TeamMember = { name: string; avatar?: string | undefined; };
 
@@ -21,6 +22,8 @@ const team: TeamMember[] = [
 const Contact = () => {
     useEffect(() => { document.title = 'Lumos - Contact Us'; }, []);
 
+
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
@@ -28,7 +31,17 @@ const Contact = () => {
         <PageContainer>
             <Stack alignItems='center' spacing={isSmallScreen ? 8 : 10}>
                 <Stack alignItems='center' width='100%' spacing={4}>
-                    <Typography color='primary' variant={isSmallScreen ? 'h2' : 'h1'} sx={{ whiteSpace: 'nowrap', WebkitTextStrokeWidth: 2, WebkitTextStrokeColor: '#000', fontWeight: 'bold' }}>Our Team</Typography>
+                    <Typography
+                        color='primary'
+                        variant={isSmallScreen ? 'h2' : 'h1'}
+                        sx={{
+                            whiteSpace: 'nowrap',
+                            WebkitTextStrokeWidth: 2,
+                            WebkitTextStrokeColor: '#000',
+                            fontWeight: 'bold'
+                        }}>
+                        {t('contact.ourTeam')}
+                    </Typography>
                     <Grid container spacing={isSmallScreen ? 6 : 10} justifyContent='center'>
                         {team.map(({ name, avatar }) =>
                             <Grid size={4}>
@@ -42,7 +55,7 @@ const Contact = () => {
                 </Stack>
 
                 <Stack alignItems='center' spacing={4}>
-                    <Typography color='secondary' variant='h4' textAlign='center' mb={2}>Got a question? <br /> We would love to hear from you!</Typography>
+                    <Typography whiteSpace='pre-line' color='secondary' variant='h4' textAlign='center' mb={2}> {t('contact.questions')}</Typography>
 
                     <Stack alignItems='left' p={2} border={2} borderRadius={2} borderColor='secondary.main' direction='column' spacing={2} bgcolor='primary.light'>
                         <Stack direction='row' alignItems='center' spacing={2}>
