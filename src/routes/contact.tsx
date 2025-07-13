@@ -11,7 +11,7 @@ const team: TeamMember[] = [
     {
         name: 'Pauline',
         avatar: 'pauline.jpeg',
-        role: 'Owner'
+        role: 'Owner & Teacher'
     },
     {
         name: 'Luke',
@@ -54,7 +54,7 @@ const Contact = () => {
                                 <Stack alignItems='center' spacing={1}>
                                     <Avatar alt={name} src={avatar} sx={{ width: isSmallScreen ? '60px' : '120px', height: isSmallScreen ? '60px' : '120px' }} />
                                     <Typography color='secondary' variant='h5'>{name}</Typography>
-                                    <Typography color='secondary' variant='h6'>{role}</Typography>
+                                    <Typography color='secondary' variant='h6' textAlign='center'>{role}</Typography>
                                 </Stack>
                             </Grid>
                         )}
