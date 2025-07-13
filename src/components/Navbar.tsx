@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Box, Stack, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import { NavItems } from "./NavItems";
 import { Link } from "@tanstack/react-router";
 import { LanguageSelector } from "./LanguageSelector";
@@ -11,9 +11,15 @@ export const Navbar = () => {
         <AppBar position="fixed" sx={{ justifyContent: 'center', height: isSmallScreen ? 80 : 100, px: isSmallScreen ? 2 : 8, borderBottom: '4px solid #000' }}>
             <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
                 <Link to="/">
-                    <Button variant='text' color='secondary' sx={{ fontSize: isSmallScreen ? '2rem' : '3rem', backgroundColor: 'transparent' }} disableRipple >
-                        LUMOS
-                    </Button>
+                    <Box
+                        component="img"
+                        sx={{
+                            height: isSmallScreen ? '100px' : '160px',
+                            width: isSmallScreen ? '100px' : '160px',
+                        }}
+                        alt="Lumos Logo"
+                        src="lumos-logo-black.png"
+                    />
                 </Link>
 
                 <Stack direction='row' spacing={isSmallScreen ? 2 : 4} alignItems='center'>
