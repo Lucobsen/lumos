@@ -23,7 +23,7 @@ const Courses = () => {
                             boxShadow: ({ shadows }) => shadows[8]
                         }}
                         alt="Salsa lessons"
-                        src="salsa-class.jpg"
+                        src="salsa-1.jpg"
                     />
                     <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
                         <Typography color='white' variant='h3'>Salsa</Typography>
@@ -55,7 +55,7 @@ const Courses = () => {
                             boxShadow: ({ shadows }) => shadows[8]
                         }}
                         alt="Salsa lessons"
-                        src="salsa-class.jpg"
+                        src="bachata-1.jpg"
                     />
                     <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
                         <Typography color='white' variant='h3'>Bachata</Typography>
@@ -87,7 +87,7 @@ const Courses = () => {
                             boxShadow: ({ shadows }) => shadows[8]
                         }}
                         alt="Salsa lessons"
-                        src="salsa-class.jpg"
+                        src="bachata-2.jpg"
                     />
                     <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
                         <Typography color='white' variant='h3'>Reggaeton</Typography>

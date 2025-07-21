@@ -57,7 +57,6 @@ export const LanguageSelector = () => {
                         style: {
                             width: 'fit-content',
                             backgroundColor: palette.common.white,
-                            boxShadow: 'none'
                         },
                     },
                 }}
