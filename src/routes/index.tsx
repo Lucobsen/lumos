@@ -1,7 +1,78 @@
-import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Grid, List, ListItem, Stack, Typography, useMediaQuery, useTheme, Link as MuiLink } from '@mui/material'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
+
+type News = {
+  title: string;
+  content: string;
+  link: string;
+};
+
+const news: News[] = [{
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}, {
+  title: 'New Teacher',
+  content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+},
+{
+  title: 'New Location',
+  content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
+  link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+}];
 
 const Index = () => {
   useEffect(() => { document.title = 'Lumos'; }, []);
@@ -11,14 +82,14 @@ const Index = () => {
 
   return (
     <PageContainer disableBorders>
-      <Box position='relative'>
+      <Box>
         <Box
           component="img"
           sx={{
-            width: '100%',
+            width: '100vw',
             height: '100vh',
             position: 'absolute',
-            opacity: 0.8,
+            opacity: 0.6,
             top: 0,
             left: 0,
             bottom: 0,
@@ -32,7 +103,7 @@ const Index = () => {
             justifyContent: 'center',
           }}
           alt="Lumos Home Page"
-          src="salsa-class.jpg"
+          src="salsa-2.jpg"
         />
         <div style={{
           zIndex: 2,
@@ -47,7 +118,6 @@ const Index = () => {
         <Box sx={{
           position: 'relative',
           zIndex: 3,
-          minHeight: '80vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -55,19 +125,40 @@ const Index = () => {
           gap: isSmallScreen ? 6 : 10,
           p: isSmallScreen ? 2 : 4,
         }}>
-          <Box>
-            <Typography color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!</Typography>
-            <Typography color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>We offer a range of courses to suit all levels and styles of dance.</Typography>
-          </Box>
+          <Grid container spacing={2}>
+            <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
+              <Box sx={{ borderRadius: 2, border: '1px solid #000', height: '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
+                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant='h1' textAlign='center' borderBottom='1px solid #000'>News</Typography>
+                <List sx={{ overflow: 'auto', height: '100%', bgcolor: '#fff' }} >
+                  {news.map(({ title, link, content }) =>
+                    <ListItem divider >
+                      <Stack alignItems='center' mb={2}>
+                        <MuiLink underline='none' target='_blank' href={link}>
+                          <Typography sx={{ WebkitTextStrokeWidth: 0.5, WebkitTextStrokeColor: '#000' }} color='inherit' variant='h3'>{title}</Typography>
+                        </MuiLink>
+                        <Typography color='secondary' textAlign='center'>{content}</Typography>
+                      </Stack>
+                    </ListItem>)}
+                </List>
+              </Box>
+            </Grid>
 
-          <Stack spacing={2}>
-            <Link to="/schedule">
-              <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Schedule</Button>
-            </Link>
-            <Link to="/courses">
-              <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Courses</Button>
-            </Link>
-          </Stack>
+            <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
+              <Stack spacing={2} alignItems='center' justifyContent='center' height='80vh'>
+                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!</Typography>
+                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>We offer a range of courses to suit all levels and styles of dance.</Typography>
+
+                <Stack spacing={2}>
+                  <Link to="/schedule">
+                    <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Schedule</Button>
+                  </Link>
+                  <Link to="/courses">
+                    <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Courses</Button>
+                  </Link>
+                </Stack>
+              </Stack>
+            </Grid>
+          </Grid>
         </Box>
       </Box>
     </PageContainer >
