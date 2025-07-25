@@ -18,32 +18,32 @@ export const NavItems = () => {
     return (
         <Stack direction='row' spacing={2}>
             <StyledLink to="/">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.home")}
                 </Typography>
             </StyledLink>
             <StyledLink to="/schedule">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.schedule")}
                 </Typography>
             </StyledLink>
             <StyledLink to="/prices">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.prices")}
                 </Typography>
             </StyledLink>
             <StyledLink to="/locations">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.locations")}
                 </Typography>
             </StyledLink>
             <StyledLink to="/courses">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.courses")}
                 </Typography>
             </StyledLink>
             <StyledLink to="/contact">
-                <Typography color='secondary' variant={isMediumScreen ? 'h6' : 'h5'}>
+                <Typography color='black' variant={isMediumScreen ? 'h6' : 'h5'}>
                     {t("navItems.contact")}
                 </Typography>
             </StyledLink>

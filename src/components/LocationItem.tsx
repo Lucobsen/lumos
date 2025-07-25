@@ -28,11 +28,11 @@ export const LocationItem = ({ title, address, locationUrl }: LocationItemProps)
             </Suspense>
 
             <Stack gap={2}>
-                <Typography color='primary' variant='h2' sx={{ WebkitTextStrokeWidth: 2, WebkitTextStrokeColor: '#000', fontWeight: 'bold' }}>{title}</Typography>
+                <Typography color='black' variant='h2'>{title}</Typography>
 
                 <Stack alignItems='center' direction='row' spacing={2}>
-                    <SvgIcon inheritViewBox color="secondary"><LocationPinIcon /></SvgIcon>
-                    <Typography color='secondary' variant='h5'>{address}</Typography>
+                    <SvgIcon inheritViewBox sx={{ color: '#000' }}><LocationPinIcon /></SvgIcon>
+                    <Typography color='black' variant='h5'>{address}</Typography>
                 </Stack>
             </Stack>
         </Stack>

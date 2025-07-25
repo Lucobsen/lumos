@@ -27,11 +27,7 @@ const Courses = () => {
 
     return (
         <PageContainer>
-            <Typography
-                sx={{
-                    WebkitTextStrokeWidth: isSmallScreen ? 0.5 : 1,
-                    WebkitTextStrokeColor: '#000'
-                }} color='primary' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>Learn the Lumos Latin way!</Typography>
+            <Typography color='black' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>Learn the Lumos Latin way!</Typography>
 
             <Grid container spacing={2} mt={2}>
                 {courses.map(({ title, backgroundImage }) => <CourseItem title={title} backgroundImage={backgroundImage} />)}

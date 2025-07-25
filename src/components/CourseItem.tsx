@@ -42,11 +42,7 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                     textAlign: 'center'
                 }}>
                 <Typography
-                    sx={{
-                        WebkitTextStrokeWidth: 0.5,
-                        WebkitTextStrokeColor: '#000'
-                    }}
-                    color='primary'
+                    color='secondary'
                     variant={isSmallScreen ? 'h5' : 'h3'}>
                     {title}
                 </Typography>
@@ -54,11 +50,7 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                     {courses.map(course =>
                         <ListItem disableGutters disablePadding>
                             <Typography
-                                sx={{
-                                    WebkitTextStrokeWidth: 0.5,
-                                    WebkitTextStrokeColor: '#000'
-                                }}
-                                color='primary'
+                                color='secondary'
                                 variant={isSmallScreen ? 'h6' : 'h4'}>
                                 {course}
                             </Typography>
