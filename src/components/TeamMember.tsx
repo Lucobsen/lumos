@@ -15,20 +15,12 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
             <Avatar alt={name.toLowerCase()} src={image} sx={{ width: isSmallScreen ? '100px' : '200px', height: isSmallScreen ? '100px' : '200px' }} />
             <Stack>
                 <Typography
-                    sx={{
-                        WebkitTextStrokeWidth: isSmallScreen ? 0.2 : 0.5,
-                        WebkitTextStrokeColor: '#000',
-                    }}
-                    color='primary'
+                    color='black'
                     variant={isSmallScreen ? 'h4' : 'h3'}>
                     {name}
                 </Typography>
                 <Typography
-                    sx={{
-                        WebkitTextStrokeWidth: 0.2,
-                        WebkitTextStrokeColor: '#000',
-                    }}
-                    color='primary'
+                    color='black'
                     variant={isSmallScreen ? 'h5' : 'h4'}>
                     {role}
                 </Typography>

@@ -43,13 +43,10 @@ const Contact = () => {
             <Stack alignItems='center' spacing={isSmallScreen ? 6 : 8}>
                 <Stack alignItems='center' width='100%' spacing={1}>
                     <Typography
-                        color='primary'
+                        color='black'
                         variant={isSmallScreen ? 'h3' : 'h1'}
                         sx={{
                             whiteSpace: 'nowrap',
-                            WebkitTextStrokeWidth: isSmallScreen ? 0.5 : 1,
-                            WebkitTextStrokeColor: '#000',
-                            fontWeight: 'bold'
                         }}>
                         {t('contact.ourTeam')}
                     </Typography>
@@ -62,7 +59,17 @@ const Contact = () => {
                     </Grid>
                 </Stack>
 
-                <Stack alignItems='left' p={2} border={2} borderRadius={2} borderColor='secondary.main' direction='column' spacing={2} bgcolor='primary.light'>
+                <Stack
+                    sx={{
+                        background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                    }}
+                    alignItems='left'
+                    p={2}
+                    border={2}
+                    borderRadius={2}
+                    borderColor='black'
+                    direction='column'
+                    spacing={2}>
                     {/* <Stack direction='row' alignItems='center' spacing={2}>
                             <SvgIcon color='secondary' inheritViewBox>
                                 <PhoneAndroid />
@@ -80,11 +87,11 @@ const Contact = () => {
                         </Stack> */}
 
                     <Stack direction='row' alignItems='center' gap={2}>
-                        <SvgIcon color='secondary' inheritViewBox>
+                        <SvgIcon sx={{ color: '#000' }} inheritViewBox>
                             <Instagram />
                         </SvgIcon>
                         <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
-                            <Typography color='secondary' variant='h6'>lumoslatin</Typography>
+                            <Typography color='black' variant='h6'>lumoslatin</Typography>
                         </Link>
                     </Stack>
                 </Stack>

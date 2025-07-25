@@ -77,10 +77,9 @@ const Index = () => {
               <Box sx={{ borderRadius: 2, border: '1px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
                 <Typography
                   sx={{
-                    WebkitTextStrokeWidth: 1,
-                    WebkitTextStrokeColor: '#000'
+                    background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                   }}
-                  color='white'
+                  color='black'
                   variant={isSmallScreen ? 'h3' : 'h1'}
                   textAlign='center'
                   borderBottom='1px solid #000'>
@@ -92,15 +91,11 @@ const Index = () => {
                       <MuiLink underline='none' target='_blank' href={link}>
                         <Stack alignItems='center' mb={2}>
                           <Typography
-                            sx={{
-                              WebkitTextStrokeWidth: isSmallScreen ? 0.2 : 0.5,
-                              WebkitTextStrokeColor: '#000'
-                            }}
-                            color='inherit'
+                            color='black'
                             variant={isSmallScreen ? 'h5' : 'h3'}>
                             {title}
                           </Typography>
-                          <Typography variant='body2' color='secondary' textAlign='center'>{content}</Typography>
+                          <Typography variant='body2' color='black' textAlign='center'>{content}</Typography>
                         </Stack>
                       </MuiLink>
                     </ListItem>)}
@@ -112,21 +107,13 @@ const Index = () => {
               <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
                 {!isSmallScreen && <>
                   <Typography
-                    sx={{
-                      WebkitTextStrokeWidth: 1,
-                      WebkitTextStrokeColor: '#000'
-                    }}
-                    color='primary'
+                    color='secondary'
                     variant={isSmallScreen ? 'h5' : 'h3'}
                     textAlign='center'>
                     At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!
                   </Typography>
                   <Typography
-                    sx={{
-                      WebkitTextStrokeWidth: 1,
-                      WebkitTextStrokeColor: '#000'
-                    }}
-                    color='primary'
+                    color='secondary'
                     variant={isSmallScreen ? 'h5' : 'h3'}
                     textAlign='center'>
                     We offer a range of courses to suit all levels and styles of dance.
@@ -139,11 +126,25 @@ const Index = () => {
                       disableRipple
                       sx={{
                         width: '200px',
-                        height: '50px'
-                      }} variant='contained'>Schedule</Button>
+                        height: '50px',
+                        background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                      }}
+                      variant='contained'>
+                      Schedule
+                    </Button>
                   </Link>
                   <Link to="/courses">
-                    <Button disableRipple sx={{ width: '200px', height: '50px' }} variant='contained'>Courses</Button>
+                    <Button
+
+                      disableRipple
+                      sx={{
+                        width: '200px',
+                        height: '50px',
+                        background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                      }}
+                      variant='contained'>
+                      Courses
+                    </Button>
                   </Link>
                 </Stack>
               </Stack>

@@ -14,8 +14,8 @@ const Prices = () => {
         <PageContainer>
             <Stack spacing={isSmallScreen ? 8 : 10}>
                 <Stack alignItems='center'>
-                    <Typography color='primary' variant={isSmallScreen ? 'h4' : 'h1'} sx={{ WebkitTextStrokeWidth: isSmallScreen ? 1 : 2, WebkitTextStrokeColor: '#000' }}>Courses</Typography>
-                    <Typography textAlign='center' color='secondary' variant={isSmallScreen ? 'body1' : 'h6'}>Sign-up for a single course of your choosing.</Typography>
+                    <Typography color='black' variant={isSmallScreen ? 'h4' : 'h1'}>Courses</Typography>
+                    <Typography textAlign='center' color='black' variant={isSmallScreen ? 'body1' : 'h6'}>Sign-up for a single course of your choosing.</Typography>
 
                     <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4} mt={2}>
                         <PriceItem
@@ -36,8 +36,8 @@ const Prices = () => {
                 </Stack>
 
                 <Stack alignItems='center'>
-                    <Typography textAlign='center' color='primary' variant={isSmallScreen ? 'h4' : 'h1'} sx={{ WebkitTextStrokeWidth: isSmallScreen ? 1 : 2, WebkitTextStrokeColor: '#000' }}>Punch Cards & Single Classes</Typography>
-                    <Typography textAlign='center' color='secondary' variant={isSmallScreen ? 'body1' : 'h6'}>Buy a punch card for more flexability or join us for a single class.</Typography>
+                    <Typography textAlign='center' color='black' variant={isSmallScreen ? 'h4' : 'h1'}>Punch Cards & Single Classes</Typography>
+                    <Typography textAlign='center' color='black' variant={isSmallScreen ? 'body1' : 'h6'}>Buy a punch card for more flexability or join us for a single class.</Typography>
 
                     <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4} mt={2}>
                         <PriceItem
