@@ -125,18 +125,36 @@ const Index = () => {
           gap: isSmallScreen ? 6 : 10,
           p: isSmallScreen ? 2 : 4,
         }}>
-          <Grid container spacing={2}>
-            <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
-              <Box sx={{ borderRadius: 2, border: '1px solid #000', height: '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
-                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant='h1' textAlign='center' borderBottom='1px solid #000'>News</Typography>
+          <Grid container columnSpacing={2} rowSpacing={4}>
+            <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }} >
+              <Box sx={{ borderRadius: 2, border: '1px solid #000', height: isSmallScreen ? '60vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
+                <Typography
+                  sx={{
+                    WebkitTextStrokeWidth: 1,
+                    WebkitTextStrokeColor: '#000'
+                  }}
+                  color='white'
+                  variant={isSmallScreen ? 'h3' : 'h1'}
+                  textAlign='center'
+                  borderBottom='1px solid #000'>
+                  News
+                </Typography>
                 <List sx={{ overflow: 'auto', height: '100%', bgcolor: '#fff' }} >
                   {news.map(({ title, link, content }) =>
                     <ListItem divider >
                       <Stack alignItems='center' mb={2}>
                         <MuiLink underline='none' target='_blank' href={link}>
-                          <Typography sx={{ WebkitTextStrokeWidth: 0.5, WebkitTextStrokeColor: '#000' }} color='inherit' variant='h3'>{title}</Typography>
+                          <Typography
+                            sx={{
+                              WebkitTextStrokeWidth: isSmallScreen ? 0.2 : 0.5,
+                              WebkitTextStrokeColor: '#000'
+                            }}
+                            color='inherit'
+                            variant={isSmallScreen ? 'h5' : 'h3'}>
+                            {title}
+                          </Typography>
                         </MuiLink>
-                        <Typography color='secondary' textAlign='center'>{content}</Typography>
+                        <Typography variant='body2' color='secondary' textAlign='center'>{content}</Typography>
                       </Stack>
                     </ListItem>)}
                 </List>
@@ -144,9 +162,11 @@ const Index = () => {
             </Grid>
 
             <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
-              <Stack spacing={2} alignItems='center' justifyContent='center' height='80vh'>
-                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!</Typography>
-                <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>We offer a range of courses to suit all levels and styles of dance.</Typography>
+              <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
+                {!isSmallScreen && <>
+                  <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!</Typography>
+                  <Typography sx={{ WebkitTextStrokeWidth: 1, WebkitTextStrokeColor: '#000' }} color='white' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>We offer a range of courses to suit all levels and styles of dance.</Typography>
+                </>}
 
                 <Stack spacing={2}>
                   <Link to="/schedule">
