@@ -9,7 +9,10 @@ export const PriceItem = ({ title, infoItems, cost }: PriceItemProps) => {
 
     return (
         <Stack boxShadow={({ shadows }) => shadows[8]} border={2} borderRadius={4} borderColor='#000' height='fit-content' pb={2}>
-            <Box textAlign='center' bgcolor='primary.light' borderBottom='2px solid #000' p={2} sx={{ borderTopLeftRadius: '14px', borderTopRightRadius: '14px' }}>
+            <Box textAlign='center' borderBottom='2px solid #000' p={2} sx={{
+                background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                borderTopLeftRadius: '14px', borderTopRightRadius: '14px'
+            }}>
                 <Typography color='black' variant={isSmallScreen ? 'h5' : 'h3'}>{title}</Typography>
                 <Typography color='black' variant={isSmallScreen ? 'h6' : 'h4'}>{cost}</Typography>
             </Box>
@@ -23,6 +26,6 @@ export const PriceItem = ({ title, infoItems, cost }: PriceItemProps) => {
                     </ListItem>
                 )}
             </List>
-        </Stack>
+        </Stack >
     );
 }
