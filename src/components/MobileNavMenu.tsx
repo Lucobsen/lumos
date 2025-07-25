@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const StyledLink = styled(Link)`
     text-decoration: none;
     width: 100%;
-    color: ${({ theme }) => theme.palette.secondary.main};
+    color: #000;
 `;
 
 type NavItem = { label: string, to: string };
@@ -35,7 +35,7 @@ export const MobileNavMenu = () => {
 
     return (
         <>
-            <IconButton onClick={handleClick} color='secondary' size="large" disableRipple>
+            <IconButton onClick={handleClick} sx={{ color: '#000' }} size="large" disableRipple>
                 <MenuRoundedIcon fontSize="large" />
             </IconButton>
             <Menu
@@ -47,7 +47,7 @@ export const MobileNavMenu = () => {
                         style: {
                             maxHeight: 320,
                             width: 160,
-                            backgroundColor: palette.primary.light,
+                            background: `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                         },
                     },
                 }}
