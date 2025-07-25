@@ -1,20 +1,31 @@
-import { Box, Grid, List, ListItem, Stack, Typography } from '@mui/material'
+import { Box, Grid, List, ListItem, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 
+const courses = [
+    'Beginners', 'Improvers', 'Intermediate', 'Footwork'
+];
+
 const Courses = () => {
     useEffect(() => { document.title = 'Lumos - Courses'; }, []);
 
+    const { breakpoints } = useTheme();
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+
     return (
         <PageContainer>
-            <Typography color='secondary' variant='h3' textAlign='center'>Learn the Lumos Latin way!</Typography>
-            <Typography color='secondary' variant='h6' textAlign='center'>At Lumos we offer a wide range of courses to suit all levels and styles.</Typography>
+            <Typography
+                sx={{
+                    WebkitTextStrokeWidth: isSmallScreen ? 0.5 : 1,
+                    WebkitTextStrokeColor: '#000'
+                }} color='primary' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>Learn the Lumos Latin way!</Typography>
 
-            <Grid container spacing={4} mt={2}>
-                <Grid size={{ lg: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
+            <Grid container spacing={2} mt={2}>
+                <Grid size={{ lg: 6 }} sx={{ position: 'relative', display: 'inline-block' }}>
                     <Box
                         component="img"
+                        loading='lazy'
                         sx={{
                             height: '100%',
                             width: '100%',
@@ -25,26 +36,24 @@ const Courses = () => {
                         alt="Salsa lessons"
                         src="salsa-1.jpg"
                     />
-                    <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
-                        <Typography color='white' variant='h3'>Salsa</Typography>
+                    <Stack alignItems='center' justifyContent='center'
+                        sx={{ position: 'absolute', background: 'transparent', left: 0, right: 0, bottom: 0, height: '100%', textAlign: 'center' }}>
+                        <Typography sx={{
+                            WebkitTextStrokeWidth: 0.5,
+                            WebkitTextStrokeColor: '#000'
+                        }} color='primary' variant={isSmallScreen ? 'h5' : 'h3'}>Salsa</Typography>
                         <List>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Absolute Beginners</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Beginners Plus</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Improvers</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Intermediate</Typography>
-                            </ListItem>
+                            {courses.map(course => <ListItem>
+                                <Typography sx={{
+                                    WebkitTextStrokeWidth: 0.5,
+                                    WebkitTextStrokeColor: '#000'
+                                }} color='primary' variant={isSmallScreen ? 'h6' : 'h4'}>{course}</Typography>
+                            </ListItem>)}
                         </List>
                     </Stack>
                 </Grid>
 
-                <Grid size={{ lg: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
+                <Grid size={{ lg: 6 }} sx={{ position: 'relative', display: 'inline-block' }}>
                     <Box
                         component="img"
                         sx={{
@@ -57,28 +66,26 @@ const Courses = () => {
                         alt="Salsa lessons"
                         src="bachata-1.jpg"
                     />
-                    <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
-                        <Typography color='white' variant='h3'>Bachata</Typography>
+                    <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', left: 0, right: 0, bottom: 0, height: '100%', textAlign: 'center' }}>
+                        <Typography sx={{
+                            WebkitTextStrokeWidth: 0.5,
+                            WebkitTextStrokeColor: '#000'
+                        }} color='primary' variant={isSmallScreen ? 'h5' : 'h3'}>Bachata</Typography>
                         <List>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Absolute Beginners</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Beginners Plus</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Improvers</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Intermediate</Typography>
-                            </ListItem>
+                            {courses.map(course => <ListItem>
+                                <Typography sx={{
+                                    WebkitTextStrokeWidth: 0.5,
+                                    WebkitTextStrokeColor: '#000'
+                                }} color='primary' variant={isSmallScreen ? 'h6' : 'h4'}>{course}</Typography>
+                            </ListItem>)}
                         </List>
                     </Stack>
                 </Grid>
 
-                <Grid size={{ lg: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
+                <Grid size={{ lg: 6 }} sx={{ position: 'relative', display: 'inline-block' }}>
                     <Box
                         component="img"
+                        loading='lazy'
                         sx={{
                             height: '100%',
                             width: '100%',
@@ -89,21 +96,18 @@ const Courses = () => {
                         alt="Salsa lessons"
                         src="bachata-2.jpg"
                     />
-                    <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', bottom: '35%', left: 0, right: 0, textAlign: 'center' }}>
-                        <Typography color='white' variant='h3'>Reggaeton</Typography>
+                    <Stack alignItems='center' justifyContent='center' sx={{ position: 'absolute', background: 'transparent', left: 0, right: 0, bottom: 0, height: '100%', textAlign: 'center' }}>
+                        <Typography sx={{
+                            WebkitTextStrokeWidth: 0.5,
+                            WebkitTextStrokeColor: '#000'
+                        }} color='primary' variant={isSmallScreen ? 'h5' : 'h3'}>Reggaeton</Typography>
                         <List>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Absolute Beginners</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Beginners Plus</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Improvers</Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography color='white' variant='h4'>Intermediate</Typography>
-                            </ListItem>
+                            {courses.map(course => <ListItem>
+                                <Typography sx={{
+                                    WebkitTextStrokeWidth: 0.5,
+                                    WebkitTextStrokeColor: '#000'
+                                }} color='primary' variant={isSmallScreen ? 'h6' : 'h4'}>{course}</Typography>
+                            </ListItem>)}
                         </List>
                     </Stack>
                 </Grid>

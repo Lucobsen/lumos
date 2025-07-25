@@ -89,7 +89,6 @@ const Index = () => {
             width: '100vw',
             height: '100vh',
             position: 'absolute',
-            opacity: 0.6,
             top: 0,
             left: 0,
             bottom: 0,
