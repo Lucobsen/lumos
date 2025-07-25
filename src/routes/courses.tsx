@@ -30,7 +30,9 @@ const Courses = () => {
             <Typography color='black' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>Learn the Lumos Latin way!</Typography>
 
             <Grid container spacing={2} mt={2}>
-                {courses.map(({ title, backgroundImage }) => <CourseItem title={title} backgroundImage={backgroundImage} />)}
+                {courses.map(({ title, backgroundImage }) =>
+                    <CourseItem title={title} backgroundImage={backgroundImage} />
+                )}
             </Grid>
         </PageContainer>
     );

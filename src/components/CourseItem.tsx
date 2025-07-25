@@ -17,7 +17,7 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
         <Grid size={{ lg: 6 }} sx={{ position: 'relative', display: 'inline-block' }}>
             <Box
                 component="img"
-                loading='lazy'
+                loading='eager'
                 sx={{
                     height: '100%',
                     width: '100%',
@@ -42,7 +42,7 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                     textAlign: 'center'
                 }}>
                 <Typography
-                    color='secondary'
+                    color='white'
                     variant={isSmallScreen ? 'h5' : 'h3'}>
                     {title}
                 </Typography>
@@ -50,7 +50,7 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                     {courses.map(course =>
                         <ListItem disableGutters disablePadding>
                             <Typography
-                                color='secondary'
+                                color='white'
                                 variant={isSmallScreen ? 'h6' : 'h4'}>
                                 {course}
                             </Typography>
