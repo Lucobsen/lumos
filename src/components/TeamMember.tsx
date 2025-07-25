@@ -12,7 +12,7 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
 
     return (
         <Stack alignItems='center' spacing={isSmallScreen ? 2 : 6} direction='row'>
-            <Avatar alt={name.toLowerCase()} src={image} sx={{ width: isSmallScreen ? '60px' : '200px', height: isSmallScreen ? '60px' : '200px' }} />
+            <Avatar alt={name.toLowerCase()} src={image} sx={{ width: isSmallScreen ? '100px' : '200px', height: isSmallScreen ? '100px' : '200px' }} />
             <Stack>
                 <Typography
                     sx={{
@@ -20,7 +20,7 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                         WebkitTextStrokeColor: '#000',
                     }}
                     color='primary'
-                    variant={isSmallScreen ? 'h6' : 'h3'}>
+                    variant={isSmallScreen ? 'h4' : 'h3'}>
                     {name}
                 </Typography>
                 <Typography
@@ -29,7 +29,7 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                         WebkitTextStrokeColor: '#000',
                     }}
                     color='primary'
-                    variant={isSmallScreen ? 'body1' : 'h4'}>
+                    variant={isSmallScreen ? 'h5' : 'h4'}>
                     {role}
                 </Typography>
             </Stack>
