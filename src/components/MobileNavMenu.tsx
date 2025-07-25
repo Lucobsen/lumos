@@ -8,6 +8,11 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     width: 100%;
     color: #000;
+
+    &.active {
+        text-decoration:underline;
+        text-decoration-color: #000;
+    }
 `;
 
 type NavItem = { label: string, to: string };

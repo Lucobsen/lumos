@@ -31,7 +31,6 @@ export const Navbar = () => {
 
                 <Stack direction='row' spacing={isSmallScreen ? 2 : 4} alignItems='center'>
                     <NavItems />
-
                     <LanguageSelector />
                 </Stack>
             </Toolbar>

@@ -4,7 +4,12 @@ import { MobileNavMenu } from "./MobileNavMenu";
 import { useTranslation } from 'react-i18next';
 
 const StyledLink = styled(Link)`
-    text-decoration: none; 
+    text-decoration: none;
+
+    &.active {
+        text-decoration:underline;
+        text-decoration-color: #000;
+    }
 `;
 
 export const NavItems = () => {
