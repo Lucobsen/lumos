@@ -45,7 +45,7 @@ export const MobileNavMenu = () => {
                 slotProps={{
                     paper: {
                         style: {
-                            maxHeight: 200,
+                            maxHeight: 320,
                             width: 160,
                             backgroundColor: palette.primary.light,
                         },
