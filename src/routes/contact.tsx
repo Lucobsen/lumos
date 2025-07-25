@@ -1,21 +1,32 @@
-import { Avatar, Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import { Email, Instagram, PhoneAndroid } from '@mui/icons-material';
+import { Instagram } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import { TeamMember } from '../components/TeamMember';
 
 type TeamMember = { name: string; avatar?: string | undefined; role: string; };
 
 const team: TeamMember[] = [
+    {
+        name: 'Pauline',
+        avatar: 'pauline.jpeg',
+        role: 'Owner & Teacher'
+    },
+    {
+        name: 'Zubaid',
+        avatar: 'zubaid.jpg',
+        role: 'Teacher'
+    },
     {
         name: 'Luke',
         avatar: 'luke.jpeg',
         role: 'Teacher'
     },
     {
-        name: 'Zubaid',
-        avatar: 'zubaid.jpg',
+        name: 'Yasmin',
+        avatar: 'yas.jpg',
         role: 'Teacher'
     }
 ];
@@ -25,7 +36,7 @@ const Contact = () => {
 
     const { t } = useTranslation();
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
     return (
         <PageContainer>
@@ -33,40 +44,32 @@ const Contact = () => {
                 <Stack alignItems='center' width='100%' spacing={1}>
                     <Typography
                         color='primary'
-                        variant={isSmallScreen ? 'h4' : 'h2'}
+                        variant={isSmallScreen ? 'h4' : 'h1'}
                         sx={{
                             whiteSpace: 'nowrap',
-                            WebkitTextStrokeWidth: 1,
+                            WebkitTextStrokeWidth: isSmallScreen ? 0.5 : 1,
                             WebkitTextStrokeColor: '#000',
                             fontWeight: 'bold'
                         }}>
                         {t('contact.ourTeam')}
                     </Typography>
                     <Grid container spacing={isSmallScreen ? 4 : 6} justifyContent='center'>
-                        <Grid size={12}>
-                            <Stack alignItems='center' spacing={1}>
-                                <Avatar alt='Pauline' src='pauline.jpeg' sx={{ width: isSmallScreen ? '60px' : '120px', height: isSmallScreen ? '60px' : '120px' }} />
-                                <Typography color='secondary' variant='h6'>Pauline</Typography>
-                                <Typography color='secondary' variant='body1' textAlign='center'>Owner & Teacher</Typography>
-                            </Stack>
-                        </Grid>
                         {team.map(({ name, avatar, role }) =>
-                            <Grid size={4}>
-                                <Stack alignItems='center' spacing={1}>
-                                    <Avatar alt={name} src={avatar} sx={{ width: isSmallScreen ? '60px' : '120px', height: isSmallScreen ? '60px' : '120px' }} />
-                                    <Typography color='secondary' variant='h6'>{name}</Typography>
-                                    <Typography color='secondary' variant='body1' textAlign='center'>{role}</Typography>
-                                </Stack>
+                            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
+                                <TeamMember image={avatar} name={name} role={role} />
                             </Grid>
                         )}
                     </Grid>
                 </Stack>
 
                 <Stack alignItems='center' spacing={2}>
-                    <Typography whiteSpace='pre-line' color='secondary' variant={isSmallScreen ? 'h6' : 'h5'} textAlign='center'> {t('contact.questions')}</Typography>
+                    <Typography sx={{
+                        WebkitTextStrokeWidth: 0.2,
+                        WebkitTextStrokeColor: '#000'
+                    }} whiteSpace={isSmallScreen ? 'pre-line' : 'none'} color='primary' variant={isSmallScreen ? 'h5' : 'h4'} textAlign='center'> {t('contact.questions')}</Typography>
 
                     <Stack alignItems='left' p={2} border={2} borderRadius={2} borderColor='secondary.main' direction='column' spacing={2} bgcolor='primary.light'>
-                        <Stack direction='row' alignItems='center' spacing={2}>
+                        {/* <Stack direction='row' alignItems='center' spacing={2}>
                             <SvgIcon color='secondary' inheritViewBox>
                                 <PhoneAndroid />
                             </SvgIcon>
@@ -80,7 +83,7 @@ const Contact = () => {
                             <Link underline='none' href='mailto:info@lumoslatin.nl'>
                                 <Typography color='secondary' variant='h6'>info@lumoslatin.nl</Typography>
                             </Link>
-                        </Stack>
+                        </Stack> */}
 
                         <Stack direction='row' alignItems='center' gap={2}>
                             <SvgIcon color='secondary' inheritViewBox>
