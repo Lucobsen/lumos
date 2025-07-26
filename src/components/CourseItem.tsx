@@ -1,7 +1,41 @@
-import { Grid, Box, Stack, Typography, List, ListItem, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Box, Typography, List } from "@mui/material";
+import { CourseInfoItem } from "./CourseInfoItem";
 
-const courses = [
-    'Beginners', 'Improvers', 'Intermediate', 'Footwork'
+export type Course = { title: string; info: string[] };
+
+const courses: Course[] = [
+    {
+        title: 'Beginners',
+        info: [
+            '- Learn the basics of salsa L.A. style.',
+            '- Leading, following, right turns & more.',
+            '- Learn to get close & cross-body leads.'
+        ]
+    },
+    {
+        title: 'Improvers',
+        info: [
+            '- Turns, turn and more turns.',
+            '- Learn the left turn & travelling turns.',
+            '- Time to tackle the final bits of fundamental technique.'
+        ]
+    },
+    {
+        title: 'Intermediate',
+        info: [
+            '- Become the best dancer you can be.',
+            '- Here we will start to push you & extract your full potential.',
+            '- Learn how to apply all the basics you have learnt in more complex patterns.'
+        ]
+    },
+    {
+        title: 'Footwork',
+        info: [
+            '- Time to go solo.',
+            '- Work on developing some fancy footwork.',
+            '- Learn to move your body in the best way.'
+        ]
+    }
 ];
 
 type CoureItemProps = {
@@ -10,53 +44,47 @@ type CoureItemProps = {
 };
 
 export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
-    const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
-
     return (
-        <Grid size={{ lg: 6 }} sx={{ position: 'relative', display: 'inline-block' }}>
+        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
             <Box
-                component="img"
-                loading='eager'
-                sx={{
-                    height: '100%',
-                    width: '100%',
-                    display: 'block',
-                    borderRadius: 2,
-                    boxShadow: ({ shadows }) => shadows[8]
-                }}
-                alt={`${title} lessons`}
-                src={backgroundImage}
-            />
-            <Stack
-                p={1}
-                alignItems='center'
-                justifyContent='center'
-                sx={{
-                    position: 'absolute',
-                    background: 'transparent',
-                    left: 0,
-                    right: 0,
-                    top: 0,
-                    bottom: 0,
-                    textAlign: 'center'
-                }}>
+                borderRadius={2}
+                position='relative'
+                boxShadow={({ shadows }) => shadows[8]}>
+                <Box
+                    component="img"
+                    loading='eager'
+                    sx={{
+                        height: '100%',
+                        width: '100%',
+                        display: 'block',
+                        borderTopLeftRadius: 8,
+                        borderTopRightRadius: 8
+                    }}
+                    alt={`${title} lessons`}
+                    src={backgroundImage}
+                />
                 <Typography
-                    color='white'
-                    variant={isSmallScreen ? 'h5' : 'h3'}>
+                    color='secondary'
+                    variant='h2'
+                    sx={{
+                        position: 'absolute',
+                        top: '150px',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        textShadow: '0px 1px 1px #000'
+                    }}>
                     {title}
                 </Typography>
-                <List disablePadding>
+                <List sx={{
+                    px: 1, bgcolor: '#000',
+                    borderBottomRightRadius: 8,
+                    borderBottomLeftRadius: 8
+                }} >
                     {courses.map(course =>
-                        <ListItem disableGutters disablePadding>
-                            <Typography
-                                color='white'
-                                variant={isSmallScreen ? 'h6' : 'h4'}>
-                                {course}
-                            </Typography>
-                        </ListItem>
+                        <CourseInfoItem course={course} />
                     )}
                 </List>
-            </Stack>
-        </Grid>);
+            </Box>
+        </Grid >
+    );
 };

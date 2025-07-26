@@ -27,7 +27,13 @@ const Courses = () => {
 
     return (
         <PageContainer>
-            <Typography color='black' variant={isSmallScreen ? 'h5' : 'h3'} textAlign='center'>Learn the Lumos Latin way!</Typography>
+            <Typography
+                color='secondary'
+                variant={isSmallScreen ? 'h5' : 'h3'}
+                textAlign='center'
+                sx={{ textShadow: '0px 1px 1px #000', }}>
+                Learn the Lumos Latin way!
+            </Typography>
 
             <Grid container spacing={2} mt={2}>
                 {courses.map(({ title, backgroundImage }) =>
