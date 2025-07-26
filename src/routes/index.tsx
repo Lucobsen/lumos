@@ -65,15 +65,17 @@ const Index = () => {
           <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen && <>
               <Typography
-                color='black'
+                color='secondary'
                 variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'>
+                textAlign='center'
+                sx={{ textShadow: '0px 1px 1px #000' }}>
                 At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!
               </Typography>
               <Typography
-                color='black'
+                color='secondary'
                 variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'>
+                textAlign='center'
+                sx={{ textShadow: '0px 1px 1px #000' }}>
                 We offer a range of courses to suit all levels and styles of dance.
               </Typography>
             </>}
