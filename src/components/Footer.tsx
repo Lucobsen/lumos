@@ -35,19 +35,10 @@ export const Footer = () => {
                 />
                 <Stack
                     height='100%'
-                    px={4}
+                    px={isSmallScreen ? 6 : 10}
                     direction='row'
                     alignItems='center'
-                    justifyContent='space-between'>
-                    <Box
-                        component="img"
-                        sx={{
-                            height: isSmallScreen ? '100px' : '160px',
-                            width: isSmallScreen ? '100px' : '160px',
-                        }}
-                        alt="Lumos Logo"
-                        src="lumos-logo-black.png"
-                    />
+                    justifyContent='flex-end'>
                     <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
                         <Stack direction='row' alignItems='center' spacing={1}>
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox>
