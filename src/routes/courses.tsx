@@ -4,14 +4,96 @@ import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 import { CourseItem } from '../components/CourseItem';
 
-const courses = [
+export type Class = { title: string; info: string[] };
+
+export type CourseItemProps = {
+    title: string;
+    backgroundImage: string;
+    classes?: Class[]
+};
+
+const courses: CourseItemProps[] = [
     {
         title: 'Salsa',
-        backgroundImage: "salsa-1.jpg"
+        backgroundImage: "salsa-1.jpg",
+        classes: [
+            {
+                title: 'Beginners',
+                info: [
+                    '- Learn the basics of salsa L.A. style.',
+                    '- Leading, following, right turns & more.',
+                    '- Learn to get close & cross-body leads.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+            {
+                title: 'Improvers',
+                info: [
+                    '- Turns, turn and more turns.',
+                    '- Learn the left turn & travelling turns.',
+                    '- Time to tackle the final bits of fundamental technique.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+            {
+                title: 'Intermediate',
+                info: [
+                    '- Become the best dancer you can be.',
+                    '- Here we will start to push you & extract your full potential.',
+                    '- Learn how to apply all the basics you have learnt in more complex patterns.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+        ]
     },
     {
         title: 'Bachata',
-        backgroundImage: "bachata-1.jpg"
+        backgroundImage: "bachata-1.jpg",
+        classes: [
+            {
+                title: 'Beginners',
+                info: [
+                    '- Learn the basics of salsa L.A. style.',
+                    '- Leading, following, right turns & more.',
+                    '- Learn to get close & cross-body leads.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+            {
+                title: 'Improvers',
+                info: [
+                    '- Turns, turn and more turns.',
+                    '- Learn the left turn & travelling turns.',
+                    '- Time to tackle the final bits of fundamental technique.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+            {
+                title: 'Intermediate',
+                info: [
+                    '- Become the best dancer you can be.',
+                    '- Here we will start to push you & extract your full potential.',
+                    '- Learn how to apply all the basics you have learnt in more complex patterns.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            },
+            {
+                title: 'Footwork',
+                info: [
+                    '- Time to go solo.',
+                    '- Work on developing some fancy footwork.',
+                    '- Learn to move your body in the best way.',
+                    '- Days: Mondays & Tuesdays',
+                    '- Locations: Veemhuis, Kompaszaal'
+                ]
+            }
+        ]
     },
     {
         title: 'Reggaeton',
@@ -28,16 +110,16 @@ const Courses = () => {
     return (
         <PageContainer>
             <Typography
-                color='secondary'
+                color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
-                sx={{ textShadow: '0px 1px 1px #000', }}>
-                Learn the Lumos Latin way!
+                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                Have a look at our classes!
             </Typography>
 
             <Grid container spacing={2} mt={2}>
-                {courses.map(({ title, backgroundImage }) =>
-                    <CourseItem title={title} backgroundImage={backgroundImage} />
+                {courses.map((course) =>
+                    <CourseItem {...course} />
                 )}
             </Grid>
         </PageContainer>

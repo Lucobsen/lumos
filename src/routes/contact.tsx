@@ -44,10 +44,10 @@ const Contact = () => {
                 <Stack alignItems='center' width='100%' spacing={1}>
                     <Typography
                         color='black'
-                        variant={isSmallScreen ? 'h3' : 'h1'}
-                        sx={{
-                            whiteSpace: 'nowrap',
-                        }}>
+                        variant={isSmallScreen ? 'h5' : 'h3'}
+                        textAlign='center'
+                        mb={2}
+                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
                         {t('contact.ourTeam')}
                     </Typography>
                     <Grid container spacing={isSmallScreen ? 4 : 6} justifyContent='center'>
