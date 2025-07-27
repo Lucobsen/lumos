@@ -17,7 +17,7 @@ type News = {
 
 const news: News[] = [
   {
-    title: 'Courses starting in September!',
+    title: 'Try-Outs starting in September!',
     content: 'Join our Try-Outs on September 1st, 2nd and 3rd at two beautiful locations! Sign up easily for the level of your choice and try something new.',
   },
   {
@@ -38,7 +38,9 @@ const Index = () => {
     <PageContainer>
       <Grid container columnSpacing={2} rowSpacing={6}>
         <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }} >
-          <Box sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
+          <Box
+            sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
+            boxShadow={({ shadows }) => shadows[8]}>
             <Typography
               sx={{
                 background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
@@ -46,8 +48,7 @@ const Index = () => {
               color='black'
               variant={isSmallScreen ? 'h3' : 'h1'}
               textAlign='center'
-              borderBottom='4px solid #000'
-              fontFamily='Chau Philomene One'>
+              borderBottom='4px solid #000'>
               News
             </Typography>
             <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
@@ -82,17 +83,17 @@ const Index = () => {
           <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen && <>
               <Typography
-                color='secondary'
+                color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
-                sx={{ textShadow: '0px 1px 1px #000' }}>
+                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
                 At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!
               </Typography>
               <Typography
-                color='secondary'
+                color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
-                sx={{ textShadow: '0px 1px 1px #000' }}>
+                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
                 We offer a range of courses to suit all levels and styles of dance.
               </Typography>
             </>}
