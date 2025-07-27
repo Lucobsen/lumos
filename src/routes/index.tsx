@@ -50,7 +50,7 @@ const Index = () => {
               fontFamily='Chau Philomene One'>
               News
             </Typography>
-            <List sx={{ overflow: 'auto', height: '100%', bgcolor: '#fff' }} >
+            <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
               {news.map(({ title, link, content, linkText }) =>
                 <ListItem divider >
                   <Stack alignItems='center' mb={2}>
