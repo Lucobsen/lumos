@@ -1,4 +1,4 @@
-import { Grid, Box, Typography, List } from "@mui/material";
+import { Grid, Box, Typography, List, useMediaQuery, useTheme } from "@mui/material";
 import { CourseInfoItem } from "./CourseInfoItem";
 
 export type Course = { title: string; info: string[] };
@@ -44,10 +44,15 @@ type CoureItemProps = {
 };
 
 export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
+    const { breakpoints } = useTheme();
+    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+
     return (
         <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
             <Box
-                borderRadius={2}
+                borderRadius={10}
+                border={4}
+                borderColor='#000'
                 position='relative'
                 boxShadow={({ shadows }) => shadows[8]}>
                 <Box
@@ -57,18 +62,24 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                         height: '100%',
                         width: '100%',
                         display: 'block',
-                        borderTopLeftRadius: 8,
-                        borderTopRightRadius: 8
+                        borderTopLeftRadius: 35,
+                        borderTopRightRadius: 35,
+                        borderBottom: '4px solid #000'
                     }}
                     alt={`${title} lessons`}
                     src={backgroundImage}
                 />
                 <Typography
                     color='secondary'
-                    variant='h2'
+                    variant={isSmallScreen ? 'h3' : 'h2'}
+                    bgcolor='#fff'
+                    borderRadius={6}
+                    border='4px solid #000'
+                    px={2}
+                    py={1}
                     sx={{
                         position: 'absolute',
-                        top: '150px',
+                        top: isSmallScreen ? '120px' : '180px',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
                         textShadow: '0px 1px 1px #000'
@@ -76,9 +87,11 @@ export const CourseItem = ({ title, backgroundImage }: CoureItemProps) => {
                     {title}
                 </Typography>
                 <List sx={{
-                    px: 1, bgcolor: '#000',
-                    borderBottomRightRadius: 8,
-                    borderBottomLeftRadius: 8
+                    px: 4,
+                    my: 1,
+                    bgcolor: '#fff',
+                    borderBottomRightRadius: 35,
+                    borderBottomLeftRadius: 35
                 }} >
                     {courses.map(course =>
                         <CourseInfoItem course={course} />

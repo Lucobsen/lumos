@@ -28,11 +28,11 @@ const Courses = () => {
     return (
         <PageContainer>
             <Typography
-                color='secondary'
+                color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
-                sx={{ textShadow: '0px 1px 1px #000', }}>
-                Learn the Lumos Latin way!
+                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}`, }}>
+                Have a look at our classes!
             </Typography>
 
             <Grid container spacing={2} mt={2}>
