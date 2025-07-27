@@ -52,8 +52,8 @@ const Index = () => {
             </Typography>
             <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
               {news.map(({ title, link, content, linkText }) =>
-                <ListItem divider >
-                  <Stack alignItems='center' mb={2}>
+                <ListItem divider sx={{ justifyContent: 'center' }}>
+                  <Stack mb={2}>
                     <Typography
                       color='black'
                       variant={isSmallScreen ? 'h5' : 'h3'}
