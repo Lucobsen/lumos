@@ -20,7 +20,7 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: [
-            'DM Sans', 'sans-serif'
+            'DM Sans', 'Chau Philomene One', 'sans-serif'
         ].join(','),
     }
 });

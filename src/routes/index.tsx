@@ -1,24 +1,30 @@
-import { Box, Button, Grid, List, ListItem, Stack, Typography, useMediaQuery, useTheme, Link as MuiLink } from '@mui/material'
+import { Box, Button, Grid, List, ListItem, Stack, styled, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
+`;
+
 type News = {
   title: string;
   content: string;
-  link: string;
+  linkText?: string;
+  link?: string;
 };
 
 const news: News[] = [
   {
-    title: 'New Teacher',
-    content: 'We at Lumos have just announced one of our amazing teachers! Check out the following post on our socials for more information!',
-    link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+    title: 'Courses starting in September!',
+    content: 'Join our Try-Outs on September 1st, 2nd and 3rd at two beautiful locations! Sign up easily for the level of your choice and try something new.',
   },
   {
-    title: 'New Location',
-    content: 'We at Lumos have just announced one of our glorious location! Check out the following post on our socials for more information!',
-    link: 'https://www.instagram.com/reel/DMX3WEQMj60/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+    title: 'Excited to reveal our locations!',
+    content: 'We got you covered in Amsterdam East and West with lovely and spacious dance rooms.',
+    linkText: 'Join us wherever suits you best.',
+    link: '/locations'
   }
 ];
 
@@ -32,7 +38,7 @@ const Index = () => {
     <PageContainer>
       <Grid container columnSpacing={2} rowSpacing={6}>
         <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }} >
-          <Box sx={{ borderRadius: 2, border: '1px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
+          <Box sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}>
             <Typography
               sx={{
                 background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
@@ -40,22 +46,33 @@ const Index = () => {
               color='black'
               variant={isSmallScreen ? 'h3' : 'h1'}
               textAlign='center'
-              borderBottom='1px solid #000'>
+              borderBottom='4px solid #000'
+              fontFamily='Chau Philomene One'>
               News
             </Typography>
             <List sx={{ overflow: 'auto', height: '100%', bgcolor: '#fff' }} >
-              {news.map(({ title, link, content }) =>
+              {news.map(({ title, link, content, linkText }) =>
                 <ListItem divider >
-                  <MuiLink underline='none' target='_blank' href={link}>
-                    <Stack alignItems='center' mb={2}>
-                      <Typography
-                        color='black'
-                        variant={isSmallScreen ? 'h5' : 'h3'}>
-                        {title}
-                      </Typography>
-                      <Typography variant='body2' color='black' textAlign='center'>{content}</Typography>
-                    </Stack>
-                  </MuiLink>
+                  <Stack alignItems='center' mb={2}>
+                    <Typography
+                      color='black'
+                      variant={isSmallScreen ? 'h5' : 'h3'}
+                      fontFamily='Chau Philomene One'
+                      textAlign='center'>
+                      {title}
+                    </Typography>
+                    <Typography variant='body1' color='black' textAlign='center'>{content}</Typography>
+                    {link && linkText &&
+                      <StyledLink to={link}>
+                        <Typography
+                          variant='body1'
+                          color='secondary'
+                          textAlign='center'>
+                          {linkText}
+                        </Typography>
+                      </StyledLink>
+                    }
+                  </Stack>
                 </ListItem>)}
             </List>
           </Box>

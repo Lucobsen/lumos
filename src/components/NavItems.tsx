@@ -7,7 +7,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
 
     &.active {
-        text-decoration:underline;
+        text-decoration: underline;
         text-decoration-color: #000;
     }
 `;
