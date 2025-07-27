@@ -19,7 +19,7 @@ i18n
                         schedule: 'Schedule',
                         prices: 'Prices',
                         locations: 'Locations',
-                        courses: 'Courses',
+                        courses: 'Courses & Classes',
                         contact: 'Contact'
                     },
                     contact: {
@@ -35,7 +35,7 @@ i18n
                         schedule: 'Schema',
                         prices: 'Prijzen',
                         locations: 'Locaties',
-                        courses: 'Cursussen',
+                        courses: 'Cursussen & Klassen',
                         contact: 'Contact'
                     },
                     contact: {

@@ -8,6 +8,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     width: 100%;
     color: #000;
+    white-space: wrap;
 
     &.active {
         text-decoration:underline;

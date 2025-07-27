@@ -1,13 +1,9 @@
 import { ChevronRight } from "@mui/icons-material";
 import { useMediaQuery, ListItem, SvgIcon, Typography, useTheme, Collapse, Stack } from "@mui/material";
 import { useState } from "react";
-import type { Course } from "./CourseItem";
+import type { Class } from "../routes/courses";
 
-type CourseInfoItemProps = {
-    course: Course;
-};
-
-export const CourseInfoItem = ({ course }: CourseInfoItemProps) => {
+export const CourseInfoItem = ({ title, info }: Class) => {
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -28,12 +24,12 @@ export const CourseInfoItem = ({ course }: CourseInfoItemProps) => {
                     <Typography
                         color='black'
                         variant={isSmallScreen ? 'h6' : 'h4'}>
-                        {course.title}
+                        {title}
                     </Typography>
                 </Stack>
                 <Collapse in={isOpen} timeout="auto" unmountOnExit>
                     <Stack pl={5}>
-                        {course.info.map(info =>
+                        {info.map(info =>
                             <Typography
                                 color='black'
                                 variant={isSmallScreen ? 'body1' : 'h6'}>
