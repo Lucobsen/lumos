@@ -41,7 +41,7 @@ const Contact = () => {
     return (
         <PageContainer>
             <Stack alignItems='center' spacing={isSmallScreen ? 6 : 8}>
-                <Stack alignItems='center' width='100%' spacing={1}>
+                <Stack alignItems='center' width='100%' spacing={isSmallScreen ? 1 : 4}>
                     <Typography
                         color='black'
                         variant={isSmallScreen ? 'h5' : 'h3'}
@@ -50,27 +50,35 @@ const Contact = () => {
                         sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
                         {t('contact.ourTeam')}
                     </Typography>
-                    <Grid container spacing={isSmallScreen ? 4 : 6} justifyContent='center'>
+                    <Grid container size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} justifyContent='center' columnSpacing={10} rowSpacing={6}>
                         {team.map(({ name, avatar, role }) =>
-                            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
+                            <Grid>
                                 <TeamMember image={avatar} name={name} role={role} />
                             </Grid>
                         )}
                     </Grid>
                 </Stack>
 
-                <Stack
-                    sx={{
-                        background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                    }}
-                    alignItems='left'
-                    p={2}
-                    border={2}
-                    borderRadius={2}
-                    borderColor='black'
-                    direction='column'
-                    spacing={2}>
-                    {/* <Stack direction='row' alignItems='center' spacing={2}>
+                <Stack spacing={isSmallScreen ? 1 : 4}>
+                    <Typography
+                        color='black'
+                        variant={isSmallScreen ? 'h5' : 'h3'}
+                        textAlign='center'
+                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                        Contact Us
+                    </Typography>
+                    <Stack
+                        sx={{
+                            background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                        }}
+                        alignItems='center'
+                        p={2}
+                        border={2}
+                        borderRadius={2}
+                        borderColor='black'
+                        direction='column'
+                        spacing={2}>
+                        {/* <Stack direction='row' alignItems='center' spacing={2}>
                             <SvgIcon color='secondary' inheritViewBox>
                                 <PhoneAndroid />
                             </SvgIcon>
@@ -86,13 +94,14 @@ const Contact = () => {
                             </Link>
                         </Stack> */}
 
-                    <Stack direction='row' alignItems='center' gap={2}>
-                        <SvgIcon sx={{ color: '#000' }} inheritViewBox>
-                            <Instagram />
-                        </SvgIcon>
-                        <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
-                            <Typography color='black' variant='h6'>lumoslatin</Typography>
-                        </Link>
+                        <Stack direction='row' alignItems='center' gap={2}>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                <Instagram />
+                            </SvgIcon>
+                            <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
+                                <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>lumoslatin</Typography>
+                            </Link>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>
