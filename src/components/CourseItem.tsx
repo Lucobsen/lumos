@@ -18,7 +18,6 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                     component="img"
                     loading='eager'
                     sx={{
-                        height: '100%',
                         width: '100%',
                         display: 'block',
                         borderTopLeftRadius: 35,
@@ -29,26 +28,20 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                     src={backgroundImage}
                 />
                 <Typography
-                    color='secondary'
-                    variant={isSmallScreen ? 'h3' : 'h2'}
-                    bgcolor='#fff'
-                    borderRadius={6}
-                    border='4px solid #000'
+                    textAlign='center'
+                    color='black'
+                    variant={isSmallScreen ? 'h4' : 'h2'}
+                    pt={2}
                     px={2}
-                    py={1}
                     sx={{
-                        position: 'absolute',
-                        top: isSmallScreen ? '120px' : '180px',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        textShadow: '0px 1px 1px #000'
+                        textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}`
                     }}>
                     {title}
                 </Typography>
                 {classes ?
                     <List sx={{
                         px: 4,
-                        my: 1,
+                        mb: 1,
                         bgcolor: '#fff',
                         borderBottomRightRadius: 35,
                         borderBottomLeftRadius: 35
@@ -57,7 +50,7 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                             <CourseInfoItem {...classItem} />
                         )}
                     </List> :
-                    <Box display='flex' px={4} my={4} justifyContent='center'>
+                    <Box display='flex' px={4} mb={4} mt={1} justifyContent='center'>
                         <Typography
                             color='black'
                             variant={isSmallScreen ? 'h4' : "h3"}

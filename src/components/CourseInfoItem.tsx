@@ -1,4 +1,4 @@
-import { ChevronRight } from "@mui/icons-material";
+import { ChevronRight, KeyboardArrowDown } from "@mui/icons-material";
 import { useMediaQuery, ListItem, SvgIcon, Typography, useTheme, Collapse, Stack } from "@mui/material";
 import { useState } from "react";
 import type { Class } from "../routes/courses";
@@ -18,12 +18,22 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                     onClick={() => setIsOpen(prev => !prev)}
                     sx={{ cursor: 'pointer' }}
                     spacing={1}>
-                    <SvgIcon fontSize={isSmallScreen ? 'small' : 'medium'} sx={{ borderRadius: 1, bgcolor: '#000', transform: isOpen ? 'rotate(90deg)' : 'none' }} color='secondary' inheritViewBox>
-                        <ChevronRight />
+                    <SvgIcon
+                        fontSize={isSmallScreen ? 'small' : 'medium'}
+                        sx={{
+                            borderRadius: 1,
+                            border: '2px solid #000',
+                            background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                            color: '#000',
+                            boxShadow: ({ shadows }) => shadows[2]
+                        }}
+                        inheritViewBox>
+                        {isOpen ? <KeyboardArrowDown /> : <ChevronRight />}
                     </SvgIcon>
                     <Typography
                         color='black'
-                        variant={isSmallScreen ? 'h6' : 'h4'}>
+                        variant={isSmallScreen ? 'h6' : 'h4'}
+                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
                         {title}
                     </Typography>
                 </Stack>

@@ -20,31 +20,22 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- Learn the basics of salsa L.A. style.',
-                    '- Leading, following, right turns & more.',
-                    '- Learn to get close & cross-body leads.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Mondays at Veemhuis',
+                    '- Wednesdays at Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- Turns, turn and more turns.',
-                    '- Learn the left turn & travelling turns.',
-                    '- Time to tackle the final bits of fundamental technique.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Mondays at Veemhuis',
+                    '- Wednesdays at Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- Become the best dancer you can be.',
-                    '- Here we will start to push you & extract your full potential.',
-                    '- Learn how to apply all the basics you have learnt in more complex patterns.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Mondays at Veemhuis',
+                    '- Wednesdays at Kompaszaal'
                 ]
             },
         ]
@@ -56,41 +47,27 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- Learn the basics of salsa L.A. style.',
-                    '- Leading, following, right turns & more.',
-                    '- Learn to get close & cross-body leads.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Tuesdays at Veemhuis',
+                    '- Wednesdays at Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- Turns, turn and more turns.',
-                    '- Learn the left turn & travelling turns.',
-                    '- Time to tackle the final bits of fundamental technique.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Tuesdays at Veemhuis',
+                    '- Wednesdays at Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- Become the best dancer you can be.',
-                    '- Here we will start to push you & extract your full potential.',
-                    '- Learn how to apply all the basics you have learnt in more complex patterns.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Tuesdays at Veemhuis'
                 ]
             },
             {
                 title: 'Footwork',
                 info: [
-                    '- Time to go solo.',
-                    '- Work on developing some fancy footwork.',
-                    '- Learn to move your body in the best way.',
-                    '- Days: Mondays & Tuesdays',
-                    '- Locations: Veemhuis, Kompaszaal'
+                    '- Wednesdays at Kompaszaal'
                 ]
             }
         ]
