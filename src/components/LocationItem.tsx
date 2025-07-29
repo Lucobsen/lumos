@@ -9,30 +9,43 @@ type LocationItemProps = {
 };
 
 export const LocationItem = ({ title, address, locationUrl }: LocationItemProps) => {
-    const { breakpoints } = useTheme();
+    const { breakpoints, shadows } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
     return (
-        <Stack spacing={4} alignItems='center' direction={isSmallScreen ? 'column' : 'row'}>
-            <Suspense fallback={<Skeleton height='300px' width={isSmallScreen ? '100%' : '600px'} />}>
+        <Stack spacing={4} alignItems='center' width='100%'>
+            <Suspense fallback={<Skeleton height={isSmallScreen ? "300px" : '400px'} width='100%' />}>
                 <iframe
-                    height="300px"
-                    width={isSmallScreen ? '100%' : '600px'}
+                    height={isSmallScreen ? "300px" : '400px'}
+                    width='100%'
                     loading="lazy"
                     frame-border="0"
-                    style={{ border: 0 }}
+                    style={{
+                        border: '4px solid #000',
+                        borderRadius: 35,
+                        boxShadow: shadows[8]
+                    }}
                     referrer-policy="no-referrer-when-downgrade"
                     src={locationUrl}
                     allowFullScreen>
                 </iframe>
             </Suspense>
 
-            <Stack gap={2}>
-                <Typography color='black' variant='h2'>{title}</Typography>
-
-                <Stack alignItems='center' direction='row' spacing={2}>
-                    <SvgIcon inheritViewBox sx={{ color: '#000' }}><LocationPinIcon /></SvgIcon>
-                    <Typography color='black' variant='h5'>{address}</Typography>
+            <Stack gap={2} alignItems='center'>
+                <Typography
+                    color='black'
+                    variant={isSmallScreen ? 'h4' : 'h2'}
+                    fontFamily='Chau Philomene One'
+                    sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                    {title}
+                </Typography>
+                <Stack direction='row' spacing={2} alignItems='center'>
+                    <SvgIcon
+                        inheritViewBox
+                        sx={{ color: '#000' }}>
+                        <LocationPinIcon />
+                    </SvgIcon>
+                    <Typography color='black' variant={isSmallScreen ? 'h6' : 'h5'}>{address}</Typography>
                 </Stack>
             </Stack>
         </Stack>

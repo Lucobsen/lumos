@@ -16,6 +16,7 @@ export const PageContainer = ({ children, disableBorders = false, borderSize = '
                 alignItems: 'center',
                 display: 'flex',
                 flexDirection: 'column',
+                minHeight: '80vh'
             }}
         >
             {children}
