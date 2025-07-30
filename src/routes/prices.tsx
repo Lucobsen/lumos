@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
 import { PriceItem } from '../components/PriceItem';
+import { useTranslation } from 'react-i18next';
 
 export type PriceItemProps = {
     title: string;
@@ -17,22 +18,22 @@ export type PriceItemProps = {
 
 const priceItems: PriceItemProps[] = [
     {
-        title: '6-week course',
-        subtitle: 'for Beginners',
+        title: 'prices.sixWeekCourse.title',
+        subtitle: 'prices.sixWeekCourse.beginners',
         cost: '€90',
-        info: 'Valid for Salsa or Bachata. Each week you join on the same day and time. You will be registered automatically for all 6 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
+        info: 'prices.sixWeekCourse.info',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45992'
         }
     },
     {
-        title: '6-week course',
-        subtitle: 'for Improvers',
+        title: 'prices.sixWeekCourse.title',
+        subtitle: 'prices.sixWeekCourse.improvers',
         cost: '€90',
-        info: 'Valid for Salsa or Bachata. Each week you join on the same day and time. You will be registered automatically for all 6 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
+        info: 'prices.sixWeekCourse.info',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45994'
         }
     },
@@ -42,7 +43,7 @@ const priceItems: PriceItemProps[] = [
         cost: '€160',
         info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You will be registered automatically for all 12 classes. Valid for 14 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45997'
         }
     },
@@ -52,7 +53,7 @@ const priceItems: PriceItemProps[] = [
         cost: '€90',
         info: 'Purchase 6 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 8 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45998'
         }
     },
@@ -62,7 +63,7 @@ const priceItems: PriceItemProps[] = [
         cost: '€170',
         info: 'Purchase 12 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 4 months.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45999'
         }
     },
@@ -72,7 +73,7 @@ const priceItems: PriceItemProps[] = [
         cost: '€16',
         info: '1. Select a class in the schedule and register directly for that specific class\n2. Buy a single credit and register later for a class of choice. Valid for 1 month',
         actionItem: {
-            actionText: 'Buy Item',
+            actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46102'
         }
     }
@@ -81,6 +82,7 @@ const priceItems: PriceItemProps[] = [
 const Prices = () => {
     useEffect(() => { document.title = 'Lumos - Prices'; }, []);
 
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(1000));
 
@@ -93,7 +95,7 @@ const Prices = () => {
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
                 mb={2}>
-                Check out our courses & prices!
+                {t('prices.header')}
             </Typography>
 
             <Grid

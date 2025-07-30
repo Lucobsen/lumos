@@ -1,8 +1,11 @@
 import { Box, Button, Link, Stack, Typography } from '@mui/material';
 import type { PriceItemProps } from '../routes/prices';
+import { useTranslation } from 'react-i18next';
 
 
 export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItemProps) => {
+    const { t } = useTranslation();
+
     return (
         <Stack boxShadow={({ shadows }) => shadows[8]} border={4} borderRadius={10} borderColor='#000' pb={2}>
             <Box textAlign='center' borderBottom='4px solid #000' p={2} sx={{
@@ -13,14 +16,14 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
                     fontFamily='Chau Philomene One'
                     color='black'
                     variant='h5'>
-                    {title}
+                    {t(title)}
                 </Typography>
                 <Typography
                     fontFamily='Chau Philomene One'
                     color='black'
                     variant='h6'
                     whiteSpace='pre-line'>
-                    {subtitle}
+                    {t(subtitle)}
                 </Typography>
                 <Typography color='black' variant='h6'>{cost}</Typography>
             </Box>
@@ -30,7 +33,7 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
                     variant='body1'
                     textAlign='center'
                     whiteSpace='pre-line'>
-                    {info}
+                    {t(info)}
                 </Typography>
                 {actionItem &&
                     <Link target='_blank' href={actionItem.actionUrl}>
@@ -45,7 +48,7 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
                                 background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                             }}
                             variant='contained'>
-                            {actionItem.actionText}
+                            {t(actionItem.actionText)}
                         </Button>
                     </Link>
                 }

@@ -41,9 +41,27 @@ i18n
                             lineTwo: 'We offer a range of courses to suit all levels and styles of dance.'
                         }
                     },
+                    prices: {
+                        header: 'Check out our courses & prices!',
+                        sixWeekCourse: {
+                            title: '6-week course',
+                            beginners: 'for Beginners',
+                            improvers: 'for Improvers',
+                            info: 'Valid for Salsa or Bachata. Each week you join on the same day and time. You will be registered automatically for all 6 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!'
+                        },
+                        buy: 'Buy Item'
+                    },
+                    locations: {
+                        header: 'Come dance at our stunning locations!'
+                    },
+                    courses: {
+                        header: 'Have a look at our classes!'
+                    },
                     contact: {
                         ourTeam: 'Our Team',
-                        questions: "Got a question?\nWe would love to hear from you!"
+                        ownerAndTeacher: 'Owner & Teacher',
+                        teacher: 'Teacher',
+                        contactUs: "Contact Us"
                     }
                 }
             },
@@ -76,9 +94,27 @@ i18n
                             lineTwo: 'We bieden een reeks cursussen die passen bij alle niveaus en stijlen van dans.'
                         }
                     },
+                    prices: {
+                        header: 'Bekijk onze cursussen en prijzen!',
+                        sixWeekCourse: {
+                            title: '6-weken cursus',
+                            beginners: 'voor Beginners',
+                            improvers: 'voor Improvers',
+                            info: 'Geldig voor salsa of bachata. Elke week schrijf je je in op dezelfde dag en tijd. Je wordt automatisch ingeschreven voor alle 6 weken.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang een geweldige korting!'
+                        },
+                        buy: 'Kopen'
+                    },
+                    locations: {
+                        header: 'Kom dansen op onze prachtige locaties!'
+                    },
+                    courses: {
+                        header: 'Bekijk onze lessen!'
+                    },
                     contact: {
                         ourTeam: 'Ons Team',
-                        questions: "Heb je een vraag?\nWij horen graag van u!"
+                        ownerAndTeacher: 'Eigenaar & Docent',
+                        teacher: 'Docent',
+                        contactUs: "Neem contact met ons op"
                     }
                 }
             }

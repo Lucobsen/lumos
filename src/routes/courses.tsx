@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 import { CourseItem } from '../components/CourseItem';
+import { useTranslation } from 'react-i18next';
 
 export type Class = { title: string; info: string[] };
 
@@ -81,6 +82,7 @@ const courses: CourseItemProps[] = [
 const Courses = () => {
     useEffect(() => { document.title = 'Lumos - Courses'; }, []);
 
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -90,7 +92,7 @@ const Courses = () => {
                 color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'>
-                Have a look at our classes!
+                {t('courses.header')}
             </Typography>
 
             <Grid container spacing={2} mt={2}>

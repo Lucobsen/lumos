@@ -1,4 +1,5 @@
 import { Stack, Typography, useMediaQuery, useTheme, Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 type TeamMemberProps = {
     name: string;
@@ -7,6 +8,7 @@ type TeamMemberProps = {
 };
 
 export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -37,7 +39,7 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 <Typography
                     color='black'
                     variant={isSmallScreen ? 'body1' : 'h5'}>
-                    {role}
+                    {t(role)}
                 </Typography>
             </Stack>
         </Stack>

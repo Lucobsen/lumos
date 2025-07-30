@@ -50,7 +50,6 @@ const news: News[] = [
 const Index = () => {
   useEffect(() => { document.title = 'Lumos'; }, []);
 
-
   const { t } = useTranslation();
   const { breakpoints } = useTheme();
   const isSmallScreen = useMediaQuery(breakpoints.down(900));
