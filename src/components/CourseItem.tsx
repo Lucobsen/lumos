@@ -15,13 +15,13 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                 borderColor='#000'
                 position='relative'
                 boxShadow={({ shadows }) => shadows[8]}>
-                <Suspense fallback={<Skeleton height={isSmallScreen ? '206px' : '360px'} width='530px' />}>
+                <Suspense fallback={<Skeleton height={isSmallScreen ? '206px' : '360px'} width={isSmallScreen ? '100%' : '530px'} />}>
                     <Box
                         component="img"
                         loading='eager'
                         sx={{
                             width: '100%',
-                            minWidth: '530px',
+                            minWidth: isSmallScreen ? '100%' : '530px',
                             height: isSmallScreen ? '206px' : '360px',
                             display: 'block',
                             borderTopLeftRadius: 35,
