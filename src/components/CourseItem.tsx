@@ -1,6 +1,7 @@
-import { Grid, Box, Typography, List, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Box, Typography, List, useMediaQuery, useTheme, Skeleton } from "@mui/material";
 import { CourseInfoItem } from "./CourseInfoItem";
 import type { CourseItemProps } from "../routes/courses";
+import { Suspense } from "react";
 
 export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps) => {
     const { breakpoints } = useTheme();
@@ -14,19 +15,22 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                 borderColor='#000'
                 position='relative'
                 boxShadow={({ shadows }) => shadows[8]}>
-                <Box
-                    component="img"
-                    loading='eager'
-                    sx={{
-                        width: '100%',
-                        display: 'block',
-                        borderTopLeftRadius: 35,
-                        borderTopRightRadius: 35,
-                        borderBottom: '4px solid #000'
-                    }}
-                    alt={`${title} lessons`}
-                    src={backgroundImage}
-                />
+                <Suspense fallback={<Skeleton height={isSmallScreen ? '206px' : '360px'} width='100%' />}>
+                    <Box
+                        component="img"
+                        loading='eager'
+                        sx={{
+                            width: '100%',
+                            height: isSmallScreen ? '206px' : '360px',
+                            display: 'block',
+                            borderTopLeftRadius: 35,
+                            borderTopRightRadius: 35,
+                            borderBottom: '4px solid #000'
+                        }}
+                        alt={`${title} lessons`}
+                        src={backgroundImage}
+                    />
+                </Suspense>
                 <Typography
                     textAlign='center'
                     color='black'
