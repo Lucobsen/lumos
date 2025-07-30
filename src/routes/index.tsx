@@ -1,8 +1,13 @@
-import { Box, Button, Grid, List, ListItem, Stack, styled, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Grid, Link as MuiLink, List, ListItem, Stack, styled, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+
+const StyledMuiLink = styled(MuiLink)`
+  text-decoration: underline;
+  text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
+`;
 
 const StyledLink = styled(Link)`
   text-decoration: underline;
@@ -12,22 +17,33 @@ const StyledLink = styled(Link)`
 type News = {
   title: string;
   content: string;
-  linkText?: string;
-  link?: string;
+  internalLink?: {
+    text: string;
+    link: string;
+  };
+  externalLink?: {
+    text: string;
+    link: string;
+  };
+
 };
 
 const news: News[] = [
   {
     title: 'Try-Outs starting in September!',
     content: 'Join our Try-Outs on September 1st, 2nd and 3rd at two beautiful locations! Sign up easily for the level of your choice and try something new.',
-    linkText: 'Sign up here!',
-    link: '/prices'
+    externalLink: {
+      text: 'Sign up here!',
+      link: 'https://www.bueno.nu/webshop/school/764/schedule?currentDate=01-09-2025&skipEmptyWeeksOnFirstLoad=NO'
+    }
   },
   {
     title: 'Excited to reveal our locations!',
     content: 'We got you covered in Amsterdam East and West with lovely and spacious dance rooms.',
-    linkText: 'Join us!',
-    link: '/locations'
+    internalLink: {
+      text: 'Join us wherever suits you best.',
+      link: '/locations'
+    }
   }
 ];
 
@@ -57,7 +73,7 @@ const Index = () => {
               News
             </Typography>
             <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
-              {news.map(({ title, link, content, linkText }) =>
+              {news.map(({ title, externalLink, content, internalLink }) =>
                 <ListItem divider sx={{ justifyContent: 'center' }}>
                   <Stack mb={2}>
                     <Typography
@@ -69,23 +85,31 @@ const Index = () => {
                     </Typography>
                     <Stack spacing={1} alignItems='center'>
                       <Typography variant='body1' color='black' textAlign='center'>{content}</Typography>
-                      {link && linkText &&
-                        <StyledLink to={link}>
+                      {externalLink &&
+                        <StyledMuiLink target='=_blank' href={externalLink.link}>
                           <Button
                             disableRipple
                             sx={{
                               color: 'white',
-                              minWidth: '200px',
-                              height: '50px',
+                              minWidth: isSmallScreen ? '100px' : '200px',
+                              height: isSmallScreen ? '40px' : '50px',
                               borderRadius: 10,
                               fontWeight: 'bold',
                               background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                             }}
                             variant='contained'>
-                            {linkText}
+                            {externalLink.text}
                           </Button>
-                        </StyledLink>
-                      }
+                        </StyledMuiLink>}
+                      {internalLink &&
+                        <StyledLink to={internalLink.link}>
+                          <Typography
+                            variant='body1'
+                            color='secondary'
+                            textAlign='center'>
+                            {internalLink.text}
+                          </Typography>
+                        </StyledLink>}
                     </Stack>
                   </Stack>
                 </ListItem>)}
