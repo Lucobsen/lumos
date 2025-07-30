@@ -20,22 +20,22 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- Mondays at Veemhuis',
-                    '- Wednesdays at Kompaszaal'
+                    '- 19:00 on Mondays, at Veemhuis',
+                    '- 19:00 on Wednesdays, at Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- Mondays at Veemhuis',
-                    '- Wednesdays at Kompaszaal'
+                    '- 20:15 on Mondays, at Veemhuis',
+                    '- 20:15 on Wednesdays, at Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- Mondays at Veemhuis',
-                    '- Wednesdays at Kompaszaal'
+                    '- 21:15 on Mondays, at Veemhuis',
+                    '- 21:15 on Wednesdays, at Kompaszaal'
                 ]
             },
         ]
@@ -47,27 +47,27 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- Tuesdays at Veemhuis',
-                    '- Wednesdays at Kompaszaal'
+                    '- 19:00 on Tuesdays, at Veemhuis',
+                    '- 20:15 on Wednesdays, at Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- Tuesdays at Veemhuis',
-                    '- Wednesdays at Kompaszaal'
+                    '- 20:15 on Tuesdays, at Veemhuis',
+                    '- 19:00 on Wednesdays, at Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- Tuesdays at Veemhuis'
+                    '- 21:15 on Tuesdays, at Veemhuis'
                 ]
             },
             {
                 title: 'Footwork',
                 info: [
-                    '- Wednesdays at Kompaszaal'
+                    '- 21:15 on Wednesdays, at Kompaszaal'
                 ]
             }
         ]
