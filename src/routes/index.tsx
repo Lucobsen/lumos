@@ -117,17 +117,25 @@ const Index = () => {
           </Box>
         </Grid>
 
-        <Grid size={{ xl: 8, lg: 8, md: 8, sm: 12, xs: 12 }}>
+        <Grid
+          size={{ xl: 8, lg: 8, md: 8, sm: 12, xs: 12 }}
+          sx={{
+            backgroundImage: isSmallScreen ? 'none' : 'url(salsa-2.jpg)',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            boxShadow: '0 0 8px 8px white inset'
+          }}>
           <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen && <>
               <Typography
-                color='black'
+                color='white'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'>
                 At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!
               </Typography>
               <Typography
-                color='black'
+                color='white'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'>
                 We offer a range of courses to suit all levels and styles of dance.
