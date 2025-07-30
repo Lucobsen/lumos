@@ -12,22 +12,22 @@ const team: TeamMember[] = [
     {
         name: 'Pauline',
         avatar: 'pauline.jpeg',
-        role: 'Owner & Teacher'
+        role: 'contact.ownerAndTeacher'
     },
     {
         name: 'Zubaid',
         avatar: 'zubaid.jpg',
-        role: 'Teacher'
+        role: 'contact.teacher'
     },
     {
         name: 'Luke',
         avatar: 'luke.jpeg',
-        role: 'Teacher'
+        role: 'contact.teacher'
     },
     {
         name: 'Yasmin',
         avatar: 'yas.jpg',
-        role: 'Teacher'
+        role: 'contact.teacher'
     }
 ];
 
@@ -58,14 +58,15 @@ const Contact = () => {
                     </Grid>
                 </Stack>
 
-                <Stack spacing={isSmallScreen ? 1 : 4}>
+                <Stack spacing={isSmallScreen ? 1 : 4} alignItems='center'>
                     <Typography
                         color='black'
                         variant={isSmallScreen ? 'h5' : 'h3'}
                         textAlign='center'>
-                        Contact Us
+                        {t('contact.contactUs')}
                     </Typography>
                     <Stack
+                        width='fit-content'
                         sx={{
                             background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                         }}

@@ -3,10 +3,12 @@ import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
 import { LocationItem } from '../components/LocationItem';
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const Locations = () => {
     useEffect(() => { document.title = 'Lumos - Locations'; }, []);
 
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -17,7 +19,7 @@ const Locations = () => {
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
                 mb={2}>
-                Come dance at our stunning locations!
+                {t('locations.header')}
             </Typography>
             <Stack justifyContent='center' direction={isSmallScreen ? 'column' : 'row'} spacing={8} width='100%'>
                 <LocationItem
