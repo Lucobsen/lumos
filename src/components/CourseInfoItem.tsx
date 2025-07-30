@@ -37,7 +37,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                     </Typography>
                 </Stack>
                 <Collapse in={isOpen} timeout="auto" unmountOnExit>
-                    <Stack pl={5}>
+                    <Stack pl={1}>
                         {info.map(info =>
                             <Typography
                                 color='black'
