@@ -2,6 +2,7 @@ import { Box, Button, Grid, List, ListItem, Stack, styled, Typography, useMediaQ
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const StyledLink = styled(Link)`
   text-decoration: underline;
@@ -19,11 +20,13 @@ const news: News[] = [
   {
     title: 'Try-Outs starting in September!',
     content: 'Join our Try-Outs on September 1st, 2nd and 3rd at two beautiful locations! Sign up easily for the level of your choice and try something new.',
+    linkText: 'Sign up here!',
+    link: '/prices'
   },
   {
     title: 'Excited to reveal our locations!',
     content: 'We got you covered in Amsterdam East and West with lovely and spacious dance rooms.',
-    linkText: 'Join us wherever suits you best.',
+    linkText: 'Join us!',
     link: '/locations'
   }
 ];
@@ -31,6 +34,8 @@ const news: News[] = [
 const Index = () => {
   useEffect(() => { document.title = 'Lumos'; }, []);
 
+
+  const { t } = useTranslation();
   const { breakpoints } = useTheme();
   const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
@@ -62,17 +67,26 @@ const Index = () => {
                       textAlign='center'>
                       {title}
                     </Typography>
-                    <Typography variant='body1' color='black' textAlign='center'>{content}</Typography>
-                    {link && linkText &&
-                      <StyledLink to={link}>
-                        <Typography
-                          variant='body1'
-                          color='secondary'
-                          textAlign='center'>
-                          {linkText}
-                        </Typography>
-                      </StyledLink>
-                    }
+                    <Stack spacing={1} alignItems='center'>
+                      <Typography variant='body1' color='black' textAlign='center'>{content}</Typography>
+                      {link && linkText &&
+                        <StyledLink to={link}>
+                          <Button
+                            disableRipple
+                            sx={{
+                              color: 'white',
+                              minWidth: '200px',
+                              height: '50px',
+                              borderRadius: 10,
+                              fontWeight: 'bold',
+                              background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                            }}
+                            variant='contained'>
+                            {linkText}
+                          </Button>
+                        </StyledLink>
+                      }
+                    </Stack>
                   </Stack>
                 </ListItem>)}
             </List>
@@ -101,24 +115,30 @@ const Index = () => {
                 <Button
                   disableRipple
                   sx={{
+                    color: 'white',
                     width: '200px',
                     height: '50px',
+                    borderRadius: 10,
+                    fontWeight: 'bold',
                     background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                   }}
                   variant='contained'>
-                  Schedule
+                  {t("navItems.schedule")}
                 </Button>
               </Link>
               <Link to="/courses">
                 <Button
                   disableRipple
                   sx={{
+                    color: 'white',
                     width: '200px',
                     height: '50px',
+                    borderRadius: 10,
+                    fontWeight: 'bold',
                     background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                   }}
                   variant='contained'>
-                  Courses
+                  {t("navItems.courses")}
                 </Button>
               </Link>
             </Stack>
