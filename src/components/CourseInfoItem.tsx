@@ -32,8 +32,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                     </SvgIcon>
                     <Typography
                         color='black'
-                        variant={isSmallScreen ? 'h6' : 'h4'}
-                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                        variant={isSmallScreen ? 'h6' : 'h4'}>
                         {title}
                     </Typography>
                 </Stack>

@@ -89,8 +89,7 @@ const Courses = () => {
             <Typography
                 color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'
-                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                textAlign='center'>
                 Have a look at our classes!
             </Typography>
 

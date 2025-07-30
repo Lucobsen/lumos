@@ -16,8 +16,7 @@ const Locations = () => {
                 color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'
-                mb={2}
-                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                mb={2}>
                 Come dance at our stunning locations!
             </Typography>
             <Stack justifyContent='center' direction={isSmallScreen ? 'column' : 'row'} spacing={8} width='100%'>

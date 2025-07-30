@@ -46,8 +46,7 @@ const Contact = () => {
                         color='black'
                         variant={isSmallScreen ? 'h5' : 'h3'}
                         textAlign='center'
-                        mb={2}
-                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                        mb={2}>
                         {t('contact.ourTeam')}
                     </Typography>
                     <Grid container size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} justifyContent='center' columnSpacing={10} rowSpacing={6}>
@@ -63,8 +62,7 @@ const Contact = () => {
                     <Typography
                         color='black'
                         variant={isSmallScreen ? 'h5' : 'h3'}
-                        textAlign='center'
-                        sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                        textAlign='center'>
                         Contact Us
                     </Typography>
                     <Stack

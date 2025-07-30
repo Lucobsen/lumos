@@ -32,10 +32,7 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                     color='black'
                     variant={isSmallScreen ? 'h4' : 'h2'}
                     pt={2}
-                    px={2}
-                    sx={{
-                        textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}`
-                    }}>
+                    px={2}>
                     {title}
                 </Typography>
                 {classes ?
@@ -53,8 +50,7 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                     <Box display='flex' px={4} mb={4} mt={1} justifyContent='center'>
                         <Typography
                             color='black'
-                            variant={isSmallScreen ? 'h4' : "h3"}
-                            sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                            variant={isSmallScreen ? 'h4' : "h3"}>
                             Coming Soon...
                         </Typography>
                     </Box>

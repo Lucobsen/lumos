@@ -37,7 +37,7 @@ const Index = () => {
   return (
     <PageContainer>
       <Grid container columnSpacing={2} rowSpacing={6}>
-        <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }} >
+        <Grid size={{ xl: 4, lg: 4, md: 4, sm: 12, xs: 12 }}>
           <Box
             sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
             boxShadow={({ shadows }) => shadows[8]}>
@@ -79,21 +79,19 @@ const Index = () => {
           </Box>
         </Grid>
 
-        <Grid size={{ xl: 6, lg: 6, md: 6, sm: 12, xs: 12 }}>
+        <Grid size={{ xl: 8, lg: 8, md: 8, sm: 12, xs: 12 }}>
           <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen && <>
               <Typography
                 color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'
-                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                textAlign='center'>
                 At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!
               </Typography>
               <Typography
                 color='black'
                 variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'
-                sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                textAlign='center'>
                 We offer a range of courses to suit all levels and styles of dance.
               </Typography>
             </>}
@@ -113,7 +111,6 @@ const Index = () => {
               </Link>
               <Link to="/courses">
                 <Button
-
                   disableRipple
                   sx={{
                     width: '200px',
