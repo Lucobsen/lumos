@@ -31,14 +31,12 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
             <Stack alignItems='center'>
                 <Typography
                     color='black'
-                    variant={isSmallScreen ? 'h6' : 'h4'}
-                    sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                    variant={isSmallScreen ? 'h6' : 'h4'}>
                     {name}
                 </Typography>
                 <Typography
                     color='black'
-                    variant={isSmallScreen ? 'body1' : 'h5'}
-                    sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                    variant={isSmallScreen ? 'body1' : 'h5'}>
                     {role}
                 </Typography>
             </Stack>

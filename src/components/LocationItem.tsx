@@ -35,8 +35,7 @@ export const LocationItem = ({ title, address, locationUrl }: LocationItemProps)
                 <Typography
                     color='black'
                     variant={isSmallScreen ? 'h4' : 'h2'}
-                    fontFamily='Chau Philomene One'
-                    sx={{ textShadow: ({ palette }) => `0px 2px 2px ${palette.secondary.main}` }}>
+                    fontFamily='Chau Philomene One'>
                     {title}
                 </Typography>
                 <Stack direction='row' spacing={2} alignItems='center'>
