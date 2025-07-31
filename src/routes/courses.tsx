@@ -21,22 +21,22 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- 19:00 on Mondays, at Veemhuis',
-                    '- 19:00 on Wednesdays, at Kompaszaal'
+                    '19:00-20:00 | Mondays, Veem House for Performances',
+                    '19:00-20:00 | Wednesdays, De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- 20:15 on Mondays, at Veemhuis',
-                    '- 20:15 on Wednesdays, at Kompaszaal'
+                    '20:15-21:15 | Mondays, Veem House for Performances',
+                    '20:15-21:15 | Wednesdays, De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- 21:15 on Mondays, at Veemhuis',
-                    '- 21:15 on Wednesdays, at Kompaszaal'
+                    '21:15-22:15 | Mondays, Veem House for Performances',
+                    '21:15-22:15 | Wednesdays, De Kompaszaal'
                 ]
             },
         ]
@@ -48,27 +48,27 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '- 19:00 on Tuesdays, at Veemhuis',
-                    '- 20:15 on Wednesdays, at Kompaszaal'
+                    '19:00-20:00 | Tuesdays, Veem House for Performances',
+                    '20:15-21:15 | Wednesdays, De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '- 20:15 on Tuesdays, at Veemhuis',
-                    '- 19:00 on Wednesdays, at Kompaszaal'
+                    '20:15-21:15 | Tuesdays, Veem House for Performances',
+                    '19:00-20:00 | Wednesdays, De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '- 21:15 on Tuesdays, at Veemhuis'
+                    '21:15-22:15 | Tuesdays, Veem House for Performances'
                 ]
             },
             {
                 title: 'Footwork',
                 info: [
-                    '- 21:15 on Wednesdays, at Kompaszaal'
+                    '21:15-22:15 | Wednesdays, De Kompaszaal'
                 ]
             }
         ]
