@@ -37,8 +37,9 @@ i18n
                             }
                         },
                         cover: {
-                            lineOne: 'At Lumos we can show you the moves and give you the confidence to shine on every dancefloor, everywhere!',
-                            lineTwo: 'We offer a range of courses to suit all levels and styles of dance.'
+                            lineOne: 'Vamos a bailar!',
+                            lineTwo: 'Never feel lost again at Latin parties! Get dozens of new moves in your pocket within just a few weeks with our classes. Discover how much value Salsa & Bachata dancing can add to your life in so many ways! An experience of instant happiness by moving the body, enjoying the best latin music, and making new friends.',
+                            lineThree: 'Time to try something new, whether you’re an experienced dancer or curious to find out what Salsa & Bachata is all about!'
                         }
                     },
                     prices: {
@@ -90,8 +91,9 @@ i18n
                             }
                         },
                         cover: {
-                            lineOne: 'Bij Lumos kunnen we je de bewegingen laten zien en je het vertrouwen geven om overal op elke dansvloer te schitteren!',
-                            lineTwo: 'We bieden een reeks cursussen die passen bij alle niveaus en stijlen van dans.'
+                            lineOne: 'Vamos a bailar!',
+                            lineTwo: 'Voel je nooit meer verloren op Latijns-Amerikaanse feesten! Leer binnen een paar weken tientallen nieuwe moves met onze lessen. Ontdek hoeveel waarde Salsa & Bachata dansen op zoveel manieren aan je leven kan toevoegen! Een instant gelukservaring door te bewegen, te genieten van de beste Latijns-Amerikaanse muziek en nieuwe vrienden te maken.',
+                            lineThree: 'Tijd om iets nieuws te proberen, of je nu een ervaren danser bent of nieuwsgierig bent naar Salsa & Bachata!'
                         }
                     },
                     prices: {
