@@ -56,7 +56,7 @@ const Index = () => {
 
   return (
     <PageContainer>
-      <Grid container columnSpacing={2} rowSpacing={6} mr={isSmallScreen ? 'unset' : '10px'}>
+      <Grid container columnSpacing={2} rowSpacing={6} mr={isSmallScreen ? 'unset' : '-32px'}>
         <Grid size={{ xl: 4, lg: 4, md: 4, sm: 12, xs: 12 }}>
           <Box
             sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
@@ -127,7 +127,7 @@ const Index = () => {
             backgroundPosition: 'center',
             backgroundBlendMode: 'hard-light',
             backgroundSize: 'cover',
-            boxShadow: '0 0 8px 8px white inset'
+            boxShadow: '10px 0 8px -2px white inset'
           }}>
           <Stack
             spacing={2}
