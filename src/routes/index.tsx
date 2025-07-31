@@ -127,20 +127,31 @@ const Index = () => {
             boxShadow: '0 0 8px 8px white inset'
           }}>
           <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
-            {!isSmallScreen && <>
-              <Typography
-                color='white'
-                variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'>
-                {t('home.cover.lineOne')}
-              </Typography>
-              <Typography
-                color='white'
-                variant={isSmallScreen ? 'h5' : 'h3'}
-                textAlign='center'>
-                {t('home.cover.lineTwo')}
-              </Typography>
-            </>}
+            {!isSmallScreen &&
+              <Stack spacing={1}>
+                <Typography
+                  color='white'
+                  variant={isSmallScreen ? 'h5' : 'h4'}
+                  textAlign='center'
+                  fontWeight='bold'>
+                  {t('home.cover.lineOne')}
+                </Typography>
+                <Typography
+                  color='white'
+                  variant={isSmallScreen ? 'h5' : 'h4'}
+                  textAlign='center'
+                  fontWeight='bold'>
+                  {t('home.cover.lineTwo')}
+                </Typography>
+                <Typography
+                  color='white'
+                  variant={isSmallScreen ? 'h5' : 'h4'}
+                  textAlign='center'
+                  fontWeight='bold'>
+                  {t('home.cover.lineThree')}
+                </Typography>
+              </Stack>
+            }
 
             <Stack spacing={2}>
               <Link to="/schedule">
