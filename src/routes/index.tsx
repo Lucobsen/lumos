@@ -56,7 +56,7 @@ const Index = () => {
 
   return (
     <PageContainer>
-      <Grid container columnSpacing={2} rowSpacing={6}>
+      <Grid container columnSpacing={2} rowSpacing={6} mr={isSmallScreen ? 'unset' : '10px'}>
         <Grid size={{ xl: 4, lg: 4, md: 4, sm: 12, xs: 12 }}>
           <Box
             sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
@@ -119,38 +119,47 @@ const Index = () => {
         <Grid
           size={{ xl: 8, lg: 8, md: 8, sm: 12, xs: 12 }}
           px={4}
+          mt={isSmallScreen ? 'unset' : '-50px'}
+          mb={isSmallScreen ? 'unset' : '-220px'}
           sx={{
             backgroundImage: isSmallScreen ? 'none' : 'url(salsa-2.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
+            backgroundBlendMode: 'hard-light',
             backgroundSize: 'cover',
             boxShadow: '0 0 8px 8px white inset'
           }}>
-          <Stack spacing={2} alignItems='center' justifyContent='center' height={isSmallScreen ? 'unset' : '80vh'}>
+          <Stack
+            spacing={2}
+            alignItems='center'
+            justifyContent='center'
+            height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen &&
-              <Stack spacing={1}>
+              <>
+                <Stack spacing={1}>
+                  <Typography
+                    color='white'
+                    variant='h5'
+                    textAlign='center'
+                    fontWeight='bold'>
+                    {t('home.cover.lineOne')}
+                  </Typography>
+                  <Typography
+                    color='white'
+                    variant='h5'
+                    textAlign='center'
+                    fontWeight='bold'>
+                    {t('home.cover.lineTwo')}
+                  </Typography>
+                </Stack>
                 <Typography
                   color='white'
-                  variant={isSmallScreen ? 'h5' : 'h4'}
-                  textAlign='center'
-                  fontWeight='bold'>
-                  {t('home.cover.lineOne')}
-                </Typography>
-                <Typography
-                  color='white'
-                  variant={isSmallScreen ? 'h5' : 'h4'}
-                  textAlign='center'
-                  fontWeight='bold'>
-                  {t('home.cover.lineTwo')}
-                </Typography>
-                <Typography
-                  color='white'
-                  variant={isSmallScreen ? 'h5' : 'h4'}
+                  variant='h5'
                   textAlign='center'
                   fontWeight='bold'>
                   {t('home.cover.lineThree')}
                 </Typography>
-              </Stack>
+              </>
             }
 
             <Stack spacing={2}>
