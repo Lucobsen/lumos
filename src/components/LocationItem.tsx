@@ -35,7 +35,8 @@ export const LocationItem = ({ title, address, locationUrl }: LocationItemProps)
                 <Typography
                     color='black'
                     variant={isSmallScreen ? 'h4' : 'h2'}
-                    fontFamily='Chau Philomene One'>
+                    fontFamily='Chau Philomene One'
+                    textAlign='center'>
                     {title}
                 </Typography>
                 <Stack direction='row' spacing={2} alignItems='center'>

@@ -42,7 +42,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                             <Typography
                                 color='black'
                                 variant={isSmallScreen ? 'body1' : 'h6'}>
-                                {info}
+                                •{info}
                             </Typography>
                         )}
                     </Stack>
