@@ -1,4 +1,4 @@
-import { Instagram } from "@mui/icons-material";
+import { Email, Instagram } from "@mui/icons-material";
 import { Box, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export const Footer = () => {
@@ -36,9 +36,18 @@ export const Footer = () => {
                 <Stack
                     height='100%'
                     px={isSmallScreen ? 6 : 10}
-                    direction='row'
-                    alignItems='center'
-                    justifyContent='flex-end'>
+                    direction={isSmallScreen ? 'row' : 'column'}
+                    alignItems={isSmallScreen ? 'center' : 'flex-end'}
+                    justifyContent={isSmallScreen ? 'flex-end' : 'center'}
+                    spacing={1}>
+
+                    <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
+                        <SvgIcon sx={{ color: '#000' }} inheritViewBox>
+                            <Email />
+                        </SvgIcon>
+                        {!isSmallScreen && <Typography color='black' variant='h6'>info@lumoslatin.nl</Typography>}
+                    </Link>
+
                     <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
                         <Stack direction='row' alignItems='center' spacing={1}>
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox>
@@ -47,6 +56,7 @@ export const Footer = () => {
                             {!isSmallScreen && <Typography color='black' variant='h6'>lumoslatin</Typography>}
                         </Stack>
                     </Link>
+
                 </Stack>
             </Stack>
         </footer >);
