@@ -2,7 +2,7 @@ import { Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from 
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import { Instagram } from '@mui/icons-material';
+import { Email, Instagram } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../components/TeamMember';
 
@@ -82,29 +82,25 @@ const Contact = () => {
                                 <PhoneAndroid />
                             </SvgIcon>
                             <Typography color='secondary' variant='h6'>+31 999 99999 999</Typography>
-                        </Stack>
-
-                        <Stack direction='row' alignItems='center' gap={2}>
-                            <SvgIcon color='secondary' inheritViewBox>
-                                <Email />
-                            </SvgIcon>
-                            <Link underline='none' href='mailto:info@lumoslatin.nl'>
-                                <Typography color='secondary' variant='h6'>info@lumoslatin.nl</Typography>
-                            </Link>
                         </Stack> */}
 
-                        <Stack direction='row' alignItems='center' gap={2}>
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                <Email />
+                            </SvgIcon>
+                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>info@lumoslatin.nl</Typography>
+                        </Link>
+
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
                                 <Instagram />
                             </SvgIcon>
-                            <Link underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
-                                <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>lumoslatin</Typography>
-                            </Link>
-                        </Stack>
+                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>lumoslatin</Typography>
+                        </Link>
                     </Stack>
                 </Stack>
             </Stack>
-        </PageContainer>
+        </PageContainer >
     );
 };
 
