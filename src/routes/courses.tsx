@@ -75,7 +75,7 @@ const courses: CourseItemProps[] = [
     },
     {
         title: 'Reggaeton',
-        backgroundImage: "bachata-2.jpg"
+        backgroundImage: "reggaeton-1.jpg"
     }
 ];
 

@@ -8,7 +8,7 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
     const isSmallScreen = useMediaQuery(breakpoints.down(900));
 
     return (
-        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
+        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
             <Box
                 borderRadius={10}
                 border={4}
@@ -21,7 +21,6 @@ export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps)
                         loading='eager'
                         sx={{
                             width: '100%',
-                            minWidth: isSmallScreen ? '100%' : '530px',
                             height: isSmallScreen ? '206px' : '360px',
                             display: 'block',
                             borderTopLeftRadius: 35,
