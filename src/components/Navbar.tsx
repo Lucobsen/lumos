@@ -5,7 +5,8 @@ import { LanguageSelector } from "./LanguageSelector";
 
 export const Navbar = () => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
+    const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
+    const isMediumScreen = useMediaQuery(breakpoints.down('md'));
 
     return (<Box sx={{ flexGrow: 1 }}>
         <AppBar
@@ -21,8 +22,8 @@ export const Navbar = () => {
                     <Box
                         component="img"
                         sx={{
-                            height: isSmallScreen ? '100px' : '160px',
-                            width: isSmallScreen ? '100px' : '160px',
+                            height: isSmallScreen ? '100px' : isMediumScreen ? '120px' : '160px',
+                            width: isSmallScreen ? '100px' : isMediumScreen ? '120px' : '160px',
                         }}
                         alt="Lumos Logo"
                         src="lumos-logo-black.png"
