@@ -21,8 +21,8 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 loading='eager'
                 boxShadow={({ shadows }) => shadows[8]}
                 sx={{
-                    height: isSmallScreen ? '300px' : '400px',
-                    width: isSmallScreen ? '200px' : '250px',
+                    height: isSmallScreen ? '140px' : '180px',
+                    width: isSmallScreen ? '100px' : '125px',
                     display: 'block',
                     borderRadius: 10,
                     border: '4px solid #000'
@@ -30,7 +30,7 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 alt={name.toLowerCase()}
                 src={image}
             />
-            <Stack alignItems='center'>
+            <Stack textAlign='center'>
                 <Typography
                     color='black'
                     variant={isSmallScreen ? 'h6' : 'h4'}>

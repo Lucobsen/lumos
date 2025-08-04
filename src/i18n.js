@@ -38,7 +38,7 @@ i18n
                         },
                         cover: {
                             lineOne: 'Vamos a bailar!',
-                            lineTwo: 'Never feel lost again at Latin parties! Get dozens of new moves in your pocket within just a few weeks with our classes. Discover how much value Salsa & Bachata dancing can add to your life in so many ways! An experience of instant happiness by moving the body, enjoying the best latin music, and making new friends.',
+                            lineTwo: 'Never feel lost again at Latin parties! Get dozens of new moves in your pocket within just a few weeks with our classes. Discover how much value Salsa & Bachata can add to your life in so many ways! An experience of instant happiness by moving the body, enjoying the best latin music, and making new friends.',
                             lineThree: 'Time to try something new, whether you’re an experienced dancer or curious to find out what Salsa & Bachata is all about!'
                         }
                     },
@@ -61,8 +61,8 @@ i18n
                     contact: {
                         ourTeam: 'Our Team',
                         ownerAndTeacher: 'Owner & Teacher',
+                        contactUs: "Contact Us",
                         teacher: 'Teacher',
-                        contactUs: "Contact Us"
                     }
                 }
             },
