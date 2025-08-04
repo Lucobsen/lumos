@@ -2,7 +2,7 @@ import { Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from 
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import { Email, Instagram } from '@mui/icons-material';
+import { Email } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../components/TeamMember';
 
@@ -41,23 +41,6 @@ const Contact = () => {
     return (
         <PageContainer>
             <Stack alignItems='center' spacing={isSmallScreen ? 6 : 8}>
-                <Stack alignItems='center' width='100%' spacing={isSmallScreen ? 1 : 4}>
-                    <Typography
-                        color='black'
-                        variant={isSmallScreen ? 'h5' : 'h3'}
-                        textAlign='center'
-                        mb={2}>
-                        {t('contact.ourTeam')}
-                    </Typography>
-                    <Grid container size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} justifyContent='center' columnSpacing={10} rowSpacing={6}>
-                        {team.map(({ name, avatar, role }) =>
-                            <Grid>
-                                <TeamMember image={avatar} name={name} role={role} />
-                            </Grid>
-                        )}
-                    </Grid>
-                </Stack>
-
                 <Stack spacing={isSmallScreen ? 1 : 4} alignItems='center'>
                     <Typography
                         color='black'
@@ -85,19 +68,29 @@ const Contact = () => {
                         </Stack> */}
 
                         <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
-                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>
                                 <Email />
                             </SvgIcon>
-                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>info@lumoslatin.nl</Typography>
-                        </Link>
-
-                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' target='_blank' href='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>
-                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
-                                <Instagram />
-                            </SvgIcon>
-                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h6'}>lumoslatin</Typography>
+                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h5'}>info@lumoslatin.nl</Typography>
                         </Link>
                     </Stack>
+                </Stack>
+
+                <Stack alignItems='center' width='100%' spacing={isSmallScreen ? 1 : 4}>
+                    <Typography
+                        color='black'
+                        variant={isSmallScreen ? 'h5' : 'h3'}
+                        textAlign='center'
+                        mb={2}>
+                        {t('contact.ourTeam')}
+                    </Typography>
+                    <Grid container justifyContent='center' columnSpacing={4} rowSpacing={6}>
+                        {team.map(({ name, avatar, role }) =>
+                            <Grid size={{ xs: 6, sm: 3, md: 3, lg: 3, xl: 3 }} >
+                                <TeamMember image={avatar} name={name} role={role} />
+                            </Grid>
+                        )}
+                    </Grid>
                 </Stack>
             </Stack>
         </PageContainer >
