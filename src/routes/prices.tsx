@@ -20,7 +20,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: 'prices.sixWeekCourse.title',
         subtitle: 'prices.sixWeekCourse.beginners',
-        cost: '€90',
+        cost: '€90,-',
         info: 'prices.sixWeekCourse.info',
         actionItem: {
             actionText: 'prices.buy',
@@ -30,7 +30,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: 'prices.sixWeekCourse.title',
         subtitle: 'prices.sixWeekCourse.improvers',
-        cost: '€90',
+        cost: '€90,-',
         info: 'prices.sixWeekCourse.info',
         actionItem: {
             actionText: 'prices.buy',
@@ -40,7 +40,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: '6-week combo',
         subtitle: 'Double the fun:\nSalsa and Bachata for Beginners or Improvers',
-        cost: '€160',
+        cost: '€160,-',
         info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You will be registered automatically for all 12 classes. Valid for 14 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
             actionText: 'prices.buy',
@@ -50,7 +50,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: 'Punch card - 6 classes',
         subtitle: 'for Improvers, Intermediate and Solo classes',
-        cost: '€90',
+        cost: '€90,-',
         info: 'Purchase 6 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 8 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
             actionText: 'prices.buy',
@@ -60,7 +60,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: 'Punch card - 12 classes',
         subtitle: 'for Improvers, Intermediate and Solo classes',
-        cost: '€170',
+        cost: '€170,-',
         info: 'Purchase 12 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 4 months.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
         actionItem: {
             actionText: 'prices.buy',
@@ -70,7 +70,7 @@ const priceItems: PriceItemProps[] = [
     {
         title: 'Single Classes',
         subtitle: 'for Improvers or Intermediate',
-        cost: '€16',
+        cost: '€16,-',
         info: '1. Select a class in the schedule and register directly for that specific class\n2. Buy a single credit and register later for a class of choice. Valid for 1 month',
         actionItem: {
             actionText: 'prices.buy',
