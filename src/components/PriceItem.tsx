@@ -18,16 +18,17 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
                     variant='h5'>
                     {t(title)}
                 </Typography>
+                <Typography color='black' variant='h3'>{cost}</Typography>
+            </Box>
+            <Stack my={2} px={4} spacing={2} alignItems='center'>
                 <Typography
+                    textAlign='center'
                     fontFamily='Chau Philomene One'
                     color='black'
                     variant='h6'
                     whiteSpace='pre-line'>
                     {t(subtitle)}
                 </Typography>
-                <Typography color='black' variant='h6'>{cost}</Typography>
-            </Box>
-            <Stack my={2} px={4} spacing={2} alignItems='center'>
                 <Typography
                     color='black'
                     variant='body1'

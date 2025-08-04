@@ -97,7 +97,6 @@ const Prices = () => {
                 mb={2}>
                 {t('prices.header')}
             </Typography>
-
             <Grid
                 container
                 columnSpacing={2}
@@ -105,8 +104,7 @@ const Prices = () => {
                 justifyContent='center'
             >
                 {priceItems.map(item =>
-
-                    <Grid size={{ xs: 12, sm: 12, md: 6, lg: spacing, xl: spacing }}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4, xl: spacing }}>
                         <PriceItem {...item} />
                     </Grid>
                 )}
