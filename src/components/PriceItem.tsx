@@ -1,4 +1,4 @@
-import { Box, Button, Link, Stack, Typography } from '@mui/material';
+import { Button, Link, Stack, Typography } from '@mui/material';
 import type { PriceItemProps } from '../routes/prices';
 import { useTranslation } from 'react-i18next';
 
@@ -8,18 +8,23 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
 
     return (
         <Stack boxShadow={({ shadows }) => shadows[8]} border={4} borderRadius={10} borderColor='#000' pb={2}>
-            <Box textAlign='center' borderBottom='4px solid #000' p={2} sx={{
-                background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                borderTopLeftRadius: '35px', borderTopRightRadius: '35px'
-            }}>
+            <Stack
+                spacing={2}
+                textAlign='center'
+                borderBottom='4px solid #000'
+                p={2}
+                sx={{
+                    background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                    borderTopLeftRadius: '35px', borderTopRightRadius: '35px'
+                }}>
                 <Typography
                     fontFamily='Chau Philomene One'
                     color='black'
                     variant='h5'>
                     {t(title)}
                 </Typography>
-                <Typography color='black' variant='h3'>{cost}</Typography>
-            </Box>
+                <Typography color='black' variant='h4'>{cost}</Typography>
+            </Stack>
             <Stack my={2} px={4} spacing={2} alignItems='center'>
                 <Typography
                     textAlign='center'
