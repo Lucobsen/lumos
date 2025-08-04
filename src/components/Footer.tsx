@@ -1,5 +1,5 @@
 import { Email, Facebook, Instagram } from "@mui/icons-material";
-import { Box, IconButton, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, IconButton, Link, Stack, SvgIcon, useMediaQuery, useTheme } from "@mui/material";
 import type { JSX } from "react";
 
 const TikTok = ({ color = "#000000" }) => {

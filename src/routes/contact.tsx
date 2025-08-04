@@ -2,7 +2,7 @@ import { Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from 
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import { Email, Instagram } from '@mui/icons-material';
+import { Email } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../components/TeamMember';
 
