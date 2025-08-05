@@ -38,40 +38,40 @@ const priceItems: PriceItemProps[] = [
         }
     },
     {
-        title: '6-week combo',
-        subtitle: 'Double the fun:\nSalsa and Bachata for Beginners or Improvers',
+        title: 'prices.sixWeekCombo.title',
+        subtitle: 'prices.sixWeekCombo.subtitle',
         cost: '€160,-',
-        info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You will be registered automatically for all 12 classes. Valid for 14 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
+        info: 'prices.sixWeekCombo.info',
         actionItem: {
             actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45997'
         }
     },
     {
-        title: 'Punch card - 6 classes',
-        subtitle: 'for Improvers, Intermediate and Solo classes',
+        title: 'prices.punchCardSix.title',
+        subtitle: 'prices.punchCardSix.subtitle',
         cost: '€90,-',
-        info: 'Purchase 6 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 8 weeks.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
+        info: 'prices.punchCardSix.info',
         actionItem: {
             actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45998'
         }
     },
     {
-        title: 'Punch card - 12 classes',
-        subtitle: 'for Improvers, Intermediate and Solo classes',
+        title: 'prices.punchCardTwelve.title',
+        subtitle: 'prices.punchCardTwelve.subtitle',
         cost: '€170,-',
-        info: 'Purchase 12 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 4 months.\n*P.S.sign up during our Try- Outs and get an amazing discount!',
+        info: 'prices.punchCardTwelve.info',
         actionItem: {
             actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45999'
         }
     },
     {
-        title: 'Single Classes',
-        subtitle: 'for Improvers or Intermediate',
+        title: 'prices.singleClass.title',
+        subtitle: 'prices.singleClass.subtitle',
         cost: '€16,-',
-        info: '1. Select a class in the schedule and register directly for that specific class\n2. Buy a single credit and register later for a class of choice. Valid for 1 month',
+        info: 'prices.singleClass.info',
         actionItem: {
             actionText: 'prices.buy',
             actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46102'
