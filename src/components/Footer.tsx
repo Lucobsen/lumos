@@ -53,7 +53,7 @@ export const Footer = () => {
                 sx={{
                     background: ({ palette }) => `linear-gradient(${palette.primary.main}, ${palette.secondary.main})`,
                 }}
-                mt={isSmallScreen ? 0 : 20}
+                mt={isSmallScreen ? 2 : 20}
             >
                 <Box
                     component="img"

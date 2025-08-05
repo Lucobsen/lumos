@@ -84,20 +84,20 @@ const Courses = () => {
 
     const { t } = useTranslation();
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
     return (
-        <PageContainer>
+        <PageContainer customPadding={{ pt: 4, pr: 0, pb: 0, pl: 0 }}>
             <Typography
                 color='black'
-                variant={isSmallScreen ? 'h5' : 'h3'}
+                variant={isExtraSmallScreen ? 'h5' : 'h3'}
                 textAlign='center'>
                 {t('courses.header')}
             </Typography>
 
-            <Grid container spacing={2} mt={2}>
-                {courses.map((course) =>
-                    <CourseItem {...course} />
+            <Grid container mt={2}>
+                {courses.map((course, index) =>
+                    <CourseItem {...course} swapSides={index % 2 !== 0} />
                 )}
             </Grid>
         </PageContainer>
