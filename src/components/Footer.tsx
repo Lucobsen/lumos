@@ -1,5 +1,5 @@
-import { Email, Facebook, Instagram } from "@mui/icons-material";
-import { Box, IconButton, Link, Stack, SvgIcon, useMediaQuery, useTheme } from "@mui/material";
+import { Email, Facebook, Instagram, PhoneAndroid, WhatsApp } from "@mui/icons-material";
+import { Box, IconButton, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
 import type { JSX } from "react";
 
 const TikTok = ({ color = "#000000" }) => {
@@ -40,7 +40,7 @@ const SocialIconButton = ({ link, size = 24, children }: SocialIconButtonProps) 
 
 export const Footer = () => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
+    const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
     return (
         <footer>
@@ -71,37 +71,57 @@ export const Footer = () => {
                     src="lumos-gem.png"
                 />
                 <Stack
-                    justifyContent='flex-end'
-                    alignItems='center'
+                    height='100%'
+                    alignItems='flex-end'
+                    justifyContent='center'
                     px={isSmallScreen ? 2 : 10}
                     zIndex={3}
-                    height='100%'
-                    direction='row'
-                    spacing={isSmallScreen ? 1 : 2}>
-                    <SocialIconButton
-                        link='mailto:info@lumoslatin.nl'
-                        size={isSmallScreen ? 16 : 24}>
-                        <Email />
-                    </SocialIconButton>
+                    spacing={2}>
+                    <Stack spacing={1} direction={isSmallScreen ? 'row' : 'column'}>
+                        <Stack direction='row' alignItems='center' spacing={2}>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                <PhoneAndroid />
+                            </SvgIcon>
+                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
+                        </Stack>
 
-                    <SocialIconButton
-                        link='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
-                        size={isSmallScreen ? 16 : 24}>
-                        <Instagram />
-                    </SocialIconButton>
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                <WhatsApp />
+                            </SvgIcon>
+                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
+                        </Link>
 
-                    <SocialIconButton
-                        link='https://www.tiktok.com/@lumoslatindance?_t=ZG-8yb3rkVzEG0&_r=1'
-                        size={isSmallScreen ? 16 : 24}>
-                        <TikTok color='inherit' />
-                    </SocialIconButton>
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                <Email />
+                            </SvgIcon>
+                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>info@lumoslatin.nl</Typography>}
+                        </Link>
+                    </Stack>
+                    <Stack
+                        direction='row'
+                        spacing={isSmallScreen ? 1 : 2}>
+                        <SocialIconButton
+                            link='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+                            size={isSmallScreen ? 10 : 16}>
+                            <Instagram />
+                        </SocialIconButton>
 
-                    <SocialIconButton
-                        link='https://www.facebook.com/share/1CDP3cBRsB/?mibextid=wwXIfr'
-                        size={isSmallScreen ? 16 : 24}>
-                        <Facebook />
-                    </SocialIconButton>
+                        <SocialIconButton
+                            link='https://www.tiktok.com/@lumoslatindance?_t=ZG-8yb3rkVzEG0&_r=1'
+                            size={isSmallScreen ? 10 : 16}>
+                            <TikTok color='inherit' />
+                        </SocialIconButton>
+
+                        <SocialIconButton
+                            link='https://www.facebook.com/share/1CDP3cBRsB/?mibextid=wwXIfr'
+                            size={isSmallScreen ? 10 : 16}>
+                            <Facebook />
+                        </SocialIconButton>
+                    </Stack>
                 </Stack>
             </Stack>
-        </footer >);
+        </footer>
+    );
 };
