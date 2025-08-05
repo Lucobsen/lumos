@@ -18,13 +18,13 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                     sx={{
                         border: '4px solid black',
                         borderRadius: 10,
-                        width: isSmallScreen ? '100%' : '70%',
+                        width: isSmallScreen ? '100%' : '40%',
                         boxShadow: ({ shadows }) => shadows[8]
                     }}
                     alt={`${title} lessons`}
                     src={backgroundImage}
                 />
-                <Stack justifyContent='center' alignItems='flex-start' width={isSmallScreen ? '100%' : '30%'}>
+                <Stack justifyContent='center' alignItems='flex-start' width={isSmallScreen ? '100%' : '60%'}>
                     {classes ?
                         <>
                             <Typography
