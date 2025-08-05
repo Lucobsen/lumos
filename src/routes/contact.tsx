@@ -2,7 +2,7 @@ import { Grid, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from 
 import { createFileRoute } from '@tanstack/react-router';
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
-import { Email } from '@mui/icons-material';
+import { Email, PhoneAndroid, WhatsApp } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../components/TeamMember';
 
@@ -53,19 +53,26 @@ const Contact = () => {
                         sx={{
                             background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                         }}
-                        alignItems='center'
+                        alignItems='flex-start'
                         p={2}
                         border={2}
                         borderRadius={2}
                         borderColor='black'
                         direction='column'
-                        spacing={2}>
-                        {/* <Stack direction='row' alignItems='center' spacing={2}>
-                            <SvgIcon color='secondary' inheritViewBox>
+                        spacing={isSmallScreen ? 1 : 2}>
+                        <Stack direction='row' alignItems='center' spacing={2}>
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>
                                 <PhoneAndroid />
                             </SvgIcon>
-                            <Typography color='secondary' variant='h6'>+31 999 99999 999</Typography>
-                        </Stack> */}
+                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h5'}>+31 6 28452492</Typography>
+                        </Stack>
+
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
+                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>
+                                <WhatsApp />
+                            </SvgIcon>
+                            <Typography color='black' variant={isSmallScreen ? 'body1' : 'h5'}>+31 6 28452492</Typography>
+                        </Link>
 
                         <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>

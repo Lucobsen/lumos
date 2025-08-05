@@ -11,17 +11,20 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
 
     return (
         <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
-            <Stack direction={isSmallScreen ? 'column' : direction}>
+            <Stack direction={isSmallScreen ? 'column' : direction} spacing={2}>
                 <Box
                     component="img"
                     loading='eager'
                     sx={{
+                        border: '4px solid black',
+                        borderRadius: 10,
                         width: isSmallScreen ? '100%' : '70%',
+                        boxShadow: ({ shadows }) => shadows[8]
                     }}
                     alt={`${title} lessons`}
                     src={backgroundImage}
                 />
-                <Stack justifyContent='center' alignItems='flex-start' width={isSmallScreen ? '100%' : '30%'} py={2}>
+                <Stack justifyContent='center' alignItems='flex-start' width={isSmallScreen ? '100%' : '30%'}>
                     {classes ?
                         <>
                             <Typography

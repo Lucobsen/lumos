@@ -21,22 +21,22 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '19:00-20:00 | Mondays, Veem House for Performances',
-                    '19:00-20:00 | Wednesdays, De Kompaszaal'
+                    'Mondays 19:00-20:00 | Veem House for Performances',
+                    'Wednesdays 19:00-20:00 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '20:15-21:15 | Mondays, Veem House for Performances',
-                    '20:15-21:15 | Wednesdays, De Kompaszaal'
+                    'Mondays 20:15-21:15 | Veem House for Performances',
+                    'Wednesdays 20:15-21:15 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '21:15-22:15 | Mondays, Veem House for Performances',
-                    '21:15-22:15 | Wednesdays, De Kompaszaal'
+                    'Mondays 21:15-22:15 | Veem House for Performances',
+                    'Wednesdays 21:15-22:15 | De Kompaszaal'
                 ]
             },
         ]
@@ -48,27 +48,27 @@ const courses: CourseItemProps[] = [
             {
                 title: 'Beginners',
                 info: [
-                    '19:00-20:00 | Tuesdays, Veem House for Performances',
-                    '20:15-21:15 | Wednesdays, De Kompaszaal'
+                    'Tuesdays 19:00-20:00 | Veem House for Performances',
+                    'Wednesdays 20:15-21:15 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
                 info: [
-                    '20:15-21:15 | Tuesdays, Veem House for Performances',
-                    '19:00-20:00 | Wednesdays, De Kompaszaal'
+                    'Tuesdays 20:15-21:15 | Veem House for Performances',
+                    'Wednesdays 19:00-20:00 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
                 info: [
-                    '21:15-22:15 | Tuesdays, Veem House for Performances'
+                    'Tuesdays 21:15-22:15 | Veem House for Performances'
                 ]
             },
             {
                 title: 'Footwork',
                 info: [
-                    '21:15-22:15 | Wednesdays, De Kompaszaal'
+                    'Wednesdays 21:15-22:15 | De Kompaszaal'
                 ]
             }
         ]
@@ -87,7 +87,7 @@ const Courses = () => {
     const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
     return (
-        <PageContainer customPadding={{ pt: 4, pr: 0, pb: 0, pl: 0 }}>
+        <PageContainer>
             <Typography
                 color='black'
                 variant={isExtraSmallScreen ? 'h5' : 'h3'}
@@ -95,7 +95,7 @@ const Courses = () => {
                 {t('courses.header')}
             </Typography>
 
-            <Grid container mt={2}>
+            <Grid container mt={2} rowSpacing={4}>
                 {courses.map((course, index) =>
                     <CourseItem {...course} swapSides={index % 2 !== 0} />
                 )}

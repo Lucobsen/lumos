@@ -18,7 +18,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                     <Typography
                         color='black'
                         variant={isExtraSmallScreen ? 'caption' : 'h6'}>
-                        • {info}
+                        {info}
                     </Typography>
                 )}
             </Stack>
