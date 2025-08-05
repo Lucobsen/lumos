@@ -78,12 +78,12 @@ export const Footer = () => {
                     zIndex={3}
                     spacing={2}>
                     <Stack spacing={1} direction={isSmallScreen ? 'row' : 'column'}>
-                        <Stack direction='row' alignItems='center' spacing={2}>
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="tel:+31628452492">
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
                                 <PhoneAndroid />
                             </SvgIcon>
                             {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
-                        </Stack>
+                        </Link>
 
                         <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
