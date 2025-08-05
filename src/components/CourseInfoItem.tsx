@@ -9,7 +9,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
         <Grid size={{ xs: 6, sm: 12, md: 12, lg: 12, xl: 12 }}>
             <Typography
                 color='black'
-                variant={isExtraSmallScreen ? 'body1' : 'h4'}
+                variant={isExtraSmallScreen ? 'h6' : 'h4'}
                 sx={{ textDecoration: 'underline' }}>
                 {title}
             </Typography>
@@ -17,7 +17,7 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                 {info.map(info =>
                     <Typography
                         color='black'
-                        variant={isExtraSmallScreen ? 'caption' : 'h6'}>
+                        variant={isExtraSmallScreen ? 'body1' : 'h6'}>
                         {info}
                     </Typography>
                 )}
