@@ -33,7 +33,7 @@ i18n
                             location: {
                                 title: 'Excited to reveal our locations!',
                                 content: 'We got you covered in Amsterdam East and West with lovely and spacious dance rooms.',
-                                link: 'Join us where ever suits you best.'
+                                link: 'Our locations'
                             }
                         },
                         cover: {
@@ -107,7 +107,7 @@ i18n
                             location: {
                                 title: 'Bekijk onze nieuwe locaties!',
                                 content: 'Wij hebben twee mooie zalen voor jullie met genoeg ruimte om alle nieuwe dansmoves uit te oefenen. In Amsterdam Oost zitten we in de prachtige Kompaszaal op het KNSM eiland en in West gebruiken we de prachtige Veemvloer, naast de Pontsteiger. Een echte Amsterdamse omgeving!',
-                                link: 'Ga met ons mee, waar je het beste bij je past.'
+                                link: 'Onze locaties'
                             }
                         },
                         cover: {
