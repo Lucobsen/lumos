@@ -52,12 +52,12 @@ const Index = () => {
 
   const { t } = useTranslation();
   const { breakpoints } = useTheme();
-  const isSmallScreen = useMediaQuery(breakpoints.down(900));
+  const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
   return (
     <PageContainer>
       <Grid container columnSpacing={2} rowSpacing={6} mr={isSmallScreen ? 'unset' : '-32px'}>
-        <Grid size={{ xl: 4, lg: 4, md: 4, sm: 12, xs: 12 }}>
+        <Grid size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }}>
           <Box
             sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
             boxShadow={({ shadows }) => shadows[8]}>
@@ -117,7 +117,7 @@ const Index = () => {
         </Grid>
 
         <Grid
-          size={{ xl: 8, lg: 8, md: 8, sm: 12, xs: 12 }}
+          size={{ xl: 8, lg: 8, md: 8, sm: 6, xs: 12 }}
           px={4}
           mt={isSmallScreen ? 'unset' : '-50px'}
           mb={isSmallScreen ? 'unset' : '-220px'}
@@ -130,22 +130,22 @@ const Index = () => {
             boxShadow: '10px 0 8px -2px white inset'
           }}>
           <Stack
-            spacing={2}
+            spacing={6}
             alignItems='center'
             justifyContent='center'
             height={isSmallScreen ? 'unset' : '80vh'}>
             {!isSmallScreen &&
-              <>
+              <Stack spacing={2} bgcolor='white' borderRadius={10} p={2} border='4px solid black'>
                 <Stack spacing={1}>
                   <Typography
-                    color='white'
+                    color='black'
                     variant='h5'
                     textAlign='center'
                     fontWeight='bold'>
                     {t('home.cover.lineOne')}
                   </Typography>
                   <Typography
-                    color='white'
+                    color='black'
                     variant='h5'
                     textAlign='center'
                     fontWeight='bold'>
@@ -153,13 +153,13 @@ const Index = () => {
                   </Typography>
                 </Stack>
                 <Typography
-                  color='white'
+                  color='black'
                   variant='h5'
                   textAlign='center'
                   fontWeight='bold'>
                   {t('home.cover.lineThree')}
                 </Typography>
-              </>
+              </Stack>
             }
 
             <Stack spacing={2}>
@@ -178,7 +178,7 @@ const Index = () => {
                   {t("navItems.schedule")}
                 </Button>
               </Link>
-              <Link to="/courses">
+              <Link to="/prices">
                 <Button
                   disableRipple
                   sx={{
@@ -190,7 +190,7 @@ const Index = () => {
                     background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                   }}
                   variant='contained'>
-                  {t("navItems.courses")}
+                  {t("navItems.prices")}
                 </Button>
               </Link>
             </Stack>
