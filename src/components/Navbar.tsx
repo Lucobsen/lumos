@@ -5,6 +5,7 @@ import { LanguageSelector } from "./LanguageSelector";
 
 export const Navbar = () => {
     const { breakpoints } = useTheme();
+    const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
     const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
     const isMediumScreen = useMediaQuery(breakpoints.down('md'));
 
@@ -15,7 +16,8 @@ export const Navbar = () => {
                 background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
                 justifyContent: 'center',
                 height: isSmallScreen ? 80 : 100,
-                px: isSmallScreen ? 4 : 8,
+                pl: isExtraSmallScreen ? 0 : 6,
+                pr: isSmallScreen ? 2 : 8,
             }}>
             <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
                 <Link to="/">
@@ -30,7 +32,7 @@ export const Navbar = () => {
                     />
                 </Link>
 
-                <Stack direction='row' spacing={isSmallScreen ? 2 : 4} alignItems='center'>
+                <Stack direction='row' spacing={isSmallScreen ? 1 : 4} alignItems='center'>
                     <NavItems />
                     <LanguageSelector />
                 </Stack>
