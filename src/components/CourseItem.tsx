@@ -1,9 +1,13 @@
-import { Grid, Box, Typography, useMediaQuery, useTheme, Stack } from "@mui/material";
+import { Grid, Box, Typography, useMediaQuery, useTheme, Stack, Button } from "@mui/material";
 import { CourseInfoItem } from "./CourseInfoItem";
 import type { CourseItemProps } from "../routes/courses";
+import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 export const CourseItem = ({ title, backgroundImage, classes, swapSides }: CourseItemProps & { swapSides: boolean }) => {
+    const { t } = useTranslation();
     const { breakpoints } = useTheme();
+    const isMediumScreen = useMediaQuery(breakpoints.down('md'));
     const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
     const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
@@ -34,11 +38,49 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                                 fontFamily='Chau Philomene One'>
                                 {title}
                             </Typography>
-                            <Grid container spacing={2} px={2}>
-                                {classes.map(classItem =>
-                                    <CourseInfoItem {...classItem} />
-                                )}
-                            </Grid>
+                            <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={isSmallScreen ? 2 : 0}>
+                                <Grid container spacing={2} px={2}>
+                                    {classes.map(classItem =>
+                                        <CourseInfoItem {...classItem} />
+                                    )}
+                                </Grid>
+                                <Stack
+                                    direction={isSmallScreen ? 'row' : 'column'}
+                                    spacing={2}
+                                    justifyContent='center'
+                                    alignItems='center'>
+                                    <Link to="/schedule">
+                                        <Button
+                                            disableRipple
+                                            sx={{
+                                                color: 'white',
+                                                width: isMediumScreen ? '150px' : '200px',
+                                                height: '50px',
+                                                borderRadius: 10,
+                                                fontWeight: 'bold',
+                                                background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                                            }}
+                                            variant='contained'>
+                                            {t("navItems.schedule")}
+                                        </Button>
+                                    </Link>
+                                    <Link to="/prices">
+                                        <Button
+                                            disableRipple
+                                            sx={{
+                                                color: 'white',
+                                                width: isMediumScreen ? '150px' : '200px',
+                                                height: '50px',
+                                                borderRadius: 10,
+                                                fontWeight: 'bold',
+                                                background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                                            }}
+                                            variant='contained'>
+                                            {t("navItems.prices")}
+                                        </Button>
+                                    </Link>
+                                </Stack>
+                            </Stack>
                         </> :
                         <>
                             <Typography

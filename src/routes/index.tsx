@@ -50,7 +50,7 @@ const Index = () => {
 
   return (
     <PageContainer customPadding={{ pt: 4, pr: isSmallScreen ? 4 : 0, pb: 4, pl: 4 }}>
-      <Grid container columnSpacing={2} rowSpacing={6}>
+      <Grid container columnSpacing={2} rowSpacing={isSmallScreen ? 4 : 0}>
         {!isSmallScreen &&
           <Stack pr={4}>
             <Stack spacing={2} p={2}>
@@ -165,42 +165,40 @@ const Index = () => {
             boxShadow: '10px 0 8px -2px white inset'
           }}>
           <Stack
-            spacing={6}
+            spacing={2}
             alignItems='center'
             justifyContent='center'
             height={isSmallScreen ? 'unset' : '80vh'}>
-            <Stack spacing={2}>
-              <Link to="/schedule">
-                <Button
-                  disableRipple
-                  sx={{
-                    color: 'white',
-                    width: '200px',
-                    height: '50px',
-                    borderRadius: 10,
-                    fontWeight: 'bold',
-                    background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                  }}
-                  variant='contained'>
-                  {t("navItems.schedule")}
-                </Button>
-              </Link>
-              <Link to="/prices">
-                <Button
-                  disableRipple
-                  sx={{
-                    color: 'white',
-                    width: '200px',
-                    height: '50px',
-                    borderRadius: 10,
-                    fontWeight: 'bold',
-                    background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                  }}
-                  variant='contained'>
-                  {t("navItems.prices")}
-                </Button>
-              </Link>
-            </Stack>
+            <Link to="/schedule">
+              <Button
+                disableRipple
+                sx={{
+                  color: 'white',
+                  width: isSmallScreen ? '200px' : '300px',
+                  height: isSmallScreen ? '50px' : '60px',
+                  borderRadius: 10,
+                  fontWeight: 'bold',
+                  background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                }}
+                variant='contained'>
+                {t("navItems.schedule")}
+              </Button>
+            </Link>
+            <Link to="/prices">
+              <Button
+                disableRipple
+                sx={{
+                  color: 'white',
+                  width: isSmallScreen ? '200px' : '300px',
+                  height: isSmallScreen ? '50px' : '60px',
+                  borderRadius: 10,
+                  fontWeight: 'bold',
+                  background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                }}
+                variant='contained'>
+                {t("navItems.prices")}
+              </Button>
+            </Link>
           </Stack>
         </Grid>
       </Grid>
