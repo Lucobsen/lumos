@@ -9,11 +9,6 @@ const StyledMuiLink = styled(MuiLink)`
   text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: underline;
-  text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
-`;
-
 type News = {
   title: string;
   content: string;
@@ -25,7 +20,6 @@ type News = {
     text: string;
     link: string;
   };
-
 };
 
 const news: News[] = [
@@ -55,11 +49,46 @@ const Index = () => {
   const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
   return (
-    <PageContainer>
-      <Grid container columnSpacing={2} rowSpacing={6} mr={isSmallScreen ? 'unset' : '-32px'}>
+    <PageContainer customPadding={{ pt: 4, pr: isSmallScreen ? 4 : 0, pb: 4, pl: 4 }}>
+      <Grid container columnSpacing={2} rowSpacing={6}>
+        {!isSmallScreen &&
+          <Stack pr={4}>
+            <Stack spacing={2} p={2}>
+              <Stack spacing={1}>
+                <Typography
+                  color='black'
+                  variant='h5'
+                  textAlign='center'
+                  fontWeight='bold'>
+                  {t('home.cover.lineOne')}
+                </Typography>
+                <Typography
+                  color='black'
+                  variant='h5'
+                  textAlign='center'
+                  fontWeight='bold'>
+                  {t('home.cover.lineTwo')}
+                </Typography>
+              </Stack>
+              <Typography
+                color='black'
+                variant='h5'
+                textAlign='center'
+                fontWeight='bold'>
+                {t('home.cover.lineThree')}
+              </Typography>
+            </Stack>
+          </Stack>}
+
         <Grid size={{ xl: 4, lg: 4, md: 4, sm: 6, xs: 12 }}>
           <Box
-            sx={{ borderRadius: 10, border: '4px solid #000', height: isSmallScreen ? '50vh' : '80vh', bgcolor: 'primary.light', overflow: 'hidden' }}
+            sx={{
+              borderRadius: 10,
+              border: '4px solid #000',
+              height: isSmallScreen ? '50vh' : '80vh',
+              bgcolor: 'primary.light',
+              overflow: 'hidden'
+            }}
             boxShadow={({ shadows }) => shadows[8]}>
             <Typography
               sx={{
@@ -71,10 +100,11 @@ const Index = () => {
               borderBottom='4px solid #000'>
               {t("home.news.header")}
             </Typography>
+
             <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
-              {news.map(({ title, externalLink, content, internalLink }) =>
+              {news.map(({ title, internalLink, externalLink, content }) =>
                 <ListItem divider sx={{ justifyContent: 'center' }}>
-                  <Stack mb={2}>
+                  <Stack mb={2} spacing={isSmallScreen ? 1 : 2}>
                     <Typography
                       color='black'
                       variant={isSmallScreen ? 'h5' : 'h3'}
@@ -82,10 +112,26 @@ const Index = () => {
                       textAlign='center'>
                       {t(title)}
                     </Typography>
-                    <Stack spacing={1} alignItems='center'>
+                    <Stack spacing={isSmallScreen ? 2 : 3} alignItems='center'>
                       <Typography variant='body1' color='black' textAlign='center'>{t(content)}</Typography>
+                      {internalLink &&
+                        <StyledMuiLink href={internalLink.link}>
+                          <Button
+                            disableRipple
+                            sx={{
+                              color: 'white',
+                              minWidth: isSmallScreen ? '100px' : '200px',
+                              height: isSmallScreen ? '40px' : '50px',
+                              borderRadius: 10,
+                              fontWeight: 'bold',
+                              background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                            }}
+                            variant='contained'>
+                            {t(internalLink.text)}
+                          </Button>
+                        </StyledMuiLink>}
                       {externalLink &&
-                        <StyledMuiLink target='=_blank' href={externalLink.link}>
+                        <StyledMuiLink target='_blank' href={externalLink.link}>
                           <Button
                             disableRipple
                             sx={{
@@ -100,15 +146,6 @@ const Index = () => {
                             {t(externalLink.text)}
                           </Button>
                         </StyledMuiLink>}
-                      {internalLink &&
-                        <StyledLink to={internalLink.link}>
-                          <Typography
-                            variant='body1'
-                            color='secondary'
-                            textAlign='center'>
-                            {t(internalLink.text)}
-                          </Typography>
-                        </StyledLink>}
                     </Stack>
                   </Stack>
                 </ListItem>)}
@@ -119,8 +156,6 @@ const Index = () => {
         <Grid
           size={{ xl: 8, lg: 8, md: 8, sm: 6, xs: 12 }}
           px={4}
-          mt={isSmallScreen ? 'unset' : '-50px'}
-          mb={isSmallScreen ? 'unset' : '-220px'}
           sx={{
             backgroundImage: isSmallScreen ? 'none' : 'url(salsa-2.jpg)',
             backgroundRepeat: 'no-repeat',
@@ -134,34 +169,6 @@ const Index = () => {
             alignItems='center'
             justifyContent='center'
             height={isSmallScreen ? 'unset' : '80vh'}>
-            {!isSmallScreen &&
-              <Stack spacing={2} bgcolor='white' borderRadius={10} p={2} border='4px solid black'>
-                <Stack spacing={1}>
-                  <Typography
-                    color='black'
-                    variant='h5'
-                    textAlign='center'
-                    fontWeight='bold'>
-                    {t('home.cover.lineOne')}
-                  </Typography>
-                  <Typography
-                    color='black'
-                    variant='h5'
-                    textAlign='center'
-                    fontWeight='bold'>
-                    {t('home.cover.lineTwo')}
-                  </Typography>
-                </Stack>
-                <Typography
-                  color='black'
-                  variant='h5'
-                  textAlign='center'
-                  fontWeight='bold'>
-                  {t('home.cover.lineThree')}
-                </Typography>
-              </Stack>
-            }
-
             <Stack spacing={2}>
               <Link to="/schedule">
                 <Button
