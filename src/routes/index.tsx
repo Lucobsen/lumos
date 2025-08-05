@@ -9,11 +9,6 @@ const StyledMuiLink = styled(MuiLink)`
   text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: underline;
-  text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
-`;
-
 type News = {
   title: string;
   content: string;
