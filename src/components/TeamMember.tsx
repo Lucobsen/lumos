@@ -10,7 +10,7 @@ type TeamMemberProps = {
 export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
     const { t } = useTranslation();
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
     return (
         <Stack
@@ -21,8 +21,8 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 loading='eager'
                 boxShadow={({ shadows }) => shadows[8]}
                 sx={{
-                    height: isSmallScreen ? '140px' : '180px',
-                    width: isSmallScreen ? '100px' : '125px',
+                    height: isExtraSmallScreen ? '140px' : '500px',
+                    width: isExtraSmallScreen ? '100px' : '300px',
                     display: 'block',
                     borderRadius: 10,
                     border: '4px solid #000'
@@ -33,12 +33,12 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
             <Stack textAlign='center'>
                 <Typography
                     color='black'
-                    variant={isSmallScreen ? 'h6' : 'h4'}>
+                    variant={isExtraSmallScreen ? 'h6' : 'h4'}>
                     {name}
                 </Typography>
                 <Typography
                     color='black'
-                    variant={isSmallScreen ? 'body1' : 'h5'}>
+                    variant={isExtraSmallScreen ? 'body1' : 'h5'}>
                     {t(role)}
                 </Typography>
             </Stack>
