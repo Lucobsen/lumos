@@ -60,12 +60,12 @@ const Contact = () => {
                         borderColor='black'
                         direction='column'
                         spacing={isSmallScreen ? 1 : 2}>
-                        <Stack direction='row' alignItems='center' spacing={2}>
+                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="tel:+31628452492">
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>
                                 <PhoneAndroid />
                             </SvgIcon>
                             <Typography color='black' variant={isSmallScreen ? 'body1' : 'h5'}>+31 6 28452492</Typography>
-                        </Stack>
+                        </Link>
 
                         <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
                             <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'large'}>
