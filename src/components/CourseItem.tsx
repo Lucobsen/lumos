@@ -1,65 +1,61 @@
-import { Grid, Box, Typography, List, useMediaQuery, useTheme, Skeleton } from "@mui/material";
+import { Grid, Box, Typography, useMediaQuery, useTheme, Stack } from "@mui/material";
 import { CourseInfoItem } from "./CourseInfoItem";
 import type { CourseItemProps } from "../routes/courses";
-import { Suspense } from "react";
 
-export const CourseItem = ({ title, backgroundImage, classes }: CourseItemProps) => {
+export const CourseItem = ({ title, backgroundImage, classes, swapSides }: CourseItemProps & { swapSides: boolean }) => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
+    const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
+    const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
+
+    const direction = swapSides ? 'row-reverse' : 'row';
 
     return (
-        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 4 }} sx={{ position: 'relative', display: 'inline-block' }}>
-            <Box
-                borderRadius={10}
-                border={4}
-                borderColor='#000'
-                position='relative'
-                boxShadow={({ shadows }) => shadows[8]}>
-                <Suspense fallback={<Skeleton height={isSmallScreen ? '206px' : '360px'} width={isSmallScreen ? '100%' : '530px'} />}>
-                    <Box
-                        component="img"
-                        loading='eager'
-                        sx={{
-                            width: '100%',
-                            height: isSmallScreen ? '206px' : '360px',
-                            display: 'block',
-                            borderTopLeftRadius: 35,
-                            borderTopRightRadius: 35,
-                            borderBottom: '4px solid #000'
-                        }}
-                        alt={`${title} lessons`}
-                        src={backgroundImage}
-                    />
-                </Suspense>
-                <Typography
-                    textAlign='center'
-                    color='black'
-                    variant={isSmallScreen ? 'h4' : 'h2'}
-                    pt={2}
-                    px={2}>
-                    {title}
-                </Typography>
-                {classes ?
-                    <List sx={{
-                        px: 4,
-                        mb: 1,
-                        bgcolor: '#fff',
-                        borderBottomRightRadius: 35,
-                        borderBottomLeftRadius: 35
-                    }} >
-                        {classes.map(classItem =>
-                            <CourseInfoItem {...classItem} />
-                        )}
-                    </List> :
-                    <Box display='flex' px={4} mb={4} mt={1} justifyContent='center'>
-                        <Typography
-                            color='black'
-                            variant={isSmallScreen ? 'h4' : "h3"}>
-                            Coming Soon...
-                        </Typography>
-                    </Box>
-                }
-            </Box>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
+            <Stack direction={isSmallScreen ? 'column' : direction}>
+                <Box
+                    component="img"
+                    loading='eager'
+                    sx={{
+                        width: isSmallScreen ? '100%' : '70%',
+                    }}
+                    alt={`${title} lessons`}
+                    src={backgroundImage}
+                />
+                <Stack justifyContent='center' alignItems='flex-start' width={isSmallScreen ? '100%' : '30%'} py={2}>
+                    {classes ?
+                        <>
+                            <Typography
+                                alignSelf='center'
+                                color='black'
+                                variant={isExtraSmallScreen ? 'h4' : 'h2'}
+                                fontFamily='Chau Philomene One'>
+                                {title}
+                            </Typography>
+                            <Grid container spacing={2} px={2}>
+                                {classes.map(classItem =>
+                                    <CourseInfoItem {...classItem} />
+                                )}
+                            </Grid>
+                        </> :
+                        <>
+                            <Typography
+                                alignSelf='center'
+                                textAlign='center'
+                                color='black'
+                                fontFamily='Chau Philomene One'
+                                variant={isSmallScreen ? 'h4' : 'h2'}>
+                                {title}
+                            </Typography>
+                            <Typography
+                                alignSelf='center'
+                                color='black'
+                                variant={isSmallScreen ? 'h6' : 'h4'}>
+                                Coming Soon...
+                            </Typography>
+                        </>
+                    }
+                </Stack>
+            </Stack>
         </Grid >
     );
 };

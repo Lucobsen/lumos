@@ -1,53 +1,27 @@
-import { ChevronRight, KeyboardArrowDown } from "@mui/icons-material";
-import { useMediaQuery, ListItem, SvgIcon, Typography, useTheme, Collapse, Stack } from "@mui/material";
-import { useState } from "react";
+import { useMediaQuery, Typography, useTheme, Stack, Grid } from "@mui/material";
 import type { Class } from "../routes/courses";
 
 export const CourseInfoItem = ({ title, info }: Class) => {
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(900));
-
-    const [isOpen, setIsOpen] = useState(false);
+    const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
     return (
-        <ListItem disableGutters disablePadding>
+        <Grid size={{ xs: 6, sm: 12, md: 12, lg: 12, xl: 12 }}>
+            <Typography
+                color='black'
+                variant={isExtraSmallScreen ? 'body1' : 'h4'}
+                sx={{ textDecoration: 'underline' }}>
+                {title}
+            </Typography>
             <Stack>
-                <Stack
-                    direction='row'
-                    alignItems='center'
-                    onClick={() => setIsOpen(prev => !prev)}
-                    sx={{ cursor: 'pointer' }}
-                    spacing={1}>
-                    <SvgIcon
-                        fontSize={isSmallScreen ? 'small' : 'medium'}
-                        sx={{
-                            borderRadius: 1,
-                            border: '2px solid #000',
-                            background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                            color: '#000',
-                            boxShadow: ({ shadows }) => shadows[2]
-                        }}
-                        inheritViewBox>
-                        {isOpen ? <KeyboardArrowDown /> : <ChevronRight />}
-                    </SvgIcon>
+                {info.map(info =>
                     <Typography
                         color='black'
-                        variant={isSmallScreen ? 'h6' : 'h4'}>
-                        {title}
+                        variant={isExtraSmallScreen ? 'caption' : 'h6'}>
+                        • {info}
                     </Typography>
-                </Stack>
-                <Collapse in={isOpen} timeout="auto" unmountOnExit>
-                    <Stack pl={1}>
-                        {info.map(info =>
-                            <Typography
-                                color='black'
-                                variant={isSmallScreen ? 'body1' : 'h6'}>
-                                •{info}
-                            </Typography>
-                        )}
-                    </Stack>
-                </Collapse>
+                )}
             </Stack>
-        </ListItem>
+        </Grid>
     );
 };
