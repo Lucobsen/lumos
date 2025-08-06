@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import { CourseItem } from '../components/CourseItem';
 import { useTranslation } from 'react-i18next';
 
-export type Class = { title: string; info: string[] };
+export type Class = { title: string; dates: string[] };
 
 export type CourseItemProps = {
     title: string;
     backgroundImage: string;
-    classes?: Class[]
+    classes?: Class[],
 };
 
 const courses: CourseItemProps[] = [
@@ -20,21 +20,21 @@ const courses: CourseItemProps[] = [
         classes: [
             {
                 title: 'Beginners',
-                info: [
+                dates: [
                     'Mondays 19:00-20:00 | Veem House for Performances',
                     'Wednesdays 19:00-20:00 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
-                info: [
+                dates: [
                     'Mondays 20:15-21:15 | Veem House for Performances',
                     'Wednesdays 20:15-21:15 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
-                info: [
+                dates: [
                     'Mondays 21:15-22:15 | Veem House for Performances',
                     'Wednesdays 21:15-22:15 | De Kompaszaal'
                 ]
@@ -47,27 +47,27 @@ const courses: CourseItemProps[] = [
         classes: [
             {
                 title: 'Beginners',
-                info: [
+                dates: [
                     'Tuesdays 19:00-20:00 | Veem House for Performances',
                     'Wednesdays 20:15-21:15 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Improvers',
-                info: [
+                dates: [
                     'Tuesdays 20:15-21:15 | Veem House for Performances',
                     'Wednesdays 19:00-20:00 | De Kompaszaal'
                 ]
             },
             {
                 title: 'Intermediate',
-                info: [
+                dates: [
                     'Tuesdays 21:15-22:15 | Veem House for Performances'
                 ]
             },
             {
                 title: 'Footwork',
-                info: [
+                dates: [
                     'Wednesdays 21:15-22:15 | De Kompaszaal'
                 ]
             }

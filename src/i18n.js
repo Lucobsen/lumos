@@ -76,7 +76,20 @@ i18n
                         header: 'Come dance at our stunning locations!'
                     },
                     courses: {
-                        header: 'Have a look at our classes!'
+                        header: 'Have a look at our classes!',
+                        info: {
+                            salsa: {
+                                beginners: 'The First Aid kit of Salsa dancing! You’ll learn the world-famous basic step and start with simple combinations.\nThink of the famous right turn, left turn, Cross Body Lead, and more.\nThis course focuses on timing, musicality, connection, and the core principles of leading and following.',
+                                improvers: 'We dive deeper into Cross Body Lead variations (with inside and outside turns), and this is where the real Salsa fun begins!\nYou’ll learn to dance the combinations more smoothly, and we’ll refine your leading and following techniques.\nWe also explore musical accents more consciously and introduce cool moves like the Copa, as well as the universally loved Open Break.',
+                                intermediate: 'In this level, we focus more on technique, styling, and musicality — so you can dance freely and confidently on the floor.\nWe’ll work on advanced combinations like Double Spins, 360 Turns, Copa Variations, and Hammerlocks.\nSpecial attention is given to how you execute the moves and whether you stay on beat — ‘cause dancing off beat is something we all want to avoid!'
+                            },
+                            bachata: {
+                                beginners: 'The First Aid kit of Bachata dancing! You’ll learn the world-famous basic step and start with easy combinations. You’ll discover how to dance in a relaxed way to the music and start building a solid connection with your partner. In this level, you’ll learn fun turns, smooth movements, and the basics of leading and following.',
+                                improvers: 'In this level, we focus on helping you lead or follow with control and flow. We’ll introduce typical hip movements and the famous head rolls. You’ll notice that you’ll start executing the moves more naturally to the music. Every combination comes with clear technique breakdowns — so it all sticks properly in your muscle memory.',
+                                intermediate: 'Here we move into more complex combinations. The pace is a bit faster and you’ll learn exciting figures like Body Rolls, Dips, Shadow Position, and more. You’ll become a more expressive dancer and learn how to interpret the music - together with your partner. We put more emphasis on precise leading and following technique, so you feel confident and comfortable with yourself and your dance partner on the dance floor.',
+                                footwork: 'No partner, just you and the music! In this class, it’s all about musicality, body control, and coordination — building on your experience and style. You’ll learn creative step variations and how to connect them to the music, to help you understand Bachata dancing even more! Footwork is a great way to feel more comfortable in your dancing.It’s the perfect space to explore your own movement, improve your technique, and have fun dancing solo!'
+                            }
+                        }
                     },
                     contact: {
                         ourTeam: 'Our Team',
@@ -149,7 +162,20 @@ i18n
                         header: 'Kom dansen op onze prachtige locaties!'
                     },
                     courses: {
-                        header: 'Bekijk onze lessen!'
+                        header: 'Bekijk onze lessen!',
+                        info: {
+                            salsa: {
+                                beginners: 'De First Aid kit in Salsa dansen! Je leert de wereldberoemde basic step en je begint met eenvoudige combinaties. Zo krijg je de veelvoorkomende right turn, left turn, Cross Body Lead en meer. De nadruk in deze cursus ligt op het tellen, muzikaliteit, connectie en de eerste principes van leiden en volgen.',
+                                improvers: 'We verdiepen de Cross Body Lead Variaties (met inside turn, outside turn) en dit is waar de Salsa fun begint! Je leert combinaties vloeiender te dansen en we verbeteren de Leading en Following technieken. We gaan bewuster om met muzikale accenten en introduceren leuke moves zoals de “Copa” en starten met de universele open break.',
+                                intermediate: 'In dit niveau is er meer aandacht voor techniek, styling en muzikaliteit — zodat je vrij kunt dansen op de dansvloer. We werken aan meer geavanceerde combinaties zoals Double Spins, 360 turns, Copa Variaties, en Hammerlocks. Er wordt vooral gelet op hoe je alles uitvoert én of het op maat van de muziek is, want dancing off beat willen we natuurlijk voorkomen.',
+                            },
+                            bachata: {
+                                beginners: 'De First Aid kit in Bachata dansen! Je leert de wereldberoemde basic step en je begint met eenvoudige combinaties. Je leert relaxed dansen op de muziek en ontwikkelt een basisconnectie met je partner. Zo leer je in dit niveau leuke draaien, sierlijke bewegingen en de beginselen van leiden en volgen.',
+                                improvers: 'In dit niveau zorgen we dat je soepel en met controle leert leiden of volgen. We leren je o.a. de typische hip movements en de beroemde head rolls. Je zult merken dat je de figuren steeds makkelijker op de muziek kunt uitvoeren. De juiste techniek wordt bij elke combinatie aangeleerd, zodat alles correct in je muscle memory blijft hangen.',
+                                intermediate: 'We gaan aan de slag met complexere combinaties. Het tempo ligt wat hoger en je krijgt toffe figuren, zoals Body Rolls, Dips, Shadow Position en meer. Je leert expressiever te dansen en hoe om te gaan met de muziek - samen met je partner. Er wordt hier strenger gelet op de juiste Leading en Following technieken, zodat jij straks op de dansvloer comfortabel met jezelf en je danspartner omgaat.',
+                                footwork: 'Geen partner nodig – alleen jij en de muziek! In deze les draait alles om muzikaliteit, lichaamscontrole en coördinatie — en om het verder ontwikkelen van jouw stijl en ervaring. Je leert creatieve variaties en hoe je die met de muziek verbindt, zodat je Bachata nóg beter gaat begrijpen. Footwork is een geweldige manier om je zelfverzekerder en vrijer te voelen in je dansen. Het is de perfecte les om met je eigen bewegingen te experimenteren, je techniek te verbeteren en vooral om lekker solo te genieten van het dansen!',
+                            }
+                        }
                     },
                     contact: {
                         ourTeam: 'Ons Team',
