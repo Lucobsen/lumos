@@ -1,7 +1,7 @@
 import { useMediaQuery, Typography, useTheme, Stack, Grid } from "@mui/material";
 import type { Class } from "../routes/courses";
 
-export const CourseInfoItem = ({ title, info }: Class) => {
+export const CourseInfoItem = ({ title, dates }: Class) => {
     const { breakpoints } = useTheme();
     const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
@@ -14,11 +14,11 @@ export const CourseInfoItem = ({ title, info }: Class) => {
                 {title}
             </Typography>
             <Stack>
-                {info.map(info =>
+                {dates.map(dates =>
                     <Typography
                         color='black'
                         variant={isExtraSmallScreen ? 'body1' : 'h6'}>
-                        {info}
+                        {dates}
                     </Typography>
                 )}
             </Stack>
