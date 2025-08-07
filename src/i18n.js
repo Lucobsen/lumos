@@ -77,6 +77,8 @@ i18n
                     },
                     courses: {
                         header: 'Have a look at our classes!',
+                        dates: 'Dates & Times',
+                        levelInfo: 'Level Info',
                         info: {
                             salsa: {
                                 beginners: 'The First Aid kit of Salsa dancing! You’ll learn the world-famous basic step and start with simple combinations.\nThink of the famous right turn, left turn, Cross Body Lead, and more.\nThis course focuses on timing, musicality, connection, and the core principles of leading and following.',
@@ -163,6 +165,8 @@ i18n
                     },
                     courses: {
                         header: 'Bekijk onze lessen!',
+                        dates: 'Datum & Tijden',
+                        levelInfo: 'Niveau Info',
                         info: {
                             salsa: {
                                 beginners: 'De First Aid kit in Salsa dansen! Je leert de wereldberoemde basic step en je begint met eenvoudige combinaties. Zo krijg je de veelvoorkomende right turn, left turn, Cross Body Lead en meer. De nadruk in deze cursus ligt op het tellen, muzikaliteit, connectie en de eerste principes van leiden en volgen.',

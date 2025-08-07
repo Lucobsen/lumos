@@ -49,7 +49,7 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                                     disableRipple
                                     disableFocusRipple
                                     disableTouchRipple
-                                    label="Dates & Times"
+                                    label={t('courses.dates')}
                                     value='dates'
                                     sx={{
                                         width: '50%',
@@ -63,7 +63,7 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                                     disableRipple
                                     disableFocusRipple
                                     disableTouchRipple
-                                    label="More Info"
+                                    label={t('courses.levelInfo')}
                                     value='info'
                                     sx={{
                                         width: '50%',
@@ -103,7 +103,7 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                             <Stack
                                 direction={isSmallScreen ? 'row' : 'column'}
                                 spacing={2}
-                                justifyContent='flex-start'
+                                justifyContent={isSmallScreen ? 'center' : 'flex-start'}
                                 alignItems='center'>
                                 <Link to="/schedule">
                                     <Button
