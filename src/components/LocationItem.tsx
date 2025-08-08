@@ -1,16 +1,21 @@
-import { Skeleton, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Button, Skeleton, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import { Suspense } from "react";
+import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 type LocationItemProps = {
     address: string;
     title: string;
     locationUrl: string;
+    code: string;
 };
 
-export const LocationItem = ({ title, address, locationUrl }: LocationItemProps) => {
+export const LocationItem = ({ title, address, locationUrl, code }: LocationItemProps) => {
+    const { t } = useTranslation();
     const { breakpoints, shadows } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
+    const isMediumScreen = useMediaQuery(breakpoints.down('md'));
+    const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
     return (
         <Stack spacing={4} alignItems='center' width='100%'>
@@ -31,7 +36,7 @@ export const LocationItem = ({ title, address, locationUrl }: LocationItemProps)
                 </iframe>
             </Suspense>
 
-            <Stack gap={2} alignItems='center'>
+            <Stack gap={2} alignItems='center' width='100%'>
                 <Typography
                     color='black'
                     variant={isSmallScreen ? 'h4' : 'h2'}
@@ -47,6 +52,21 @@ export const LocationItem = ({ title, address, locationUrl }: LocationItemProps)
                     </SvgIcon>
                     <Typography color='black' variant={isSmallScreen ? 'h6' : 'h5'}>{address}</Typography>
                 </Stack>
+                <Link to='/schedule' search={{ location: code }} style={{ width: '100%' }}>
+                    <Button
+                        disableRipple
+                        sx={{
+                            color: 'white',
+                            height: '50px',
+                            width: '100%',
+                            borderRadius: 10,
+                            fontWeight: 'bold',
+                            background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
+                        }}
+                        variant='contained'>
+                        {t("navItems.schedule")}
+                    </Button>
+                </Link>
             </Stack>
         </Stack>
     )
