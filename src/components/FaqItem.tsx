@@ -36,7 +36,7 @@ export const FaqItem = ({ question, answer }: FaqItemProps) => {
                     </SvgIcon>
                     <Typography
                         color='black'
-                        variant={isExtraSmallScreen ? 'body1' : 'h5'}>
+                        variant={isExtraSmallScreen ? 'h6' : 'h5'}>
                         {t(question)}
                     </Typography>
                 </Stack>
@@ -44,7 +44,7 @@ export const FaqItem = ({ question, answer }: FaqItemProps) => {
                     <Typography
                         mt={1}
                         color='black'
-                        variant={isExtraSmallScreen ? 'caption' : 'h6'}
+                        variant={isExtraSmallScreen ? 'body1' : 'h6'}
                         textAlign='center'>
                         {t(answer)}
                     </Typography>
