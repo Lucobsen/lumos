@@ -1,5 +1,6 @@
 import { Email, Facebook, Instagram, PhoneAndroid, WhatsApp } from "@mui/icons-material";
-import { Box, IconButton, Link, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, IconButton, Link as MuiLink, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Link } from "@tanstack/react-router";
 import type { JSX } from "react";
 
 const TikTok = ({ color = "#000000" }) => {
@@ -23,7 +24,7 @@ type SocialIconButtonProps = {
 };
 
 const SocialIconButton = ({ link, size = 24, children }: SocialIconButtonProps) =>
-    <Link underline='none' target='_blank' href={link}>
+    <MuiLink underline='none' target='_blank' href={link}>
         <IconButton
             disableRipple
             sx={{
@@ -36,7 +37,7 @@ const SocialIconButton = ({ link, size = 24, children }: SocialIconButtonProps) 
                 {children}
             </SvgIcon>
         </IconButton>
-    </Link>;
+    </MuiLink>;
 
 export const Footer = () => {
     const { breakpoints } = useTheme();
@@ -71,54 +72,66 @@ export const Footer = () => {
                     src="lumos-gem.png"
                 />
                 <Stack
-                    height='100%'
-                    alignItems='flex-end'
-                    justifyContent='center'
-                    px={isSmallScreen ? 2 : 10}
+                    direction='row'
                     zIndex={3}
-                    spacing={2}>
-                    <Stack spacing={1} direction={isSmallScreen ? 'row' : 'column'}>
-                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="tel:+31628452492">
-                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
-                                <PhoneAndroid />
-                            </SvgIcon>
-                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
-                        </Link>
+                    height='100%'
+                    justifyContent='space-between'
+                    px={isSmallScreen ? 2 : 10}>
+                    <Link to='/contact' style={{ alignSelf: 'center', textDecoration: 'none' }}>
+                        <Typography
+                            color="black"
+                            variant={isSmallScreen ? 'h6' : "h4"}>
+                            FAQ
+                        </Typography>
+                    </Link>
 
-                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
-                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
-                                <WhatsApp />
-                            </SvgIcon>
-                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
-                        </Link>
-
-                        <Link gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
-                            <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
-                                <Email />
-                            </SvgIcon>
-                            {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>info@lumoslatin.nl</Typography>}
-                        </Link>
-                    </Stack>
                     <Stack
-                        direction='row'
-                        spacing={isSmallScreen ? 1 : 2}>
-                        <SocialIconButton
-                            link='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
-                            size={isSmallScreen ? 10 : 16}>
-                            <Instagram />
-                        </SocialIconButton>
+                        alignItems='flex-end'
+                        justifyContent='center'
+                        spacing={2}>
+                        <Stack spacing={1} direction={isSmallScreen ? 'row' : 'column'}>
+                            <MuiLink gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="tel:+31628452492">
+                                <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                    <PhoneAndroid />
+                                </SvgIcon>
+                                {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
+                            </MuiLink>
 
-                        <SocialIconButton
-                            link='https://www.tiktok.com/@lumoslatindance?_t=ZG-8yb3rkVzEG0&_r=1'
-                            size={isSmallScreen ? 10 : 16}>
-                            <TikTok color='inherit' />
-                        </SocialIconButton>
+                            <MuiLink gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href="https://wa.me/31628452492" target="_blank">
+                                <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                    <WhatsApp />
+                                </SvgIcon>
+                                {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>+31 6 28452492</Typography>}
+                            </MuiLink>
 
-                        <SocialIconButton
-                            link='https://www.facebook.com/share/1CDP3cBRsB/?mibextid=wwXIfr'
-                            size={isSmallScreen ? 10 : 16}>
-                            <Facebook />
-                        </SocialIconButton>
+                            <MuiLink gap={2} alignItems='center' display='flex' flexDirection='row' underline='none' href='mailto:info@lumoslatin.nl'>
+                                <SvgIcon sx={{ color: '#000' }} inheritViewBox fontSize={isSmallScreen ? 'small' : 'medium'}>
+                                    <Email />
+                                </SvgIcon>
+                                {!isSmallScreen && <Typography color='black' variant={isSmallScreen ? 'caption' : 'body1'}>info@lumoslatin.nl</Typography>}
+                            </MuiLink>
+                        </Stack>
+                        <Stack
+                            direction='row'
+                            spacing={isSmallScreen ? 1 : 2}>
+                            <SocialIconButton
+                                link='https://www.instagram.com/lumoslatin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+                                size={isSmallScreen ? 10 : 16}>
+                                <Instagram />
+                            </SocialIconButton>
+
+                            <SocialIconButton
+                                link='https://www.tiktok.com/@lumoslatindance?_t=ZG-8yb3rkVzEG0&_r=1'
+                                size={isSmallScreen ? 10 : 16}>
+                                <TikTok color='inherit' />
+                            </SocialIconButton>
+
+                            <SocialIconButton
+                                link='https://www.facebook.com/share/1CDP3cBRsB/?mibextid=wwXIfr'
+                                size={isSmallScreen ? 10 : 16}>
+                                <Facebook />
+                            </SocialIconButton>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>
