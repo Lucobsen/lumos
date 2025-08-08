@@ -108,10 +108,16 @@ i18n
                         contactUs: "Questions? We are happy to help!",
                         teacher: 'Teacher',
                         faq: {
-                            questionOne: 'Heb ik een danspartner nodig?',
-                            questionTwo: 'Kan ik tussentijds instromen bij een beginners of improvers cursus?',
-                            questionThree: 'Wat voor kleding moet ik dragen?',
-                            questionFour: 'Geven jullie Salsa LA of Cubaanse Salsa?'
+                            questionOne: 'Do I need to bring a dance partner?',
+                            answerOne: 'No! During the classes, we will switch partners, so everyone gets to dance with a partner. If it turns out the ratios are not equal and we need more leaders or followers, we will arrange more people through our Whatsapp Groups. If you prefer not to switch, that is, of course, also fine. However, we always recommend dancing with different people, so your leading/following skills will be developed to the fullest.',
+                            questionTwo: 'Can I join a course after it has already started?',
+                            answerTwo: 'This is possible for Beginners and Improvers until the 3rd week of the course. This means that it’s possible to miss the first 2 weeks, but not more. Would you still like to join in the 3rd week or later? Please contact us through Whatsapp or Email so we can discuss the options.',
+                            questionThree: 'What clothes should I wear?',
+                            answerThree: 'Going to dance classes, you should think of it a bit like going to the gym. This doesn’t mean we are going to lift weights or make you run. However, it is important to be able to move your body and lift your arms in a comfortable way. Clothes that are too tight or too warm are going to hinder your dancing. Make sure to wear dancing shoes, or shoes with a sole that allows you to spin. This is especially important for your feet and knees to prevent any pain. When coming straight from work, we ask you to bring an extra/fresh shirt.',
+                            questionFour: 'Do you teach Salsa LA or Cuban Salsa?',
+                            answerFour: 'We teach Salsa LA On1. This is also called Cross Body lead style or Salsa en Linea.',
+                            questionFive: 'What type of Bachata do you teach?',
+                            answerFive: 'In Levels 1 we teach a balanced Bachata style without leaning fully into Sensual or Dominican. From Level 2 onwards we lean more into Sensual Style.',
                         }
                     }
                 }
@@ -212,9 +218,15 @@ i18n
                         contactUs: "Stel je vraag, wij helpen graag verder!",
                         faq: {
                             questionOne: 'Heb ik een danspartner nodig?',
+                            answerOne: 'Nee! Tijdens de lessen wisselen we van partner, zodat iedereen kan dansen. Wanneer blijkt dat de verhouding niet gelijk is en we meer leaders of followers nodig hebben, dan regelen we dit via onze WhatsApp-groepen. Als je liever niet van partner wisselt, is dat natuurlijk ook helemaal prima. We raden echter altijd aan om met verschillende mensen te dansen, zodat je leading- en following vaardigheden zich optimaal ontwikkelen!',
                             questionTwo: 'Kan ik tussentijds instromen bij een beginners of improvers cursus?',
+                            answerTwo: 'Dit is mogelijk voor Beginners en Improvers tot en met de 3e week van de cursus. Dit betekent dat je de eerste 2 weken kunt missen, maar helaas niet meer dan dat. Wil je toch instromen in de 3e week of later? Neem dan contact met ons op via WhatsApp of e-mail, zodat we samen de mogelijkheden kunnen bespreken!',
                             questionThree: 'Wat voor kleding moet ik dragen?',
-                            questionFour: 'Geven jullie Salsa LA of Cubaanse Salsa?'
+                            answerThree: 'Naar dansles gaan kun je een beetje vergelijken met een bezoek aan de sportschool. Dat betekent niet dat we gewichten gaan tillen of je laten rennen, maar het is wel nodig om de juiste kleding te dragen. Het is belangrijk dat je je lichaam goed kunt bewegen en je armen gemakkelijk kan optillen. Te strakke of te warme kleding belemmert je dansen. Zorg ervoor dat je dansschoenen draagt, of schoenen met een zool waarop je goed kunt draaien. Dit is vooral belangrijk om pijn aan je voeten en knieën te voorkomen.Kom je direct van werk? Dan vragen we je om een extra/ schoon shirt mee te nemen.',
+                            questionFour: 'Geven jullie Salsa LA of Cubaanse Salsa?',
+                            answerFour: 'We geven Salsa LA On1. Dit wordt ook wel Salsa en linea of Cross Body Style genoemd.',
+                            questionFive: 'Welke soort Bachata geven jullie?',
+                            answerFive: 'In Level 1 geven we les in een gebalanceerde Bachata-stijl, zonder volledig de nadruk te leggen op Sensual of Dominican. Vanaf Level 2 richten we ons meer op de Sensual Style.'
                         }
                     }
                 }

@@ -1,13 +1,14 @@
 import { ChevronRight, KeyboardArrowDown } from "@mui/icons-material";
-import { ListItem, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Collapse, ListItem, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type FaqItemProps = {
+export type FaqItemProps = {
     question: string;
+    answer: string;
 };
 
-export const FaqItem = ({ question }: FaqItemProps) => {
+export const FaqItem = ({ question, answer }: FaqItemProps) => {
     const { t } = useTranslation();
     const { breakpoints } = useTheme();
     const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
@@ -15,9 +16,14 @@ export const FaqItem = ({ question }: FaqItemProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <ListItem onClick={() => setIsOpen(prev => !prev)}>
-            <Stack>
-                <Stack direction='row' spacing={1} alignItems='flex-start'>
+        <ListItem onClick={() => setIsOpen(prev => !prev)} sx={{ pb: isExtraSmallScreen ? 2 : 5 }}>
+            <Stack width='100%'>
+                <Stack
+                    direction='row'
+                    spacing={1}
+                    alignItems='center'
+                    justifyContent={isExtraSmallScreen ? 'flex-start' : 'center'}
+                    sx={{ cursor: 'pointer' }}>
                     <SvgIcon
                         fontSize={isExtraSmallScreen ? 'small' : 'medium'}
                         sx={{
@@ -30,18 +36,19 @@ export const FaqItem = ({ question }: FaqItemProps) => {
                     </SvgIcon>
                     <Typography
                         color='black'
-                        variant={isExtraSmallScreen ? 'body1' : 'h6'}>
+                        variant={isExtraSmallScreen ? 'body1' : 'h5'}>
                         {t(question)}
                     </Typography>
                 </Stack>
-                {isOpen &&
+                <Collapse in={isOpen}>
                     <Typography
-                        pl={5}
+                        mt={1}
                         color='black'
-                        variant={isExtraSmallScreen ? 'caption' : 'body1'}>
-                        Blahahahahahhahaha
+                        variant={isExtraSmallScreen ? 'caption' : 'h6'}
+                        textAlign='center'>
+                        {t(answer)}
                     </Typography>
-                }
+                </Collapse>
             </Stack>
         </ListItem >
     );
