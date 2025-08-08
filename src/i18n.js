@@ -96,7 +96,7 @@ i18n
                     contact: {
                         ourTeam: 'Our Team',
                         ownerAndTeacher: 'Owner & Teacher',
-                        contactUs: "Contact Us",
+                        contactUs: "Questions? We are happy to help!",
                         teacher: 'Teacher',
                         faq: {
                             questionOne: 'Heb ik een danspartner nodig?',
@@ -191,7 +191,7 @@ i18n
                         ourTeam: 'Ons Team',
                         ownerAndTeacher: 'Eigenaar & Docent',
                         teacher: 'Docent',
-                        contactUs: "Neem contact met ons op",
+                        contactUs: "Stel je vraag, wij helpen graag verder!",
                         faq: {
                             questionOne: 'Heb ik een danspartner nodig?',
                             questionTwo: 'Kan ik tussentijds instromen bij een beginners of improvers cursus?',
