@@ -98,6 +98,12 @@ i18n
                         ownerAndTeacher: 'Owner & Teacher',
                         contactUs: "Contact Us",
                         teacher: 'Teacher',
+                        faq: {
+                            questionOne: 'Heb ik een danspartner nodig?',
+                            questionTwo: 'Kan ik tussentijds instromen bij een beginners of improvers cursus?',
+                            questionThree: 'Wat voor kleding moet ik dragen?',
+                            questionFour: 'Geven jullie Salsa LA of Cubaanse Salsa?'
+                        }
                     }
                 }
             },
@@ -185,7 +191,13 @@ i18n
                         ourTeam: 'Ons Team',
                         ownerAndTeacher: 'Eigenaar & Docent',
                         teacher: 'Docent',
-                        contactUs: "Neem contact met ons op"
+                        contactUs: "Neem contact met ons op",
+                        faq: {
+                            questionOne: 'Heb ik een danspartner nodig?',
+                            questionTwo: 'Kan ik tussentijds instromen bij een beginners of improvers cursus?',
+                            questionThree: 'Wat voor kleding moet ik dragen?',
+                            questionFour: 'Geven jullie Salsa LA of Cubaanse Salsa?'
+                        }
                     }
                 }
             }
