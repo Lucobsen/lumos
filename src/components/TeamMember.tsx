@@ -21,8 +21,8 @@ export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 loading='eager'
                 boxShadow={({ shadows }) => shadows[8]}
                 sx={{
-                    height: isExtraSmallScreen ? '140px' : '500px',
-                    width: isExtraSmallScreen ? '100px' : '300px',
+                    height: isExtraSmallScreen ? '140px' : '400px',
+                    width: isExtraSmallScreen ? '100px' : '250px',
                     display: 'block',
                     borderRadius: 10,
                     border: '4px solid #000'
