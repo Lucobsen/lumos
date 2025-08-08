@@ -47,6 +47,7 @@ const Index = () => {
   const { t } = useTranslation();
   const { breakpoints } = useTheme();
   const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
+  const isExtraSmallScreen = useMediaQuery(breakpoints.down('xs'));
 
   return (
     <PageContainer customPadding={{ pt: 4, pr: isSmallScreen ? 4 : 0, pb: 4, pl: 4 }}>
@@ -172,7 +173,7 @@ const Index = () => {
               <Button
                 disableRipple
                 sx={{
-                  mt: 12,
+                  mt: isExtraSmallScreen ? 0 : 12,
                   color: 'white',
                   width: isSmallScreen ? '200px' : '300px',
                   height: isSmallScreen ? '50px' : '60px',
