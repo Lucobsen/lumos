@@ -65,8 +65,7 @@ const Index = () => {
                 <Typography
                   color='black'
                   variant='h5'
-                  textAlign='center'
-                  fontWeight='bold'>
+                  textAlign='center'>
                   {t('home.cover.lineTwo')}
                 </Typography>
               </Stack>
@@ -173,6 +172,7 @@ const Index = () => {
               <Button
                 disableRipple
                 sx={{
+                  mt: 12,
                   color: 'white',
                   width: isSmallScreen ? '200px' : '300px',
                   height: isSmallScreen ? '50px' : '60px',

@@ -133,7 +133,7 @@ i18n
                         },
                         cover: {
                             lineOne: 'Vamos a bailar!',
-                            lineTwo: 'Voel je nooit meer ongemakkelijk/verloren op Latin feesten! Al binnen een paar weken heb jij tientallen nieuwe moves in je dans pocket. Ontdek hoeveel waarde Salsa & Bachata aan je leven toevoegt op verschillende manieren! Krijg een instant happiness ervaring door te bewegen, geniet van de beste Latin muziek en maak snel nieuwe vrienden.',
+                            lineTwo: 'Voel je nooit meer ongemakkelijk op Latin feesten! Al binnen een paar weken heb jij tientallen nieuwe moves in je dans pocket. Ontdek hoeveel waarde Salsa & Bachata aan je leven toevoegt op verschillende manieren! Krijg een instant happiness ervaring door te bewegen, geniet van de beste Latin muziek en maak snel nieuwe vrienden.',
                             lineThree: 'Tijd om iets nieuws te proberen: of je nu een ervaren danser bent of wilt ontdekken waar de hele Salsa & Bachata hype over gaat!',
                         }
                     },
