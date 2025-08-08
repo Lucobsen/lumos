@@ -14,6 +14,15 @@ i18n
         resources: {
             en: {
                 translation: {
+                    days: {
+                        monday: 'Monday',
+                        tuesday: 'Tuesday',
+                        wednesday: 'Wednesday',
+                        thursday: 'Thursday',
+                        friday: 'Friday',
+                        saturday: 'Saturday',
+                        sunday: 'Sunday'
+                    },
                     navItems: {
                         home: 'Home',
                         schedule: 'Schedule',
@@ -109,6 +118,15 @@ i18n
             },
             nl: {
                 translation: {
+                    days: {
+                        monday: 'maandag',
+                        tuesday: 'dinsdag',
+                        wednesday: 'woensdag',
+                        thursday: 'donderdag',
+                        friday: 'vrijdag',
+                        saturday: 'zaterdag',
+                        sunday: 'zondag'
+                    },
                     navItems: {
                         home: 'Home',
                         schedule: 'Rooster',
