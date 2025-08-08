@@ -4,6 +4,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { Navbar } from '../components/Navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { Footer } from '../components/Footer';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const theme = createTheme({
     breakpoints: {
@@ -41,6 +42,7 @@ export const Route = createRootRoute({
             <Outlet />
             <Footer />
             <Analytics />
+            <SpeedInsights />
             <TanStackRouterDevtools />
         </ThemeProvider >
     ),
