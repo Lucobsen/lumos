@@ -14,7 +14,6 @@ type LocationItemProps = {
 export const LocationItem = ({ title, address, locationUrl, code }: LocationItemProps) => {
     const { t } = useTranslation();
     const { breakpoints, shadows } = useTheme();
-    const isMediumScreen = useMediaQuery(breakpoints.down('md'));
     const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
     return (
