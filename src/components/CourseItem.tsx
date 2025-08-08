@@ -105,7 +105,7 @@ export const CourseItem = ({ title, backgroundImage, classes, swapSides }: Cours
                                 spacing={2}
                                 justifyContent={isSmallScreen ? 'center' : 'flex-start'}
                                 alignItems='center'>
-                                <Link to="/schedule">
+                                <Link to='/schedule' search={{ genre: title.toLowerCase() }}>
                                     <Button
                                         disableRipple
                                         sx={{
