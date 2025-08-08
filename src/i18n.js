@@ -57,12 +57,12 @@ i18n
                             title: '6-week course',
                             beginners: 'for Beginners',
                             improvers: 'for Improvers',
-                            info: 'Valid for Salsa or Bachata. Each week you join on the same day and time. You will be registered automatically for all 6 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!'
+                            info: 'Valid for Salsa or Bachata. Each week you join on the same day and time. You choose for which Course you sign up.\n*P.S. Sign up during our Try- Outs and get an amazing discount!'
                         },
                         sixWeekCombo: {
                             title: '6-week combo',
                             subtitle: 'Double the fun:\nSalsa and Bachata for Beginners or Improvers',
-                            info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You will be registered automatically for all 12 classes. Valid for 14 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!',
+                            info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You choose for which Beginner or Improver Course you sign up. Valid for 14 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!',
                         },
                         punchCardSix: {
                             title: 'Punch card - 6 classes',
@@ -167,11 +167,11 @@ i18n
                             title: '6-weekse cursus',
                             beginners: 'voor Beginners',
                             improvers: 'voor Improvers',
-                            info: 'Geldig voor Salsa of Bachata. Je danst elke week op dezelfde dag en tijd. We schrijven je automatisch in voor alle 6 weken.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!'
+                            info: 'Geldig voor Salsa of Bachata. Je danst elke week op dezelfde dag en tijd. Kies zelf voor welke cursus jij je inschrijft.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!'
                         }, sixWeekCombo: {
                             title: '6-weekse combo cursus',
                             subtitle: 'Double the fun:\nSalsa en Bachata voor Beginners of Improvers',
-                            info: 'Volg een Salsa én Bachata voor Beginners (level 1) of Improvers (level 2). Je danst elke week op dezelfde dagen en tijden. We schrijven je automatisch in voor alle 12 lessen.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!',
+                            info: 'Volg een Salsa én Bachata voor Beginners (level 1) of Improvers (level 2). Je danst elke week op dezelfde dagen en tijden. Kies zelf voor welke Beginners- of Improverscursus jij je inschrijft.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!',
                         },
                         punchCardSix: {
                             title: 'Strippenkaart - 6 lessen',
