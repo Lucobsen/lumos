@@ -1,22 +1,13 @@
-import { Box, Button, Grid, Link as MuiLink, List, ListItem, Stack, styled, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Grid, List, ListItem, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer'
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const StyledMuiLink = styled(MuiLink)`
-  text-decoration: underline;
-  text-decoration-color: ${({ theme }) => theme.palette.secondary.main};
-`;
-
 type News = {
   title: string;
   content: string;
-  internalLink?: {
-    text: string;
-    link: string;
-  };
-  externalLink?: {
+  internalLink: {
     text: string;
     link: string;
   };
@@ -26,9 +17,10 @@ const news: News[] = [
   {
     title: 'home.news.tryOuts.title',
     content: 'home.news.tryOuts.content',
-    externalLink: {
+    internalLink: {
       text: 'home.news.tryOuts.link',
-      link: 'https://www.bueno.nu/webshop/school/764/schedule?currentDate=01-09-2025&skipEmptyWeeksOnFirstLoad=NO'
+      link: '/schedule?currentDate=01-09-2025&skipEmptyWeeksOnFirstLoad=NO'
+
     }
   },
   {
@@ -102,7 +94,7 @@ const Index = () => {
             </Typography>
 
             <List sx={{ overflow: 'auto', height: `calc(100% - ${isSmallScreen ? 65 : 120}px)`, bgcolor: '#fff' }} >
-              {news.map(({ title, internalLink, externalLink, content }) =>
+              {news.map(({ title, internalLink, content }) =>
                 <ListItem divider sx={{ justifyContent: 'center' }}>
                   <Stack mb={2} spacing={isSmallScreen ? 1 : 2}>
                     <Typography
@@ -115,7 +107,7 @@ const Index = () => {
                     <Stack spacing={isSmallScreen ? 2 : 3} alignItems='center'>
                       <Typography variant='body1' color='black' textAlign='center'>{t(content)}</Typography>
                       {internalLink &&
-                        <StyledMuiLink href={internalLink.link}>
+                        <Link to={internalLink.link}>
                           <Button
                             disableRipple
                             sx={{
@@ -129,23 +121,7 @@ const Index = () => {
                             variant='contained'>
                             {t(internalLink.text)}
                           </Button>
-                        </StyledMuiLink>}
-                      {externalLink &&
-                        <StyledMuiLink target='_blank' href={externalLink.link}>
-                          <Button
-                            disableRipple
-                            sx={{
-                              color: 'white',
-                              minWidth: isSmallScreen ? '100px' : '200px',
-                              height: isSmallScreen ? '40px' : '50px',
-                              borderRadius: 10,
-                              fontWeight: 'bold',
-                              background: ({ palette }) => `linear-gradient(${palette.secondary.main}, ${palette.primary.main})`,
-                            }}
-                            variant='contained'>
-                            {t(externalLink.text)}
-                          </Button>
-                        </StyledMuiLink>}
+                        </Link>}
                     </Stack>
                   </Stack>
                 </ListItem>)}

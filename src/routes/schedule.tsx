@@ -16,13 +16,15 @@ const genreCodes: Record<string, string> = {
 
 const searchSchema = z.object({
     genre: z.string().optional(),
+    currentDate: z.string().optional().default(''),
+    skipEmptyWeeksOnFirstLoad: z.string().optional().default('YES')
 })
 
 
 const Schedule = () => {
     useEffect(() => { document.title = 'Lumos - Schedule'; }, []);
 
-    const { genre } = Route.useSearch();
+    const { genre, currentDate, skipEmptyWeeksOnFirstLoad } = Route.useSearch();
     const selectedCode = genre ? genreCodes[genre] : '';
 
     const scrollSchedule = () => {
@@ -33,7 +35,7 @@ const Schedule = () => {
     return (
         <PageContainer disableBorders>
             <IframeResizer
-                src={`https://www.bueno.nu/webshop/school/764/schedule?currentDate=&skipEmptyWeeksOnFirstLoad=YES&calendarEntryTypes=&locations=&genres=${selectedCode}&levels=&employees=`}
+                src={`https://www.bueno.nu/webshop/school/764/schedule?currentDate=${currentDate ?? ''}&skipEmptyWeeksOnFirstLoad=${skipEmptyWeeksOnFirstLoad ?? 'YES'}&calendarEntryTypes=&locations=&genres=${selectedCode}&levels=&employees=`}
                 style={{ width: '100%', minHeight: '100vh' }}
                 log={false}
                 onScroll={() => scrollSchedule()}
