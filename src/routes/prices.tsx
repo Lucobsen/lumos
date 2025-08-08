@@ -84,7 +84,7 @@ const Prices = () => {
 
     const { t } = useTranslation();
     const { breakpoints } = useTheme();
-    const isSmallScreen = useMediaQuery(breakpoints.down(1000));
+    const isSmallScreen = useMediaQuery(breakpoints.down('sm'));
 
     const spacing = 12 / priceItems.length;
 

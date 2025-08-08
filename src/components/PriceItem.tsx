@@ -7,7 +7,13 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
     const { t } = useTranslation();
 
     return (
-        <Stack boxShadow={({ shadows }) => shadows[8]} border={4} borderRadius={10} borderColor='#000' pb={2}>
+        <Stack
+            minHeight={200}
+            boxShadow={({ shadows }) => shadows[8]}
+            border={4}
+            borderRadius={10}
+            borderColor='#000'
+            height='100%'>
             <Stack
                 spacing={2}
                 textAlign='center'
@@ -25,22 +31,30 @@ export const PriceItem = ({ title, subtitle, info, cost, actionItem }: PriceItem
                 </Typography>
                 <Typography color='black' variant='h4'>{cost}</Typography>
             </Stack>
-            <Stack my={2} px={4} spacing={2} alignItems='center'>
-                <Typography
-                    textAlign='center'
-                    fontFamily='Chau Philomene One'
-                    color='black'
-                    variant='h6'
-                    whiteSpace='pre-line'>
-                    {t(subtitle)}
-                </Typography>
-                <Typography
-                    color='black'
-                    variant='body1'
-                    textAlign='center'
-                    whiteSpace='pre-line'>
-                    {t(info)}
-                </Typography>
+            <Stack
+                my={2}
+                px={4}
+                spacing={2}
+                alignItems='center'
+                justifyContent='space-between'
+                height='100%'>
+                <Stack>
+                    <Typography
+                        textAlign='center'
+                        fontFamily='Chau Philomene One'
+                        color='black'
+                        variant='h6'
+                        whiteSpace='pre-line'>
+                        {t(subtitle)}
+                    </Typography>
+                    <Typography
+                        color='black'
+                        variant='body1'
+                        textAlign='center'
+                        whiteSpace='pre-line'>
+                        {t(info)}
+                    </Typography>
+                </Stack>
                 {actionItem &&
                     <Link target='_blank' href={actionItem.actionUrl}>
                         <Button
