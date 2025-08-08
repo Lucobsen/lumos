@@ -2,9 +2,28 @@ import { createFileRoute } from '@tanstack/react-router'
 import { PageContainer } from '../components/PageContainer';
 import { useEffect } from 'react';
 import IframeResizer from '@iframe-resizer/react';
+import * as z from "zod";
+
+const genreCodes: Record<string, string> = {
+    salsa: '5206',
+    bachata: '5207'
+};
+
+// const locationCodes = {
+//     komp: '1441',
+//     veem: '1470'
+// }
+
+const searchSchema = z.object({
+    genre: z.string().optional(),
+})
+
 
 const Schedule = () => {
     useEffect(() => { document.title = 'Lumos - Schedule'; }, []);
+
+    const { genre } = Route.useSearch();
+    const selectedCode = genre ? genreCodes[genre] : '';
 
     const scrollSchedule = () => {
         document.getElementById('bueno-schedule')?.scrollIntoView({ behavior: 'smooth' });
@@ -14,7 +33,7 @@ const Schedule = () => {
     return (
         <PageContainer disableBorders>
             <IframeResizer
-                src="https://www.bueno.nu/webshop/school/764/schedule?currentDate=&skipEmptyWeeksOnFirstLoad=YES&calendarEntryTypes=&locations=&genres=&levels=&employees="
+                src={`https://www.bueno.nu/webshop/school/764/schedule?currentDate=&skipEmptyWeeksOnFirstLoad=YES&calendarEntryTypes=&locations=&genres=${selectedCode}&levels=&employees=`}
                 style={{ width: '100%', minHeight: '100vh' }}
                 log={false}
                 onScroll={() => scrollSchedule()}
@@ -26,4 +45,5 @@ const Schedule = () => {
 
 export const Route = createFileRoute('/schedule')({
     component: Schedule,
+    validateSearch: searchSchema,
 })
