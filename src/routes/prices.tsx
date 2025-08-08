@@ -24,7 +24,7 @@ const priceItems: PriceItemProps[] = [
         info: 'prices.sixWeekCourse.info',
         actionItem: {
             actionText: 'prices.buy',
-            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45992'
+            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46400'
         }
     },
     {
@@ -34,7 +34,7 @@ const priceItems: PriceItemProps[] = [
         info: 'prices.sixWeekCourse.info',
         actionItem: {
             actionText: 'prices.buy',
-            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45994'
+            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46402'
         }
     },
     {
@@ -44,7 +44,7 @@ const priceItems: PriceItemProps[] = [
         info: 'prices.sixWeekCombo.info',
         actionItem: {
             actionText: 'prices.buy',
-            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/45997'
+            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46404'
         }
     },
     {
@@ -74,7 +74,7 @@ const priceItems: PriceItemProps[] = [
         info: 'prices.singleClass.info',
         actionItem: {
             actionText: 'prices.buy',
-            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46102'
+            actionUrl: 'https://www.bueno.nu/webshop/school/764/punch-card/46405'
         }
     }
 ];
