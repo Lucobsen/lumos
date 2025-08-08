@@ -65,12 +65,12 @@ i18n
                             info: 'Follow a Salsa and Bachata course of Beginners or Improvers. Each week you join on the same days and time. You choose for which Beginner or Improver Course you sign up. Valid for 14 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!',
                         },
                         punchCardSix: {
-                            title: 'Punch card - 6 classes',
+                            title: 'Punch card - 6 single classes',
                             subtitle: 'for Improvers, Intermediate and Solo classes',
                             info: 'Purchase 6 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 8 weeks.\n*P.S. Sign up during our Try- Outs and get an amazing discount!',
                         },
                         punchCardTwelve: {
-                            title: 'Punch card - 12 classes',
+                            title: 'Punch card - 12 single classes',
                             subtitle: 'for Improvers, Intermediate and Solo classes',
                             info: 'Purchase 12 separate classes and join whenever it suits you. Register for each class through our Bueno Students app. Valid for 4 months.\n*P.S. Sign up during our Try- Outs and get an amazing discount!',
                         },
@@ -174,12 +174,12 @@ i18n
                             info: 'Volg een Salsa én Bachata voor Beginners (level 1) of Improvers (level 2). Je danst elke week op dezelfde dagen en tijden. Kies zelf voor welke Beginners- of Improverscursus jij je inschrijft.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!',
                         },
                         punchCardSix: {
-                            title: 'Strippenkaart - 6 lessen',
+                            title: 'Strippenkaart - 6 losse lessen',
                             subtitle: 'voor Improvers, Intermediate en Solo classes',
                             info: 'Krijg 6 losse lessen en schrijf je in wanneer het jou uitkomt. Meld je aan voor een les naar keuze via onze Bueno Students app. Geldig voor 3 maanden voor improvers, intermediate en Footwork lessen.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!',
                         },
                         punchCardTwelve: {
-                            title: 'Strippenkaart - 12 lessen',
+                            title: 'Strippenkaart - 12 losse lessen',
                             subtitle: 'voor Improvers, Intermediate en Solo classes',
                             info: 'Krijg 12 losse lessen en schrijf je in wanneer het jou uitkomt. Meld je aan voor een les naar keuze via onze Bueno Students app. Geldig voor 4 maanden voor improvers, intermediate en Footwork lessen.\n*P.S. Meld je aan tijdens onze Try-Outs en ontvang geweldige kortingen!',
                         },
